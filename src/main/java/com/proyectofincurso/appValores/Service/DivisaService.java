@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.proyectofincurso.appValores.entity.Divisa;
 
-public interface divisaService {
+public interface DivisaService {
 
 	public List<Divisa> findAll();
 

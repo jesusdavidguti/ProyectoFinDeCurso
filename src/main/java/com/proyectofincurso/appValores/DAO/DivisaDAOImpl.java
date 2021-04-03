@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.proyectofincurso.appValores.entity.Divisa;
 
 @Repository
-public class DivisaDAOImpl implements divisaDAO {
+public class DivisaDAOImpl implements DivisaDAO {
 
 	@Autowired
 	private EntityManager entityManager;

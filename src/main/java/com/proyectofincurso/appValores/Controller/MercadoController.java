@@ -17,6 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.proyectofincurso.appValores.Service.MercadoService;
+import com.proyectofincurso.appValores.Service.MercadoServiceImpl;
+import com.proyectofincurso.appValores.entity.Mercado;
+
 // Indiciamos que es un controlador rest así como la raíz de la URL que usaremos (http://localhost:8080/api/)
 @RestController
 @RequestMapping("/apiMercados")
@@ -26,11 +30,11 @@ public class MercadoController {
 
 	//Inyectamos el servicio para poder hacer uso de el	
 	@Autowired
-	private PersonaService personaService;
+	private MercadoService mercadoService;
 		
 	@Bean 
-	public PersonaService personaService() { 
-		return new PersonaServiceImpl(); 
+	public MercadoService mercadoService() { 
+		return new MercadoServiceImpl(); 
 	}
 	 	
 	// PETICONES GET
@@ -38,70 +42,69 @@ public class MercadoController {
 	@GetMapping("/info")
 	public Map<String, String> info() {
 	    HashMap<String, String> map = new HashMap<>();
-	    map.put("Servicio", "personaCRUD");
+	    map.put("Servicio", "mercadoCRUD");
 	    map.put("Versión", "1.0");
-	    map.put("Descripción", "CRUD para el mantenimiento de la entidad persona.");
-	    map.put("Observaciones", "Tutorial para gestión de una sola tabla.");	    
+	    map.put("Descripción", "CRUD para el mantenimiento de la entidad mercado.");
+	    map.put("Observaciones", "Trabajo fin de curso DAW2.");	    
 	    return map;
 	}
 	
-	@GetMapping("/personas")
-    public List<Persona> findAll(){
+	@GetMapping("/mercados")
+    public List<Mercado> findAll(){
 
-        return personaService.findAll();
+        return mercadoService.findAll();
     }
 	
-	@GetMapping("/personas/{personaId}")
-    public Persona getUser(@PathVariable int personaId){
-        Persona persona = personaService.findById(personaId);
+	@GetMapping("/mercados/{mercadoId}")
+    public Mercado getUser(@PathVariable String mercadoId){
+        Mercado mercado = mercadoService.findById(mercadoId);
 
-        if(persona == null) {
-            throw new RuntimeException("Persona desconocida -"+personaId);
+        if(mercado == null) {
+            throw new RuntimeException("Mercado desconocido -"+mercadoId);
         }
 
-        return persona;
+        return mercado;
     }
 
-	 // ...aquí podríamos ampliar nuestra funcionalidad añadiendo búsquedas por nombre, fecha de nacimiento, etc.
-	 
-	 
+	 // ...aquí podríamos ampliar nuestra funcionalidad añadiendo distintas búsquedas.
+	 	 
 	// PETICONES POST	 
 	
-	 @PostMapping("/personas")
-	 public Persona addPersona(@RequestBody Persona persona) {
+	 @PostMapping("/mercados")
+	 public Mercado addMercado(@RequestBody Mercado mercado) {
 		 
-	        persona.setId_persona(0);
+	        //mercado.setCodMercado(0);
 
-	        personaService.save(persona);
+	        mercadoService.save(mercado);
 
-	        return persona;	 
+	        return mercado;	 
 	 }
 	 
 	// PETICONES PUT
 	 
-	 @PutMapping("/personas")
-	 public Persona updatePersona(@RequestBody Persona persona) {
+	 @PutMapping("/mercados")
+	 public Mercado updateMercado(@RequestBody Mercado mercado) {
 
-	        personaService.save(persona);
+	        mercadoService.save(mercado);
 
-	        return persona;
+	        return mercado;
 	    }
 	 
 	// PETICONES DELETE
 	 
-	 @DeleteMapping("personas/{personaId}")
-	 public String deletePersona(@PathVariable int personaId) {
+	 @DeleteMapping("mercados/{mercadoId}")
+	 public String deleteMercado(@PathVariable String mercadoId) {
 
-	        Persona persona = personaService.findById(personaId);
+	        Mercado mercado = mercadoService.findById(mercadoId);
 
-	        if(persona == null) {
-	            throw new RuntimeException("Persona desconocida id:"+personaId);
+	        if(mercado == null) {
+	            throw new RuntimeException("Mercado desconocido id:"+mercadoId);
 	        }
 
-	        personaService.deleteById(personaId);
+	        mercadoService.deleteById(mercadoId);
 
-	        return "Persona borrada con id - "+personaId;
+	        return "Mercado borrado con id - "+mercadoId;
 	    }	 
 	 
-	 // ...inicialmente borramos por id, pero podríamos borrar también por apellido, fecha de nacimiento, etc.
+	 // ...inicialmente borramos por id, pero podríamos borrar también por otros campos.
 }

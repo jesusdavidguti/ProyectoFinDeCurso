@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.proyectofincurso.appValores.entity.Mercado;
 
-public interface mercadoDAO {
+public interface MercadoDAO {
 
 	 public List<Mercado> findAll();
 

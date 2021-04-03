@@ -3,7 +3,7 @@ package com.proyectofincurso.appValores.Service;
 import com.proyectofincurso.appValores.entity.Cartera;
 import java.util.List;
 
-public interface carteraService {
+public interface CarteraService {
 
 	public List<Cartera> findAll();
 

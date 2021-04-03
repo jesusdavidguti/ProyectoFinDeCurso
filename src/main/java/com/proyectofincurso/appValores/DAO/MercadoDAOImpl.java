@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.proyectofincurso.appValores.entity.Mercado;
 
 @Repository
-public class MercadoDAOImpl implements mercadoDAO {
+public class MercadoDAOImpl implements MercadoDAO {
 
 	@Autowired
 	private EntityManager entityManager;

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.proyectofincurso.appValores.entity.Cartera;
 
-public interface carteraDAO {
+public interface CarteraDAO {
 
 	public List<Cartera> findAll();
 

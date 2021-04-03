@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.proyectofincurso.appValores.entity.Cartera;
 
 @Repository
-public class CarteraDAOImpl implements carteraDAO {
+public class CarteraDAOImpl implements CarteraDAO {
 
 	@Autowired
 	private EntityManager entityManager;

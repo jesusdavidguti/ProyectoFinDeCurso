@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.proyectofincurso.appValores.DAO.MercadoDAO;
+import com.proyectofincurso.appValores.DAO.mercadoDAO;
 import com.proyectofincurso.appValores.entity.Mercado;
 
 @Service
 public class MercadoServiceImpl implements mercadoService {
 
 	@Autowired
-	private MercadoDAO mercadoDAO;
+	private mercadoDAO mercadoDAO;
 	
 	@Override
 	public List<Mercado> findAll() {

@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.proyectofincurso.appValores.DAO.CarteraDAO;
+import com.proyectofincurso.appValores.DAO.carteraDAO;
 import com.proyectofincurso.appValores.entity.Cartera;
 
 @Service
 public class CarteraServiceImpl implements carteraService {
 
 	@Autowired
-	private CarteraDAO carteraDAO; 
+	private carteraDAO carteraDAO; 
 	
 	@Override
 	public List<Cartera> findAll() {

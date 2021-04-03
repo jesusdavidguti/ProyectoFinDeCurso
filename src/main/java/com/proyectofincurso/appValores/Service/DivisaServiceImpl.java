@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.proyectofincurso.appValores.DAO.DivisaDAO;
+import com.proyectofincurso.appValores.DAO.divisaDAO;
 import com.proyectofincurso.appValores.entity.Divisa;
 
 @Service
 public class DivisaServiceImpl implements divisaService {
 
 	@Autowired
-	private DivisaDAO divisaDAO;
+	private divisaDAO divisaDAO;
 	
 	@Override
 	public List<Divisa> findAll() {

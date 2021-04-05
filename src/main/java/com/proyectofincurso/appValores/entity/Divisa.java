@@ -1,11 +1,7 @@
 package com.proyectofincurso.appValores.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @javax.persistence.Entity(name = "divisa")
 public class Divisa {
@@ -22,30 +18,17 @@ public class Divisa {
 		
 	@Column(name="cambio")
 	private double cambio;
-
-	@OneToMany(mappedBy="divisa" )
-	private List<Valor> listaValores;
 	
 	public Divisa() {
 		super();
-		listaValores = new ArrayList<Valor>();
 	}
 	
-	public Divisa(String codDivisa, String nombre, String codPais, double cambio, List<Valor> listaValores) {
+	public Divisa(String codDivisa, String nombre, String codPais, double cambio) {
 		super();
 		this.codDivisa = codDivisa;
 		this.nombre = nombre;
 		this.codPais = codPais;
 		this.cambio = cambio;
-		this.listaValores = listaValores;
-	}
-
-	public List<Valor> getListaValores() {
-		return listaValores;
-	}
-
-	public void addValor(Valor v) {
-		this.listaValores.add(v);
 	}
 		
 	public String getCodDivisa() {

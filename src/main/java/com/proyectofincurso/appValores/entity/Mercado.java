@@ -1,11 +1,7 @@
 package com.proyectofincurso.appValores.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @javax.persistence.Entity(name = "mercado")
 public class Mercado {
@@ -22,30 +18,18 @@ public class Mercado {
 	
 	@Column(name="continente",length=20)
 	private String continente;
-	
-	@OneToMany(mappedBy="mercado" )
-	private List<Valor> listaValores;
-		
+			
 	public Mercado() {
 		super();
-		listaValores = new ArrayList<Valor>();
+
 	}
 
-	public Mercado(String codMercado, String nombre, String codPais, String continente, List<Valor> listaValores) {
+	public Mercado(String codMercado, String nombre, String codPais, String continente) {
 		super();
 		this.codMercado = codMercado;
 		this.nombre = nombre;
 		this.codPais = codPais;
 		this.continente = continente;
-		this.listaValores = listaValores;
-	}
-
-	public List<Valor> getListaValores() {
-		return listaValores;
-	}
-
-	public void addValor(Valor v) {
-		this.listaValores.add(v);
 	}
 
 	public String getCodMercado() {

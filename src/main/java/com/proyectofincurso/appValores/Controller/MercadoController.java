@@ -106,5 +106,4 @@ public class MercadoController {
 	        return "Mercado borrado con id - "+mercadoId;
 	    }	 
 	 
-	 // ...inicialmente borramos por id, pero podríamos borrar también por otros campos.
 }

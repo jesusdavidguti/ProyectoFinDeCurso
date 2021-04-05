@@ -23,7 +23,7 @@ public class Mercado {
 	@Column(name="continente",length=20)
 	private String continente;
 	
-	@OneToMany(mappedBy="valor" )
+	@OneToMany(mappedBy="mercado" )
 	private List<Valor> listaValores;
 		
 	public Mercado() {

@@ -23,7 +23,7 @@ public class Divisa {
 	@Column(name="cambio")
 	private double cambio;
 
-	@OneToMany(mappedBy="valor" )
+	@OneToMany(mappedBy="divisa" )
 	private List<Valor> listaValores;
 	
 	public Divisa() {

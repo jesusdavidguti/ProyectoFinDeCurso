@@ -14,10 +14,10 @@ public class Cartera {
     @Column(name="idCartera")
 	private int idCartera;
 	
-	@Column(name="nombre")
+	@Column(name="nombre",length=50)
 	private String nombre;
 	
-	@Column(name="descripcion")
+	@Column(name="descripcion",length=100)
 	private String descripcion;	
 	
 	@Column(name="fecInicio")

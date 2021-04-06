@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+
 @javax.persistence.Entity(name = "valor")
 public class Valor {
 
@@ -29,6 +30,7 @@ public class Valor {
     @JoinColumn(name="codDivisa")
     private Divisa divisa;
 
+	
 	public Valor() {
 		super();
 		// TODO Auto-generated constructor stub

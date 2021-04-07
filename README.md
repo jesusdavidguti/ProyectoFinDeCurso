@@ -16,3 +16,4 @@ Desarrollo de una aplicación web bursatil
 - [JPA @ OneToMany](https://www.arquitecturajava.com/jpa-onetomany/)
 - [JPA @ ManyToOne](https://www.arquitecturajava.com/jpa-manytoone/)
 - [@id automático](https://stackoverflow.com/questions/20603638/what-is-the-use-of-annotations-id-and-generatedvaluestrategy-generationtype)
+- [Sintaxis Github](https://docs.github.com/es/github/writing-on-github/basic-writing-and-formatting-syntax)

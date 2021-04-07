@@ -8,3 +8,6 @@ Desarrollo de una aplicación web bursatil
 
 
 ## Bibliografía
+
+- [Mi tutorial](https://github.com/jesusdavidguti/TutorialSpringJPA)
+- [Api REST](https://www.nigmacode.com/java/crear-api-rest-con-spring/)

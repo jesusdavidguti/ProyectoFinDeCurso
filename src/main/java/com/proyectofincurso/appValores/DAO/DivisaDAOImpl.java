@@ -32,9 +32,9 @@ public class DivisaDAOImpl implements DivisaDAO {
 	@Override
 	public Divisa findById(String id) {
 		Session currentSession = entityManager.unwrap(Session.class);
-
+		
         Divisa divisa = currentSession.get(Divisa.class, id);
-
+        
         return divisa;
 	}
 

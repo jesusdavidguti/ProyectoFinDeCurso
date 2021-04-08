@@ -3,6 +3,7 @@ package com.proyectofincurso.appValores.Controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -57,13 +58,13 @@ public class DivisaController {
 	
 	@GetMapping("/divisas/{divisaId}")
     public Divisa getDivisa(@PathVariable String divisaId){
-        Divisa divisa = divisaService.findById(divisaId);
-
-        if(divisa == null) {
-            throw new RuntimeException("Divisa desconocida -"+divisaId);
-        }
-
-        return divisa;
+		
+		try {
+	        Divisa divisa = divisaService.findById(divisaId);	        
+	        return divisa;
+		} catch (Exception e) {
+			throw new RuntimeException("Error recuperación divisa "+divisaId);
+		}				
     }
 	
 	// PETICONES POST	 
@@ -77,6 +78,25 @@ public class DivisaController {
 
 	        return divisa;	 
 	 }
+	 
+	 @PostMapping("/load")
+	 public Map<String, String> loadDivisa() {
+		 
+		 	Divisa divisaLoad1 = new Divisa("eur","Euro","EU",1.19);		 			 	
+	        divisaService.save(divisaLoad1);
+		 	Divisa divisaLoad2 = new Divisa("usdo","Dolar americano","USA",1.00);		 			 	
+	        divisaService.save(divisaLoad2);
+		 	Divisa divisaLoad3 = new Divisa("libr","Libra esterlina","GB",1.37);		 			 	
+	        divisaService.save(divisaLoad3);
+		 	Divisa divisaLoad4 = new Divisa("Yen","Yen japonés","JP",0.0092);		 			 	
+	        divisaService.save(divisaLoad4);
+	        
+	        HashMap<String, String> map = new HashMap<>();
+		    map.put("Tabla", "Divisas");
+		    map.put("Carga", "Finalizada");	    
+		    return map;
+	 }
+
 	 
 	// PETICONES PUT
 	 
@@ -103,5 +123,5 @@ public class DivisaController {
 
 	        return "Divisa borrada con id - "+divisaId;
 	 }	
-		
+	 
 }

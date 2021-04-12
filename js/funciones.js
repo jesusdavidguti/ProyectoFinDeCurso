@@ -24,21 +24,19 @@ $('#formulario').on('submit', function(e) {
   e.preventDefault();
     alert("Entra en submit");
     registrar();
-
 });
+
 //Función que envía los datos de la divisa desde el formulario
 function registrar() {
  
-      var viaje = {
-          desc_corta:$("#inputCodDivisa").val(),
-          fec_inicio:$("#inputCodPais").val(),
-          fec_fin:$("#InputCambio").val(),
-          participantes:$("#inputParticipantes").val(),
-          medio_transporte:$("#inputTransporte").val()
+      var divisa = {
+          nombre:$("#inputCodDivisa").val(),
+          codPais:$("#inputCodPais").val(),
+          cambioUS:$("#InputCambio").val()
           
       }
 
-      var dataJson = JSON.stringify(viaje);
+      var dataJson = JSON.stringify(divisa);
     //  alert(dataJson);
       $.ajax({
           url: "https://travellog2.herokuapp.com/api/viajes",
@@ -48,5 +46,4 @@ function registrar() {
           data: dataJson
       });
 
-  
   }

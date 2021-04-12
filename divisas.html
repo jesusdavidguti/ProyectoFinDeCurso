@@ -50,25 +50,25 @@
         <div class="form row">
             <div class="form-group col-md-6">
               <label for="inputCodPais">Código de país</label>
-              <input type="text" class="form-control" id="inputCodPais" required>                                                                                  " min="1" max="50" class="form-control" id="InputCodPais" required> 
+              <input type="text" class="form-control" id="inputCodPais" required>                                                                                  
               <div class="valid-feedback">OK!</div>
               <div class="invalid-feedback">Por favor, rellene este campo</div>   
             </div>
         </div>
+
         <div class="form row">
           <div class="form-group col-md-6">
             <label for="InputCambio">Cambio $US</label>
-            <input type="number" min="1" max="5" class="form-control" id="InputCambio" required> 
+            <input type="decimal" min="0.01" max="4.99" class="form-control" id="InputCambio" required> 
             <div class="valid-feedback">OK!</div>
             <div class="invalid-feedback">Por favor, rellene este campo</div>   
           </div>             
         </div>      
-      </div>
 
-      <button id="enviar" class="btn btn-primary" type="submit">Guardar</button>
-      <button id="enviar" class="btn btn-primary" type="submit">Consultar</button>
+        <button id="enviar" class="btn btn-primary" type="submit">Guardar</button>
+        <button id="enviar" class="btn btn-primary" type="submit">Consultar</button>
 
-    </form>
+      </form>
     </div>    
 
       <!--FOOTER-->

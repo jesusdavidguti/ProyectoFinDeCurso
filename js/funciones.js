@@ -18,11 +18,11 @@
   }, false);
 })();
 
-//Envío de datos del formulario, método post.
+//Envío de datos del formulario, método post/put.
 
 $('#formulario').on('submit', function(e) {
   e.preventDefault();
- // alert("entra");
+    alert("Entra en submit");
     registrar();
 
 });
@@ -30,10 +30,9 @@ $('#formulario').on('submit', function(e) {
 function registrar() {
  
       var viaje = {
-          desc_corta:$("#inputDescripcionCorta").val(),
-          desc_larga:$("#inputDescripcionLarga").val(),
-          fec_inicio:$("#fechaInicio").val(),
-          fec_fin:$("#fechaFin").val(),
+          desc_corta:$("#inputCodDivisa").val(),
+          fec_inicio:$("#inputCodPais").val(),
+          fec_fin:$("#InputCambio").val(),
           participantes:$("#inputParticipantes").val(),
           medio_transporte:$("#inputTransporte").val()
           

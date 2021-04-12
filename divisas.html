@@ -38,39 +38,38 @@
       <h3>Divisa</h3>
       <br />
       <form id="formulario" method="post" class="needs-validation" novalidate>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputDescripcionCorta">Nombre</label>
-            <input type="text" class="form-control" id="inputDescripcionCorta" required>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+              <label for="inputCodDivisa">Nombre</label>
+              <input type="text" class="form-control" id="inputCodDivisa" required>
+              <div class="valid-feedback">OK!</div>
+              <div class="invalid-feedback">Por favor, rellene este campo</div>
+          </div>
+        </div>
+
+        <div class="form row">
+            <div class="form-group col-md-6">
+              <label for="inputCodPais">Código de país</label>
+              <input type="text" class="form-control" id="inputCodPais" required>                                                                                  " min="1" max="50" class="form-control" id="InputCodPais" required> 
+              <div class="valid-feedback">OK!</div>
+              <div class="invalid-feedback">Por favor, rellene este campo</div>   
+            </div>
+        </div>
+        <div class="form row">
+          <div class="form-group col-md-6">
+            <label for="InputCambio">Cambio $US</label>
+            <input type="number" min="1" max="5" class="form-control" id="InputCambio" required> 
             <div class="valid-feedback">OK!</div>
-            <div class="invalid-feedback">Por favor, rellene este campo</div>
-        </div>
+            <div class="invalid-feedback">Por favor, rellene este campo</div>   
+          </div>             
+        </div>      
       </div>
-
-    <div class="form row">
-        <div class="form-group col-md-6">
-          <label for="InputCodPais">Código de país</label>
-          <input type="text                                                                                   " min="1" max="50" class="form-control" id="InputCodPais" required> 
-          <div class="valid-feedback">OK!</div>
-          <div class="invalid-feedback">Por favor, rellene este campo</div>   
-        </div>
-    </div>
-    <div class="form row">
-      <div class="form-group col-md-6">
-        <label for="InputCodPais">Cambio $US</label>
-        <input type="number" min="1" max="5" class="form-control" id="InputCodPais" required> 
-        <div class="valid-feedback">OK!</div>
-        <div class="invalid-feedback">Por favor, rellene este campo</div>   
-      </div>             
-    </div>      
-</div>
-
 
       <button id="enviar" class="btn btn-primary" type="submit">Guardar</button>
       <button id="enviar" class="btn btn-primary" type="submit">Consultar</button>
 
-</form>
-</div>    
+    </form>
+    </div>    
 
       <!--FOOTER-->
     

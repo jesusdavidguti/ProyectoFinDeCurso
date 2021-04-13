@@ -33,6 +33,10 @@ public class DivisaDAOImpl implements DivisaDAO {
 	public Divisa findById(String id) {
 		Session currentSession = entityManager.unwrap(Session.class);
 		
+//		id = "'" + id + "'";
+//		
+//		System.out.println("id: " + id);
+		
         Divisa divisa = currentSession.get(Divisa.class, id);
         
         return divisa;

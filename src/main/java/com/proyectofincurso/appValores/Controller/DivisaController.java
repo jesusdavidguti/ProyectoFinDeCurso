@@ -92,8 +92,8 @@ public class DivisaController {
 	        divisaService.save(divisaLoad4);
 	        
 	        HashMap<String, String> map = new HashMap<>();
-		    map.put("Tabla", "Divisas");
-		    map.put("Carga", "Finalizada");	    
+		    map.put("Tabla:", "Divisas");
+		    map.put("Carga:", "Finalizada");	    
 		    return map;
 	 }
 
@@ -112,16 +112,17 @@ public class DivisaController {
 	 
 	 @DeleteMapping("divisas/{divisaId}")
 	 public String deleteDivisa(@PathVariable String divisaId) {
-
-	        Divisa divisa = divisaService.findById(divisaId);
-
+		 	        
+        try {
+	        Divisa divisa = divisaService.findById(divisaId);	        
 	        if(divisa == null) {
 	            throw new RuntimeException("Divisa desconocida id:"+divisaId);
 	        }
-
 	        divisaService.deleteById(divisaId);
-
 	        return "Divisa borrada con id - "+divisaId;
-	 }	
-	 
+	        
+		} catch (Exception e) {
+			throw new RuntimeException("Error recuperación divisa "+divisaId);
+		}					        
+	 }		 
 }

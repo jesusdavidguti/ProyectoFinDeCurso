@@ -90,6 +90,9 @@ public class DivisaController {
 	        divisaService.save(divisaLoad3);
 		 	Divisa divisaLoad4 = new Divisa("Yen","Yen japonés","JP",0.0092);		 			 	
 	        divisaService.save(divisaLoad4);
+		 	Divisa divisaLoad5 = new Divisa("test","test divisas","xx",0.0001);		 			 	
+	        divisaService.save(divisaLoad5);
+
 	        
 	        HashMap<String, String> map = new HashMap<>();
 		    map.put("Tabla:", "Divisas");

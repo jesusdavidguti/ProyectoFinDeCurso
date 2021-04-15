@@ -2,7 +2,7 @@
 //Validación del formulario de registros de datos de la divisa
 //Validará que los campos estén rellenos
 
-/* (function() {
+(function() {
   'use strict';
   window.addEventListener('load', function() {
     var forms = document.getElementsByClassName('needs-validation');
@@ -16,7 +16,7 @@
       }, false);
     });
   }, false);
-})(); */
+})();
 
 //Envío de datos del formulario, método post/put.
 

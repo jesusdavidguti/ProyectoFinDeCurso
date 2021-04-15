@@ -2,22 +2,18 @@ package com.proyectofincurso.appValores.Service;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-
-import org.hibernate.Session;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.proyectofincurso.appValores.DAO.ValorDAO;
 import com.proyectofincurso.appValores.entity.Valor;
 
 @Service
 public class ValorServiceImpl implements ValorService {
 
 	@Autowired
-	private ValorDao valorDao;	
+	private ValorDAO valorDAO;	
 	
 	@Override
 	public List<Valor> findAll() {

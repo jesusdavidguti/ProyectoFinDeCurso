@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.proyectofincurso.appValores.Service.MercadoService;
 import com.proyectofincurso.appValores.Service.MercadoServiceImpl;
-import com.proyectofincurso.appValores.entity.Divisa;
 import com.proyectofincurso.appValores.entity.Mercado;
 
 // Indiciamos que es un controlador rest así como la raíz de la URL que usaremos (http://localhost:8080/api/)
@@ -57,7 +56,7 @@ public class MercadoController {
     }
 	
 	@GetMapping("/mercados/{mercadoId}")
-    public Mercado getUser(@PathVariable String mercadoId){
+    public Mercado getMercado(@PathVariable String mercadoId){
         Mercado mercado = mercadoService.findById(mercadoId);
 
         if(mercado == null) {

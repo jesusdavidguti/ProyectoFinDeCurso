@@ -1,7 +1,12 @@
 package com.proyectofincurso.appValores.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @javax.persistence.Entity(name = "mercado")
 public class Mercado {
@@ -19,6 +24,10 @@ public class Mercado {
 	@Column(name="continente",length=20)
 	private String continente;
 			
+	// CUIDADO
+	@OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER,mappedBy = "mercado")
+	private List<Valor> listaValores;
+		
 	public Mercado() {
 		super();
 

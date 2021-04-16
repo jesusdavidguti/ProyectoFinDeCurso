@@ -1,7 +1,12 @@
 package com.proyectofincurso.appValores.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @javax.persistence.Entity(name = "divisa")
 public class Divisa {
@@ -18,6 +23,10 @@ public class Divisa {
 		
 	@Column(name="cambio")
 	private double cambio;
+	
+	// CUIDADO
+	@OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER, mappedBy = "divisa")
+	private List<Valor> listaValores;
 	
 	public Divisa() {
 		super();

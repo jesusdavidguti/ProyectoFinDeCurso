@@ -44,7 +44,7 @@ imagen
 
 # Objetivos
 
-  	Los objetivos generales a conseguir será los siguientes:
+Los objetivos generales a conseguir serán los siguientes:
 
 - Desarrollar un Back-End que, mediante API, permita:
   - Hacer CRUD de mercados.

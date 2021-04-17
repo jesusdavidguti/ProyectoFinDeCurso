@@ -6,7 +6,7 @@
 
 
 
-![AppValores](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Bolsa%20E-R.png "AppValores")
+![AppValores](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/bolsa%20E-R.png "AppValores")
 
 
 

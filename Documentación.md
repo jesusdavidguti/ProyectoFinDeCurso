@@ -6,7 +6,7 @@
 
 
 
-![Diagrama E/R](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20E-R.png "Diagrama E/R")
+![AppValores](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Bolsa%20E-R.png "AppValores")
 
 
 

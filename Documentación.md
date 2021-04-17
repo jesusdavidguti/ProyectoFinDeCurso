@@ -6,7 +6,7 @@
 
 
 
-imagen
+[Diagrama E/R](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/bolsa.png "AppValores")
 
 
 

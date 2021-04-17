@@ -62,5 +62,11 @@
 
 # Recursos
 
-​																																																																																																																						
+​		Los recursos necesarios serán los siguientes:
+
+- Hardware
+
+- Software
+
+- Documentación																																																																																																																						
 

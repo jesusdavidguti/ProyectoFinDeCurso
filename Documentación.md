@@ -24,29 +24,19 @@ imagen
 
 
 
-# Indice
-
-​		Introducción
-
-​		Objectivos
-
-​		Análisis previo
-
-
-
-
-
-
+[TOC]
 
 
 
 # Introducción
 
-​		El objetivo de este proyecto es el desarrollo de una aplicación web capaz de almacenar y mostrar información de valores bursátiles y su evalución en el tiempo. La aplicación se podrá ejecutar en los principales navegadores así como en distintos dispositivos. Su funcionalidad será muy básica en un primer momento por lo que será susceptible de mejoras en un futuro. Esta funcionalidad básica es lo que hace que vaya orientada al gran público o a personas con pocos o ningún conocimiento y que sólo dispongan de un dispositivo móvil o tablet.
+​		El objetivo de este proyecto es el desarrollo de una aplicación web capaz de almacenar y mostrar información de valores bursátiles y su evolución en el tiempo. La aplicación se podrá ejecutar en los principales navegadores así como en distintos dispositivos móviles. Su funcionalidad será muy básica en un primer momento por lo que será susceptible de mejoras en un futuro. Esta funcionalidad básica es lo que hace que vaya orientada al gran público o a personas con pocos o ningún conocimiento sobre infromática y que sólo dispongan de un dispositivo móvil o tablet.
 
 # Objetivos
 
-Los objetivos específicos a conseguir serán los siguientes:
+​		El objetivo general es tener una app capaz de mostrar información comparativa de valores bursátiles y que dicha información sea accesible por distintos sistemas. La información será recogida y almacenada por un sistema back-end, que también desarrollaremos, y que permitirá no sólo el acceso sino también su mantenimiento (CRUD).
+
+​		De lo dicho anteriormente se deduce que los objetivos específicos a conseguir serán los siguientes:
 
 - Desarrollar un Back-End que, mediante API, permita:
   - Hacer CRUD de mercados.
@@ -62,7 +52,9 @@ Los objetivos específicos a conseguir serán los siguientes:
 
 # Análisis previo.
 
-afda
+​		Para la consecución de nuestros objetivos deberemos contar, al menos, con los siguientes elementos:
+
+
 
 
 

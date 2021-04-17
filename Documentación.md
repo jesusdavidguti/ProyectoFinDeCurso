@@ -12,15 +12,15 @@
 
 
 
-​																									Módulo: DAW
+​																									                                                                                Módulo: DAW
 
-​																									Proyecto: appValores
+​																									                                                                                Proyecto: appValores
 
-​																									Fecha de exposición: xx/xx/xx
+​																									                                                                                Fecha de exposición: xx/xx/xx
 
-​																									Alumno: Jesús David Gutiérrez Delgado
+​																									                                                                                Alumno: Jesús David Gutiérrez Delgado
 
-​																									Tutor: Alfonso 
+​																									                                                                                Tutor: Alfonso 
 
 
 

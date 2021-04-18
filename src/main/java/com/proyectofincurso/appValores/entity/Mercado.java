@@ -23,7 +23,7 @@ public class Mercado {
 	
 	@Column(name="continente",length=20)
 	private String continente;
-			
+
 	// CUIDADO
 	@OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER,mappedBy = "mercado")
 	private List<Valor> listaValores;

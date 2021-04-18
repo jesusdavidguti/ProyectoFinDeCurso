@@ -65,10 +65,11 @@ public class ValorController {
 	 @PostMapping("/valores")
 	 public Valor addValor(@RequestBody Valor valor) {
 		 
-        //mercado.setCodMercado(0);
-
+		//System.out.println("Divisa nombre: " + valor.getDivisa().getCodDivisa());
+		//System.out.println("Divisa país: " + valor.getDivisa().getCodPais());				 
+		 
         valorService.save(valor);
-
+        
         return valor;	 
 	 }
 	 

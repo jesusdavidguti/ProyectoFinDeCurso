@@ -42,7 +42,7 @@ public class ValorDAOImpl implements ValorDAO {
 	@Override
 	public void save(Valor valor) {
 		Session currentSession = entityManager.unwrap(Session.class);
-
+		
         currentSession.saveOrUpdate(valor);
 
 	}

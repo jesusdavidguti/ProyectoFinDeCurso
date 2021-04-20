@@ -1,67 +1,52 @@
 package com.proyectofincurso.appValores.entity;
 
-import java.util.Date;
-
 import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.EmbeddedId;
 
 @javax.persistence.Entity(name = "valorhist")
-public class Valorhist {
+public class Valorhist{
 
-	@Id
-	@ManyToOne
-    @JoinColumn(name="idValor")
-	private Valor valor;
+//	@Id
+//	@ManyToOne
+//	@JoinColumn(name="idValor")
+//	private Valor valor;
+//	
+//	@Id
+//	@Temporal(TemporalType.TIMESTAMP)	
+//	@Column(name="fecValor")
+//	private Date fecValor;
 	
-	@Id
-	@Temporal(TemporalType.TIMESTAMP)	
-	@Column(name="fecValor")
-	private Date fecValor;
+	@EmbeddedId
+	private ValorhistID valorHistID;
 	
 	@Column(name="cotizacionUSdolar")
 	private double cotizacionUSdolar;
-
+	
 	public Valorhist() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Valorhist(Valor valor, Date fecValor, double cotizacion) {
+	public Valorhist(ValorhistID valorHistID, double cotizacionUSdolar) {
 		super();
-		this.valor = valor;
-		this.fecValor = fecValor;
-		this.cotizacionUSdolar = cotizacion;
+		this.valorHistID = valorHistID;
+		this.cotizacionUSdolar = cotizacionUSdolar;
 	}
 
-	public Valor getValor() {
-		return valor;
+	public ValorhistID getValorHistID() {
+		return valorHistID;
 	}
 
-	public void setValor(Valor valor) {
-		this.valor = valor;
+	public void setValorHistID(ValorhistID valorHistID) {
+		this.valorHistID = valorHistID;
 	}
 
-	public Date getFecValor() {
-		return fecValor;
-	}
-
-	public void setFecValor(Date fecValor) {
-		this.fecValor = fecValor;
-	}
-
-	public double getCotizacion() {
+	public double getCotizacionUSdolar() {
 		return cotizacionUSdolar;
 	}
 
-	public void setCotizacion(double cotizacion) {
-		this.cotizacionUSdolar = cotizacion;
+	public void setCotizacionUSdolar(double cotizacionUSdolar) {
+		this.cotizacionUSdolar = cotizacionUSdolar;
 	}
-		
 
-	
-	
 }

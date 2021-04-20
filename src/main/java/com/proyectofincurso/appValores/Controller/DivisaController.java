@@ -82,13 +82,13 @@ public class DivisaController {
 	 public Map<String, String> loadDivisa() {
 		 
 		 	Divisa divisaLoad1 = new Divisa("eur","Euro","EU",1.19);		 			 	
-	        divisaService.save(divisaLoad1);
+	        divisaService.save(divisaLoad1);	        	        
 		 	Divisa divisaLoad2 = new Divisa("usdo","Dolar americano","USA",1.00);		 			 	
-	        divisaService.save(divisaLoad2);
+	        divisaService.save(divisaLoad2);	        	        
 		 	Divisa divisaLoad3 = new Divisa("libr","Libra esterlina","GB",1.37);		 			 	
-	        divisaService.save(divisaLoad3);
-		 	Divisa divisaLoad4 = new Divisa("Yen","Yen japonés","JP",0.0092);		 			 	
-	        divisaService.save(divisaLoad4);
+	        divisaService.save(divisaLoad3);	        	        
+		 	Divisa divisaLoad4 = new Divisa("yen","Yen japonés","JP",0.0092);		 			 	
+	        divisaService.save(divisaLoad4);	        	        
 		 	Divisa divisaLoad5 = new Divisa("test","test divisas","xx",0.0001);		 			 	
 	        divisaService.save(divisaLoad5);
 

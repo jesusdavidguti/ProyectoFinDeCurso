@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.proyectofincurso.appValores.Service.DivisaService;
+import com.proyectofincurso.appValores.Service.MercadoService;
 import com.proyectofincurso.appValores.Service.ValorService;
+import com.proyectofincurso.appValores.Service.ValorhistService;
 import com.proyectofincurso.appValores.entity.Valor;
 
 //Indiciamos que es un controlador rest así como la raíz de la URL que usaremos (http://localhost:8080/api/)
@@ -28,6 +31,12 @@ public class ValorController {
 
 	@Autowired
 	private ValorService valorService;
+	@Autowired	
+	private MercadoService mercadoService;
+	@Autowired	
+	private DivisaService divisaService;	
+	@Autowired
+	private ValorhistService valorhistService;
 	
 	// PETICONES GET
 	
@@ -79,6 +88,15 @@ public class ValorController {
 		 	// Insertar objetos.
 	        
 	        HashMap<String, String> map = new HashMap<>();
+	        Valor valor1 = new Valor(0,"Valor Teleco1","Teleco", mercadoService.findById("NDQ"), divisaService.findById("usdo"));
+	        valorService.save(valor1);
+	        Valor valor2 = new Valor(0,"Valor Banco1","Banca", mercadoService.findById("IBEX"), divisaService.findById("eur"));
+	        valorService.save(valor2);
+	        Valor valor3 = new Valor(0,"Valor Energia1","Energía", mercadoService.findById("FTSE"), divisaService.findById("eur"));
+	        valorService.save(valor3);
+	        Valor valor4 = new Valor(0,"Valor Inmobiliario1","Inmobiliario", mercadoService.findById("NIKK"), divisaService.findById("yen"));
+	        valorService.save(valor4);
+	        
 		    map.put("Tabla:", "Valor");
 		    map.put("Carga:", "Finalizada");	    
 		    return map;

@@ -17,19 +17,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.proyectofincurso.appValores.Service.ValorService;
 import com.proyectofincurso.appValores.Service.ValorhistService;
 import com.proyectofincurso.appValores.entity.Valorhist;
+import com.proyectofincurso.appValores.entity.ValorhistID;
 
 //Indiciamos que es un controlador rest así como la raíz de la URL que usaremos (http://localhost:8080/api/)
 @RestController
-@RequestMapping("/apiValores")
+@RequestMapping("/apiValoresHist")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.PUT,RequestMethod.POST}) // Evita problmas COR
 
 public class ValorhistController {
 
 	@Autowired
 	private ValorhistService valorhistService;
-	
+	@Autowired
+	private ValorService valorService;	
 	// PETICONES GET
 	
 	@GetMapping("/info")
@@ -77,9 +80,11 @@ public class ValorhistController {
 	 @PostMapping("/load")
 	 public Map<String, String> loadValorHist() {
 		 
-		 	//Valorhist valorHist1= 
-		 
-		 
+		 	java.util.Date fecha = new Date();
+		 	ValorhistID valorhistID1 = new ValorhistID(valorService.findById(1),fecha);
+		 	Valorhist valorHist1 = new Valorhist(valorhistID1,1.24); 
+		 	valorhistService.save(valorHist1);
+		 		 
 		 	// Insertar objetos.
 	        
 	        HashMap<String, String> map = new HashMap<>();

@@ -77,6 +77,9 @@ public class ValorhistController {
 	 @PostMapping("/load")
 	 public Map<String, String> loadValorHist() {
 		 
+		 	//Valorhist valorHist1= 
+		 
+		 
 		 	// Insertar objetos.
 	        
 	        HashMap<String, String> map = new HashMap<>();
@@ -98,16 +101,16 @@ public class ValorhistController {
 	// PETICONES DELETE
 	 
 	 @DeleteMapping("valores/{valorHist}")
-	 public String deleteValorHist(@PathVariable int valorId) {
+	 public String deleteValorHist(@PathVariable int valorHistId, Date fec) {
 
-	        Valor valor = valorService.findById(valorId);
+	        Valorhist valorHist = valorhistService.findById(valorHistId, fec);
 
-	        if(valor == null) {
-	            throw new RuntimeException("Valor desconocido id:"+valorId);
+	        if(valorHist == null) {
+	            throw new RuntimeException("Valor histórico desconocido id:"+valorHistId);
 	        }
 
-	        valorService.deleteById(valorId);
+	        valorhistService.deleteById(valorHistId,fec);
 
-	        return "Valor borrado con id - "+valorId;
+	        return "Valor histórico borrado con id - "+valorHistId + " y fecha "+fec;
 	  }	 	 
 }

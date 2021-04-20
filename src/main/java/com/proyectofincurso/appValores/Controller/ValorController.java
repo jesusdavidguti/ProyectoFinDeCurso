@@ -35,8 +35,6 @@ public class ValorController {
 	private MercadoService mercadoService;
 	@Autowired	
 	private DivisaService divisaService;	
-	@Autowired
-	private ValorhistService valorhistService;
 	
 	// PETICONES GET
 	

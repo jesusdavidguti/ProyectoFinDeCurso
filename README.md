@@ -1,6 +1,6 @@
 # ProyectoFinDeCurso
 ## Rama Main
-Desarrollo de una aplicación web bursatil
+Desarrollo de una aplicación web bursátil
 
 **Diagrama E/R**
 

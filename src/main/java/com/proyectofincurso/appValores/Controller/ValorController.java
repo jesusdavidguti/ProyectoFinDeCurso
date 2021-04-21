@@ -65,7 +65,7 @@ public class ValorController {
         return valor;
     }
 
-	@GetMapping("/valores/{nombre}")
+	@GetMapping("/valoresNombre/{nombre}")
     public Valor getValor(@PathVariable String nombre){
 		Valor valor = valorService.findByNombre(nombre);
 
@@ -76,17 +76,13 @@ public class ValorController {
         return valor;
     }
 	
-	
 	 // ...aquí podríamos ampliar nuestra funcionalidad añadiendo distintas búsquedas.
 	 
 	// PETICONES POST	 
 	
 	 @PostMapping("/valores")
 	 public Valor addValor(@RequestBody Valor valor) {
-		 
-		//System.out.println("Divisa nombre: " + valor.getDivisa().getCodDivisa());
-		//System.out.println("Divisa país: " + valor.getDivisa().getCodPais());				 
-		 
+		 		 
         valorService.save(valor);
         
         return valor;	 

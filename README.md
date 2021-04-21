@@ -6,6 +6,8 @@ Desarrollo de una aplicación web bursatil
 
 ![Diagrama E/R](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20E-R.png "Diagrama E/R")
 
+**Diagrama de despliegue**
+
 ![Diagrama de despliegue](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Despliegue.png "Diagrama de despliegue")
 
 ## Bibliografía

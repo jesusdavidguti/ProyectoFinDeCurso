@@ -10,6 +10,8 @@ public interface ValorDAO {
 
 	 public Valor findById(int id);
 	 
+	 public Valor findByNombre(String nombre);
+	 
 	 public void save(Valor valor);
 
 	 public void deleteById(int id);

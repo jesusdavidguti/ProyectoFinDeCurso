@@ -27,6 +27,13 @@ public class ValorServiceImpl implements ValorService {
 		return valor;
 	}
 
+	@Override
+	public Valor findByNombre(String nombre) {
+
+		Valor valor = valorDAO.findByNombre(nombre);
+		return valor;
+	}
+		
 	@Transactional
 	@Override
 	public void save(Valor valor) {

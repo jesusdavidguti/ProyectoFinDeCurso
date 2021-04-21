@@ -89,7 +89,7 @@ public class DivisaController {
 	        divisaService.save(divisaLoad3);	        	        
 		 	Divisa divisaLoad4 = new Divisa("yen","Yen japonés","JP",0.0092);		 			 	
 	        divisaService.save(divisaLoad4);	        	        
-		 	Divisa divisaLoad5 = new Divisa("test","test divisas","xx",0.0001);		 			 	
+		 	Divisa divisaLoad5 = new Divisa("test","test divisas","xx",0.01);		 			 	
 	        divisaService.save(divisaLoad5);
 
 	        

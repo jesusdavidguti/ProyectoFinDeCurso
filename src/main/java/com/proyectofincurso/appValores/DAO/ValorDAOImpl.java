@@ -3,6 +3,7 @@ package com.proyectofincurso.appValores.DAO;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -38,6 +39,16 @@ public class ValorDAOImpl implements ValorDAO {
         return valor;
 	}
 
+	@Override
+	public Valor findByNombre(String nombre) {
+
+		TypedQuery<Valor> query = entityManager.createQuery("select v from valor v where v.nombre = ?1", Valor.class);
+	    query.setParameter(1, nombre);
+		
+	    return query.getSingleResult();
+	    		
+	}
+	
 	@Transactional
 	@Override
 	public void save(Valor valor) {

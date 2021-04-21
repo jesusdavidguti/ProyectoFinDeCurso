@@ -65,6 +65,18 @@ public class ValorController {
         return valor;
     }
 
+	@GetMapping("/valores/{nombre}")
+    public Valor getValor(@PathVariable String nombre){
+		Valor valor = valorService.findByNombre(nombre);
+
+        if(valor == null) {
+            throw new RuntimeException("Valor desconocido -"+nombre);
+        }
+
+        return valor;
+    }
+	
+	
 	 // ...aquí podríamos ampliar nuestra funcionalidad añadiendo distintas búsquedas.
 	 
 	// PETICONES POST	 

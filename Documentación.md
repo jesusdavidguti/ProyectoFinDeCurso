@@ -78,9 +78,9 @@
 
 - Servicios online:
 
-  - Despliegue back-end:
-  - Despliegue front-end:
-  - Despliegue SGBD:
+  - Despliegue back-end: Heroku
+  - Despliegue front-end: Vercel
+  - Despliegue SGBD: Gearhost
 
   ​																																																																																																																						
 

@@ -62,11 +62,25 @@
 
 # Recursos
 
-​		Los recursos necesarios serán los siguientes:
+​		Para llevar a cabo este proyecto, necesitaremos contar con los siguientes recursos:
 
-- Hardware
+- Hardware: para el trabajo de desarrollo, propiamente dicho, necesitamos contar con un equipo capaz de hacer correr a la vez todos los recursos software que veremos en el siguiente punto. Se trata de un equipo dotado de un procesador Intel i7 a 3Ghz de velocidad y con 32 Gb de RAM. 
 
-- Software
+- Software: son varias las aplicaciones y herramientas que necesitaremos. Serían las siguientes:
 
-- Documentación																																																																																																																						
+  - S.O: Windows 10 Pro.
+  - IDE: utilizaremos Eclipse en la versión 2019-12
+  - SGBD: MySql administrado desde phpMyAdmin
+  - Pruebas: Postman 8.1
+  - Documentación: utilizaremos Typora como editor para Markdown.,
+
+- Repositorios: para la gestión documental y del desarrollo nos apoyaremos en Github.
+
+- Servicios online:
+
+  - Despliegue back-end:
+  - Despliegue front-end:
+  - Despliegue SGBD:
+
+  ​																																																																																																																						
 

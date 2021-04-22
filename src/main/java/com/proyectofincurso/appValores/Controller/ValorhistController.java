@@ -1,5 +1,7 @@
 package com.proyectofincurso.appValores.Controller;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -80,13 +82,34 @@ public class ValorhistController {
 	 @PostMapping("/load")
 	 public Map<String, String> loadValorHist() {
 		 
+
 		 	java.util.Date fecha = new Date();
+		 			 		
+		 	fecha.setDate(1);
 		 	ValorhistID valorhistID1 = new ValorhistID(valorService.findById(1),fecha);
 		 	Valorhist valorHist1 = new Valorhist(valorhistID1,1.24); 
 		 	valorhistService.save(valorHist1);
 		 		 
-		 	// Insertar objetos.
-	        
+		 	fecha.setDate(2);		 			 			 	
+		 	ValorhistID valorhistID2 = new ValorhistID(valorService.findById(1),fecha);
+		 	Valorhist valorHist2 = new Valorhist(valorhistID2,1.1); 
+		 	valorhistService.save(valorHist2);
+		 			 	
+		 	fecha.setDate(3);		 			 			 	
+		 	ValorhistID valorhistID3 = new ValorhistID(valorService.findById(1),fecha);
+		 	Valorhist valorHist3 = new Valorhist(valorhistID3,2.1); 
+		 	valorhistService.save(valorHist3);
+
+		 	fecha.setDate(4);		 			 			 	
+		 	ValorhistID valorhistID4 = new ValorhistID(valorService.findById(1),fecha);
+		 	Valorhist valorHist4 = new Valorhist(valorhistID4,1.5); 
+		 	valorhistService.save(valorHist4);
+		 	
+		 	fecha.setDate(5);		 			 			 	
+		 	ValorhistID valorhistID5 = new ValorhistID(valorService.findById(1),fecha);
+		 	Valorhist valorHist5 = new Valorhist(valorhistID5,1.92); 
+		 	valorhistService.save(valorHist5);
+			        
 	        HashMap<String, String> map = new HashMap<>();
 		    map.put("Tabla:", "valorhist");
 		    map.put("Carga:", "Finalizada");	    

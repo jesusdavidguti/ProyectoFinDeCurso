@@ -77,22 +77,16 @@
 - Repositorios: para la gestión documental y del desarrollo nos apoyaremos en Github. Nuestro repositorio de Github se llamará [ProyectoFinDeCurso](https://github.com/jesusdavidguti/ProyectoFinDeCurso) y contará con las siguientes ramas:
 
   - [Main](https://github.com/jesusdavidguti/ProyectoFinDeCurso): resumen visual y bibliografía
-
-  - [Backend](https://github.com/jesusdavidguti/ProyectoFinDeCurso/tree/backend): objetos del proyecto en Spring y JPA
-
-  - [Frontend](https://github.com/jesusdavidguti/ProyectoFinDeCurso/tree/frontend): páginas y código en JavaScript
-
+  - [Backend](https://github.com/jesusdavidguti/ProyectoFinDeCurso/tree/backend): objetos del proyecto en Spring y JPAl. Desde esta rama se realizará el despliegue en Heroku
+  - [Frontend](https://github.com/jesusdavidguti/ProyectoFinDeCurso/tree/frontend): páginas y código en JavaScript. Desde esta rama se realizará el despliegue en Vercel
   - [Doc](https://github.com/jesusdavidguti/ProyectoFinDeCurso/tree/doc): documentación asociada al proyecto, diagramas en formato drawio, etc.
-
   - [Img](https://github.com/jesusdavidguti/ProyectoFinDeCurso/tree/img): imágenes o gráficos explicativos
-
-    
 
 - Servicios online:
 
-  - Despliegue back-end: Heroku
-  - Despliegue front-end: Vercel
-  - Despliegue SGBD: Gearhost
+  - Despliegue back-end: [Heroku](https://id.heroku.com/login)
+  - Despliegue front-end: [Vercel](https://vercel.com/login)
+  - Despliegue SGBD: [Gearhost](https://www.gearhost.com/)
 
   ​																																																																																																																						
 

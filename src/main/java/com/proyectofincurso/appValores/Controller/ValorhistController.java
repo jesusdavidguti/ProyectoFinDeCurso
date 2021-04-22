@@ -107,6 +107,7 @@ public class ValorhistController {
 		 
 		 Date actual = inicio;
 		 
+		 // Recuperamos todos los valores
 		 List<Valor> listaValores;
 		 listaValores = valorService.findAll();
 		 
@@ -118,19 +119,18 @@ public class ValorhistController {
 
 			        Calendar calendar = Calendar.getInstance();
 			        calendar.setTime(actual);
-			        
+			        // Generamos un valor aleatorio
 			        random = new Random().nextDouble();
-			        result = start + (random * (end - start));
-			        
+			        result = start + (random * (end - start));			        
 			        result = Double.valueOf(df.format(result));
 			        
-			        ValorhistID valorhistID = new ValorhistID(valor,actual);	// Clave
-				 	valorhistService.save(new Valorhist(valorhistID,result));	// Valor
+			        ValorhistID valorhistID = new ValorhistID(valor,actual);	// Objeto clave
+				 	valorhistService.save(new Valorhist(valorhistID,result));	// Objeto Valor
 			        
+				 	// Avanzamos un día
 			        calendar.add(Calendar.DATE, 1);
 			        actual = calendar.getTime();					        			        
-			    }
-			    
+			    }			    
 			    actual = inicio;
 		 }
 		 

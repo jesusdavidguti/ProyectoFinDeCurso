@@ -22,3 +22,4 @@ Desarrollo de una aplicación web bursátil
 - [Sintaxis Github](https://docs.github.com/es/github/writing-on-github/basic-writing-and-formatting-syntax)
 - [Iconos](https://feathericons.com/)
 - [Anotar fecha y hora en JPA](https://www.it-swarm-es.com/es/java/como-almacenar-la-fechahora-y-las-marcas-de-tiempo-en-la-zona-horaria-utc-con-jpa-e-hibernate/958259387/)
+- [Query en Spring](https://spring.io/blog/2011/02/10/getting-started-with-spring-data-jpa/)

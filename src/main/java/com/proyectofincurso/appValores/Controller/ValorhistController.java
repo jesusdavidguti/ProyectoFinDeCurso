@@ -1,11 +1,16 @@
 package com.proyectofincurso.appValores.Controller;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.text.DateFormat;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,6 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.proyectofincurso.appValores.Service.ValorService;
 import com.proyectofincurso.appValores.Service.ValorhistService;
+import com.proyectofincurso.appValores.entity.Valor;
 import com.proyectofincurso.appValores.entity.Valorhist;
 import com.proyectofincurso.appValores.entity.ValorhistID;
 
@@ -34,7 +40,8 @@ public class ValorhistController {
 	@Autowired
 	private ValorhistService valorhistService;
 	@Autowired
-	private ValorService valorService;	
+	private ValorService valorService;
+	
 	// PETICONES GET
 	
 	@GetMapping("/info")
@@ -70,19 +77,73 @@ public class ValorhistController {
 	
 	 @PostMapping("/valoreshist")
 	 public Valorhist addValorHist(@RequestBody Valorhist valorHist) {
-		 
-		//System.out.println("Divisa nombre: " + valor.getDivisa().getCodDivisa());
-		//System.out.println("Divisa país: " + valor.getDivisa().getCodPais());				 
-		 
+		 		 
         valorhistService.save(valorHist);
         
         return valorHist;	 
 	 }
 	 
+	 @PostMapping("/loadMes/{fecDesde}/{fecHasta}")
+	 public Map<String, String> loadValorHistMes(@PathVariable String fecDesde, @PathVariable String fecHasta)  throws ParseException {
+		 		 
+		 double start = 1.5;
+		 double end = 0.5;
+		 double random, result;
+		 
+		 DateFormat sourceFormat = new SimpleDateFormat("dd/MM/yyyy");
+		
+		 DecimalFormatSymbols simbolos = new DecimalFormatSymbols();
+		 simbolos.setDecimalSeparator('.');
+		 DecimalFormat df = new DecimalFormat("#.00",simbolos);
+		 
+		 Date inicio, fin;
+ 		 String fechaDesde = fecDesde.substring(0, 2)+"/"+fecDesde.substring(2, 4)+"/"+fecDesde.substring(4, 8);
+ 		 String fechaHasta = fecHasta.substring(0, 2)+"/"+fecHasta.substring(2, 4)+"/"+fecHasta.substring(4, 8);
+ 		 
+ 		 System.out.println("fechaDede:" + fechaDesde);
+ 		 
+		 inicio = sourceFormat.parse(fechaDesde);		 
+		 fin = sourceFormat.parse(fechaHasta);
+		 
+		 Date actual = inicio;
+		 
+		 List<Valor> listaValores;
+		 listaValores = valorService.findAll();
+		 
+		 // Recorremos todos los valores
+		 for (Valor valor: listaValores) {
+			 
+			 	// Para cada fecha, insertamos un registro por valor
+			    while (actual.before(fin)) {
+
+			        Calendar calendar = Calendar.getInstance();
+			        calendar.setTime(actual);
+			        
+			        random = new Random().nextDouble();
+			        result = start + (random * (end - start));
+			        
+			        result = Double.valueOf(df.format(result));
+			        
+			        ValorhistID valorhistID = new ValorhistID(valor,actual);	// Clave
+				 	valorhistService.save(new Valorhist(valorhistID,result));	// Valor
+			        
+			        calendar.add(Calendar.DATE, 1);
+			        actual = calendar.getTime();					        			        
+			    }
+			    
+			    actual = inicio;
+		 }
+		 
+		 HashMap<String, String> map = new HashMap<>();
+		 map.put("Tabla:", "valorhist");
+		 map.put("Carga:", "Finalizada para un mes");
+		 
+		 return map;
+	 }
+	 
 	 @PostMapping("/load")
 	 public Map<String, String> loadValorHist() {
 		 
-
 		 	java.util.Date fecha = new Date();
 		 			 		
 		 	fecha.setDate(1);

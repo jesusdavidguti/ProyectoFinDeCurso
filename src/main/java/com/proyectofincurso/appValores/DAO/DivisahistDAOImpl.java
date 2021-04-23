@@ -1,9 +1,13 @@
 package com.proyectofincurso.appValores.DAO;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -12,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.proyectofincurso.appValores.entity.Divisahist;
+import com.proyectofincurso.appValores.entity.Valor;
 
 @Repository
 public class DivisahistDAOImpl implements DivisahistDAO {
@@ -31,12 +36,31 @@ public class DivisahistDAOImpl implements DivisahistDAO {
 	}
 
 	@Override
-	public Divisahist findById(String id, Date fec) {
-		Session currentSession = entityManager.unwrap(Session.class);
-				
-        Divisahist divisahist = currentSession.get(Divisahist.class, id);
-        
-        return divisahist;
+	public Divisahist findById(String id, String fec) {
+
+		DateFormat sourceFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Date inicio = null;
+		
+		String fechaDesde = fec.substring(0, 2)+"/"+fec.substring(2, 4)+"/"+fec.substring(4, 8);
+		  		 
+		try {
+			inicio = sourceFormat.parse(fechaDesde);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		 
+		 
+   	    Date fecBusqueda = inicio;
+
+   	    //
+   	    System.out.println("Fecha: " + fecBusqueda);
+   	    //
+   	    
+		TypedQuery<Divisahist> query = entityManager.createQuery("select vh from valorhist vh where vh.nombre = ?1 and vh.fec_valor = ?2", Divisahist.class);
+	    query.setParameter(1, id);
+	    query.setParameter(1, fecBusqueda);
+	    
+	    return query.getSingleResult();			   
 	}
 
 	@Transactional
@@ -49,7 +73,7 @@ public class DivisahistDAOImpl implements DivisahistDAO {
 
 	@Transactional	
 	@Override
-	public void deleteById(String id, Date fec) {
+	public void deleteById(String id, String fec) {
 		 Session currentSession = entityManager.unwrap(Session.class);
 		 
 		 Query<Divisahist> theQuery =  currentSession.createQuery("Delete from divisahist where codDivisa=:codDivisa and fecDivisa=:fecDivisa");

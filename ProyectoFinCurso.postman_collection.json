@@ -399,21 +399,22 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/apiDivisas/divisas/código",
+					"name": "http://localhost:8080/apiDivisasHist/divisashist/código/fecha",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/apiDivisas/divisas/eur",
+							"raw": "http://localhost:8080/apiDivisasHist/divisashist/eur/01022021",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"apiDivisas",
-								"divisas",
-								"eur"
+								"apiDivisasHist",
+								"divisashist",
+								"eur",
+								"01022021"
 							]
 						}
 					},
@@ -493,6 +494,28 @@
 							"path": [
 								"apiDivisasHist",
 								"divisashist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/apiDivisasHist/loadMes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiDivisasHist/loadMes/01022021/10022021",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiDivisasHist",
+								"loadMes",
+								"01022021",
+								"10022021"
 							]
 						}
 					},

@@ -1,9 +1,16 @@
 package com.proyectofincurso.appValores.Controller;
 
+import java.text.DateFormat;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -23,6 +30,7 @@ import com.proyectofincurso.appValores.Service.DivisahistService;
 import com.proyectofincurso.appValores.Service.DivisahistServiceImpl;
 import com.proyectofincurso.appValores.entity.Divisahist;
 import com.proyectofincurso.appValores.entity.DivisahistID;
+import com.proyectofincurso.appValores.entity.Divisa;
 
 //Indiciamos que es un controlador rest así como la raíz de la URL que usaremos (http://localhost:8080/api/)
 @RestController
@@ -60,14 +68,14 @@ public class DivisaHistController {
         return divisahistService.findAll();
     }
 	
-	@GetMapping("/divisashist/{divisahistId, fecha}")
-    public Divisahist getDivisa(@PathVariable String divisahistId, Date fec){
+	@GetMapping("/divisashist/{divisahistId}/{fecha}")
+    public Divisahist getDivisa(@PathVariable String divisahistId, @PathVariable String fecha){
 		
 		try {
-	        Divisahist divisahist = divisahistService.findById(divisahistId, fec);	        
+	        Divisahist divisahist = divisahistService.findById(divisahistId, fecha);	        
 	        return divisahist;
 		} catch (Exception e) {
-			throw new RuntimeException("Error recuperación divisa "+divisahistId);
+			throw new RuntimeException("Error recuperación divisa histórica " + divisahistId + " " + fecha);
 		}				
     }
 	
@@ -82,6 +90,62 @@ public class DivisaHistController {
 
 	        return divisahist;	 
 	 }
+	 
+	 @PostMapping("/loadMes/{fecDesde}/{fecHasta}")
+	 public Map<String, String> loadDivisaHistMes(@PathVariable String fecDesde, @PathVariable String fecHasta)  throws ParseException {
+		 		 
+		 double start = 1.5;
+		 double end = 0.5;
+		 double random, result;
+		 
+		 DateFormat sourceFormat = new SimpleDateFormat("dd/MM/yyyy");
+		
+		 DecimalFormatSymbols simbolos = new DecimalFormatSymbols();
+		 simbolos.setDecimalSeparator('.');
+		 DecimalFormat df = new DecimalFormat("#.00",simbolos);
+		 
+		 Date inicio, fin;
+ 		 String fechaDesde = fecDesde.substring(0, 2)+"/"+fecDesde.substring(2, 4)+"/"+fecDesde.substring(4, 8);
+ 		 String fechaHasta = fecHasta.substring(0, 2)+"/"+fecHasta.substring(2, 4)+"/"+fecHasta.substring(4, 8);
+ 		  		 
+		 inicio = sourceFormat.parse(fechaDesde);		 
+		 fin = sourceFormat.parse(fechaHasta);
+		 
+		 Date fecActual = inicio;
+		 
+		 // Recuperamos todos los divisas
+		 List<Divisa> listaDivisas;
+		 listaDivisas = divisaService.findAll();
+		 
+		 // Recorremos todos las divisas
+		 for (Divisa divisa: listaDivisas) {
+			 
+			 	// Para cada fecha, insertamos un registro por divisa
+			    while (fecActual.before(fin)) {
+
+			        Calendar calendar = Calendar.getInstance();
+			        calendar.setTime(fecActual);
+			        // Generamos un valor aleatorio
+			        random = new Random().nextDouble();
+			        result = start + (random * (end - start));			        
+			        result = Double.valueOf(df.format(result));
+			        
+			        DivisahistID divisahistID = new DivisahistID(divisa,fecActual);	// Objeto clave
+				 	divisahistService.save(new Divisahist(divisahistID,result));	// Objeto Valor
+			        
+				 	// Avanzamos un día
+			        calendar.add(Calendar.DATE, 1);
+			        fecActual = calendar.getTime();					        			        
+			    }			    
+			    fecActual = inicio;
+		 }
+		 
+		 HashMap<String, String> map = new HashMap<>();
+		 map.put("Tabla:", "valorhist");
+		 map.put("Carga:", "Entre " + fechaDesde + " y " + fechaHasta);
+		 
+		 return map;
+	 }	 
 	 
 	 @PostMapping("/load")
 	 public Map<String, String> loadDivisahist() {
@@ -133,7 +197,7 @@ public class DivisaHistController {
 	// PETICONES DELETE
 	 
 	 @DeleteMapping("divisashist/{divisahistId, fec}")
-	 public String deleteDivisahist(@PathVariable String divisahistId, Date fec) {
+	 public String deleteDivisahist(@PathVariable String divisahistId, String fec) {
 		 	        
         try {
 	        Divisahist divisahist = divisahistService.findById(divisahistId, fec);	        

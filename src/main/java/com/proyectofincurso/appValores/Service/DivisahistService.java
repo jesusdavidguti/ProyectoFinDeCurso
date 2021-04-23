@@ -9,10 +9,10 @@ public interface DivisahistService {
 
 	public List<Divisahist> findAll();
 
-    public Divisahist findById(String id, Date fec);
+    public Divisahist findById(String id, String fec);
 
     public void save(Divisahist divisahist);
 
-    public void deleteById(String id, Date fec);
+    public void deleteById(String id, String fec);
 	
 }

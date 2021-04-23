@@ -136,7 +136,7 @@ public class ValorhistController {
 		 
 		 HashMap<String, String> map = new HashMap<>();
 		 map.put("Tabla:", "valorhist");
-		 map.put("Carga:", "Finalizada para un mes");
+		 map.put("Carga:", "Entre " + fechaDesde + " y " + fechaHasta);
 		 
 		 return map;
 	 }

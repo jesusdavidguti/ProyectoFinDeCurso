@@ -25,7 +25,7 @@ public class DivisahistServiceImpl implements DivisahistService {
 	}
 
 	@Override
-	public Divisahist findById(String id, Date fec) {
+	public Divisahist findById(String id, String fec) {
 		// TODO Auto-generated method stub
 		
 		Divisahist divisahist = divisahistDAO.findById(id, fec);
@@ -42,7 +42,7 @@ public class DivisahistServiceImpl implements DivisahistService {
 	
 	@Transactional
 	@Override
-	public void deleteById(String id, Date fec) {
+	public void deleteById(String id, String fec) {
 		// TODO Auto-generated method stub
 
 		divisahistDAO.deleteById(id,fec);

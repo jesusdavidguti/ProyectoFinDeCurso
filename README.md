@@ -10,6 +10,11 @@ Desarrollo de una aplicación web bursátil
 
 ![Diagrama de despliegue](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Despliegue.png "Diagrama de despliegue")
 
+**Despliegue en Gearhost**
+
+![Despliegue de la BBDD](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GearBBDD.PNG "Despliegue de la BBDD")
+
+
 ## Bibliografía
 
 - [Mi tutorial](https://github.com/jesusdavidguti/TutorialSpringJPA)

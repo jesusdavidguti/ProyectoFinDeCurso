@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
 
 import org.hibernate.Session;
@@ -38,28 +39,24 @@ public class DivisahistDAOImpl implements DivisahistDAO {
 	@Override
 	public Divisahist findById(String id, String fec) {
 
-		DateFormat sourceFormat = new SimpleDateFormat("dd/MM/yyyy");
+		DateFormat sourceFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");		
 		Date inicio = null;
-		
-		String fechaDesde = fec.substring(0, 2)+"/"+fec.substring(2, 4)+"/"+fec.substring(4, 8);
-		  		 
+				
+		String fechaDesde = fec.substring(4, 8) + "-" + fec.substring(2, 4) + "-" + fec.substring(0, 2) + " 00:00:00";
+		  				
 		try {
 			inicio = sourceFormat.parse(fechaDesde);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}		 
-		 
+		    	    				
    	    Date fecBusqueda = inicio;
-
-   	    //
-   	    System.out.println("Fecha: " + fecBusqueda);
-   	    //
-   	    
-		TypedQuery<Divisahist> query = entityManager.createQuery("select vh from valorhist vh where vh.nombre = ?1 and vh.fec_valor = ?2", Divisahist.class);
+   	       	    
+		TypedQuery<Divisahist> query = entityManager.createQuery("select d from divisahist d where d.divisaHistID.divisa.codDivisa = ?1 and d.divisaHistID.fecDivisa = ?2", Divisahist.class);
 	    query.setParameter(1, id);
-	    query.setParameter(1, fecBusqueda);
-	    
+	    query.setParameter(2, fecBusqueda, TemporalType.TIMESTAMP);
+	    	    
 	    return query.getSingleResult();			   
 	}
 

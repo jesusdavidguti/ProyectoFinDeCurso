@@ -69,7 +69,7 @@ public class DivisaHistController {
     }
 	
 	@GetMapping("/divisashist/{divisahistId}/{fecha}")
-    public Divisahist getDivisa(@PathVariable String divisahistId, @PathVariable String fecha){
+    public Divisahist getDivisahist(@PathVariable String divisahistId, @PathVariable String fecha){
 		
 		try {
 	        Divisahist divisahist = divisahistService.findById(divisahistId, fecha);	        

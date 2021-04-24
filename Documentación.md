@@ -72,7 +72,7 @@
   - IDE: utilizaremos Eclipse en la versión 2019-12
   - SGBD: MySql administrado desde phpMyAdmin
   - Pruebas: Postman 8.1
-  - Documentación: utilizaremos Typora como editor para Markdown.,
+  - Documentación: utilizaremos Typora como editor para Markdown así como LibreOffice Writter
 
 - Repositorios: para la gestión documental y del desarrollo nos apoyaremos en Github. Nuestro repositorio de Github se llamará [ProyectoFinDeCurso](https://github.com/jesusdavidguti/ProyectoFinDeCurso) y contará con las siguientes ramas:
 
@@ -104,3 +104,37 @@ La implantación deberá ser realizada en las siguientes fases para ir comproban
 - Backend.
   - Crearemos en Heroku nuestra aplicación dándola de alta y, utilizando la rama de backend de github, realizaremosl
 - Frontend
+
+## Programación.
+
+### Guía de estilo
+
+### Organización del código
+
+El código del proyecto estará estructurado en cuatro paquetes básicos que nos darán una idea bastante clara de la jerarquía de los objetos que contienen. Son los siguientes:
+
+- Entidades: representarán a la tupla de la BBDD y contendrán los métodos y constructores básicos de acceso a sus propiedades. En algunos casos también contendrá a las clases "clave" que nos servirán para identificar al objeto univocamente utilizando otro objeto contenido en el.
+- Acceso a datos (DAO): estos objetos serán los responsables de interactuar con JPA y, utilizando los métodos necesarios, interactuar con la BBDD.
+- Servicios: los servicios serán la herramienta o "capa visible" que utilizará el desarrollador para acceder a los datos e interactuar con ellos.
+- Controladores: serán los que reciban las peticiones http y en función de las mismas, realicen la acción que se les solicite (GET, POST, PUT y DELETE). Serán la capa visible de cara al frontend.
+
+Además de estos paquetes básicos, tendremos también otros como el de recursos donde almacenaremos la parametrización de la conexión a BBDD.
+
+### Clases y métodos
+
+
+
+
+
+
+
+### Pruebas
+
+#### Backend
+
+Las pruebas en backend estarán gestionadas por Postman. Para cada una de los objetos/entidades se ha creado una batería de pruebas que engloba todo el ciclo de vida del mismo (CRUD). Además, se incluyen llamadas a métodos de carga masiva, aleatoria y parametrizable para cada una de dichas entidades y así facilitar la casuística de las pruebas.
+
+
+
+
+

@@ -14,7 +14,7 @@ public class Valor {
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="idValor")
-	private int idVAlor;
+	private int idValor;
 	
 	@Column(name="nombre",length=50)
 	private String nombre;
@@ -38,7 +38,7 @@ public class Valor {
 
 	public Valor(int idVAlor, String nombre, String sector, Mercado mercado, Divisa divisa) {
 		super();
-		this.idVAlor = idVAlor;
+		this.idValor = idVAlor;
 		this.nombre = nombre;
 		this.sector = sector;
 		this.mercado = mercado;
@@ -46,11 +46,11 @@ public class Valor {
 	}
 
 	public int getIdVAlor() {
-		return idVAlor;
+		return idValor;
 	}
 
 	public void setIdVAlor(int idVAlor) {
-		this.idVAlor = idVAlor;
+		this.idValor = idVAlor;
 	}
 
 	public String getNombre() {

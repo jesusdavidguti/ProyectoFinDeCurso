@@ -1,9 +1,14 @@
 package com.proyectofincurso.appValores.DAO;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TemporalType;
+import javax.persistence.TypedQuery;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -11,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.proyectofincurso.appValores.entity.Divisahist;
 import com.proyectofincurso.appValores.entity.Valorhist;
 
 @Repository
@@ -31,12 +37,26 @@ public class ValorhistDAOImpl implements ValorhistDAO {
 	}
 
 	@Override
-	public Valorhist findById(int id, Date fec) {
-		Session currentSession = entityManager.unwrap(Session.class);
-
-        Valorhist valorhist = currentSession.get(Valorhist.class, id);
-
-        return valorhist;
+	public Valorhist findById(int id, String fec) {
+		DateFormat sourceFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");		
+		Date inicio = null;
+				
+		String fechaDesde = fec.substring(4, 8) + "-" + fec.substring(2, 4) + "-" + fec.substring(0, 2) + " 00:00:00";
+		  				
+		try {
+			inicio = sourceFormat.parse(fechaDesde);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		 
+		    	    				
+   	    Date fecBusqueda = inicio;
+   	       	    
+		TypedQuery<Valorhist> query = entityManager.createQuery("select v from valorhist v where v.valorHistID.valor.idValor = ?1 and v.valorHistID.fecValor = ?2", Valorhist.class);
+	    query.setParameter(1, id);
+	    query.setParameter(2, fecBusqueda, TemporalType.TIMESTAMP);
+	    	    
+	    return query.getSingleResult();
 	}
 
 	@Transactional
@@ -50,13 +70,27 @@ public class ValorhistDAOImpl implements ValorhistDAO {
 
 	@Transactional
 	@Override
-	public void deleteById(int id, Date fec) {
+	public void deleteById(int id, String fec) {
 		 Session currentSession = entityManager.unwrap(Session.class);
 		 
-		 Query<Valorhist> theQuery =  currentSession.createQuery("Delete from valor where idValor=:idValor and fecValor=:fec");
+		 DateFormat sourceFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");		
+		 Date inicio = null;
+				
+		 String fechaDesde = fec.substring(4, 8) + "-" + fec.substring(2, 4) + "-" + fec.substring(0, 2) + " 00:00:00";
+		  				
+		 try {
+			inicio = sourceFormat.parse(fechaDesde);
+		 } catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		 }		 
+		    	    				
+   	     Date fecBorrado = inicio;
+		 
+		 Query<Valorhist> theQuery =  currentSession.createQuery("Delete from valor v where v.valorHistID.valor.idValor = :id and v.valorHistID.fecValor = :fecBorrado");
 		  
-		 theQuery.setParameter("idValorhist", id); 
-		 theQuery.setParameter("fecValor", fec);		 
+		 theQuery.setParameter("idValorhist", id);
+		 theQuery.setParameter("fecValor", fecBorrado);
 		 theQuery.executeUpdate();
 	}
 

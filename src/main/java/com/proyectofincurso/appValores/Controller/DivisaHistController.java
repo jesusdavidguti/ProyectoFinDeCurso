@@ -91,7 +91,7 @@ public class DivisaHistController {
 	        return divisahist;	 
 	 }
 	 
-	 @PostMapping("/loadMes/{fecDesde}/{fecHasta}")
+	 @PostMapping("/loadFecdesdeFechasta/{fecDesde}/{fecHasta}")
 	 public Map<String, String> loadDivisaHistMes(@PathVariable String fecDesde, @PathVariable String fecHasta)  throws ParseException {
 		 		 
 		 double start = 1.5;

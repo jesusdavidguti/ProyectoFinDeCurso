@@ -9,9 +9,9 @@ public interface ValorhistDAO {
 
 	 public List<Valorhist> findAll();
 
-	 public Valorhist findById(int id, Date fec);
+	 public Valorhist findById(int id, String fec);
 	 
 	 public void save(Valorhist valorhist);
 
-	 public void deleteById(int id, Date fec);
+	 public void deleteById(int id, String fec);
 }

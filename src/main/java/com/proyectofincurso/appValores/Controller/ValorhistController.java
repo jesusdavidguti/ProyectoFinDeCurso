@@ -60,9 +60,10 @@ public class ValorhistController {
         return valorhistService.findAll();
     }
 	
-	@GetMapping("/valoreshist/{valorId, fecha}")
-    public Valorhist getValor(@PathVariable int valorHistId, Date fec){
-        Valorhist valorhist = valorhistService.findById(valorHistId, fec);
+	@GetMapping("/valoreshist/{valorHistId}/{fecha}")
+    public Valorhist getValor(@PathVariable int valorHistId, @PathVariable String fecha){
+		
+        Valorhist valorhist = valorhistService.findById(valorHistId, fecha);
 
         if(valorhist == null) {
             throw new RuntimeException("Valor histórico desconocido -"+valorHistId);
@@ -83,8 +84,8 @@ public class ValorhistController {
         return valorHist;	 
 	 }
 	 
-	 @PostMapping("/loadMes/{fecDesde}/{fecHasta}")
-	 public Map<String, String> loadValorHistMes(@PathVariable String fecDesde, @PathVariable String fecHasta)  throws ParseException {
+	 @PostMapping("/loadFecdesdeFechasta/{fecDesde}/{fecHasta}")
+	 public Map<String, String> loadFecdesdeFechasta(@PathVariable String fecDesde, @PathVariable String fecHasta)  throws ParseException {
 		 		 
 		 double start = 1.5;
 		 double end = 0.5;
@@ -189,17 +190,17 @@ public class ValorhistController {
 
 	// PETICONES DELETE
 	 
-	 @DeleteMapping("valores/{valorHist}")
-	 public String deleteValorHist(@PathVariable int valorHistId, Date fec) {
+	 @DeleteMapping("valores/{valorHistId}/{fecha}")
+	 public String deleteValorHist(@PathVariable int valorHistId, @PathVariable String fecha) {
 
-	        Valorhist valorHist = valorhistService.findById(valorHistId, fec);
+	        Valorhist valorHist = valorhistService.findById(valorHistId, fecha);
 
 	        if(valorHist == null) {
 	            throw new RuntimeException("Valor histórico desconocido id:"+valorHistId);
 	        }
 
-	        valorhistService.deleteById(valorHistId,fec);
+	        valorhistService.deleteById(valorHistId,fecha);
 
-	        return "Valor histórico borrado con id - "+valorHistId + " y fecha "+fec;
+	        return "Valor histórico borrado con id - "+valorHistId + " y fecha "+fecha;
 	  }	 	 
 }

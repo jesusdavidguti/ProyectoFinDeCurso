@@ -23,7 +23,7 @@ public class ValorhistServiceImpl implements ValorhistService {
 	}
 
 	@Override
-	public Valorhist findById(int id, Date fec) {
+	public Valorhist findById(int id, String fec) {
 		Valorhist valorhist = valorhistDAO.findById(id,fec);
 		return valorhist;
 	}
@@ -36,7 +36,7 @@ public class ValorhistServiceImpl implements ValorhistService {
 
 	@Transactional
 	@Override
-	public void deleteById(int id, Date fec) {
+	public void deleteById(int id, String fec) {
 		valorhistDAO.deleteById(id,fec);		
 	}
 

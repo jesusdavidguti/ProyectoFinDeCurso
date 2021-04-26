@@ -59,6 +59,12 @@ public class ValorhistDAOImpl implements ValorhistDAO {
 	    return query.getSingleResult();
 	}
 
+	@Override
+	public List<Valorhist> findByIdBetweenFecs(int id, String fecD, String fecH) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+		
 	@Transactional
 	@Override
 	public void save(Valorhist valorhist) {

@@ -153,7 +153,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/apiMercados/mercados/AEX",
+							"raw": "http://localhost:8080/apiMercados/mercados/TEST",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -162,7 +162,7 @@
 							"path": [
 								"apiMercados",
 								"mercados",
-								"AEX"
+								"TEST"
 							]
 						}
 					},
@@ -404,7 +404,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/apiDivisasHist/divisashist/eur/01022021",
+							"raw": "http://localhost:8080/apiDivisasHist/divisashist/test/02022021",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -413,8 +413,8 @@
 							"path": [
 								"apiDivisasHist",
 								"divisashist",
-								"eur",
-								"01022021"
+								"test",
+								"02022021"
 							]
 						}
 					},
@@ -500,12 +500,12 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/apiDivisasHist/loadMes",
+					"name": "http://localhost:8080/apiDivisasHist/loadFecdesdeFechasta",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/apiDivisasHist/loadMes/01022021/10022021",
+							"raw": "http://localhost:8080/apiDivisasHist/loadFecdesdeFechasta/01032021/10032021",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -513,9 +513,9 @@
 							"port": "8080",
 							"path": [
 								"apiDivisasHist",
-								"loadMes",
-								"01022021",
-								"10022021"
+								"loadFecdesdeFechasta",
+								"01032021",
+								"10032021"
 							]
 						}
 					},
@@ -616,12 +616,12 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/apiValoresHist/loadMes",
+					"name": "http://localhost:8080/apiValoresHist/loadFecdesdeFechasta",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/apiValoresHist/loadMes/01022021/10022021",
+							"raw": "http://localhost:8080/apiValoresHist/loadFecdesdeFechasta/01022021/10022021",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -629,9 +629,31 @@
 							"port": "8080",
 							"path": [
 								"apiValoresHist",
-								"loadMes",
+								"loadFecdesdeFechasta",
 								"01022021",
 								"10022021"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/apiValoresHist/valoreshist/cod/fec",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiValoresHist/valoreshist/2/02022021",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiValoresHist",
+								"valoreshist",
+								"2",
+								"02022021"
 							]
 						}
 					},
@@ -801,6 +823,27 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "http://localhost:8080/apiValores/valores/codigo_delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiValores/valores/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiValores",
+								"valores",
+								"5"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -868,12 +911,12 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/apiValoresHist/loadMes",
+					"name": "http://localhost:8080/apiValoresHist/loadFecdesdeFechasta",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/apiValoresHist/loadMes/01022021/10022021",
+							"raw": "http://localhost:8080/apiValoresHist/loadFecdesdeFechasta/01032021/16032021",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -881,9 +924,31 @@
 							"port": "8080",
 							"path": [
 								"apiValoresHist",
-								"loadMes",
-								"01022021",
-								"10022021"
+								"loadFecdesdeFechasta",
+								"01032021",
+								"16032021"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/apiDivisasHist/loadFecdesdeFechasta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiDivisasHist/loadFecdesdeFechasta/01032021/16032021",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiDivisasHist",
+								"loadFecdesdeFechasta",
+								"01032021",
+								"16032021"
 							]
 						}
 					},

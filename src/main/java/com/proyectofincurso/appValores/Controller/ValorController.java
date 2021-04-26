@@ -102,6 +102,9 @@ public class ValorController {
 	        valorService.save(valor3);
 	        Valor valor4 = new Valor(0,"Valor Inmobiliario1","Inmobiliario", mercadoService.findById("NIKK"), divisaService.findById("yen"));
 	        valorService.save(valor4);
+	        Valor valor5 = new Valor(0,"Valor test","TEST", mercadoService.findById("TEST"), divisaService.findById("test"));
+	        valorService.save(valor5);
+	        
 	        
 		    map.put("Tabla:", "Valor");
 		    map.put("Carga:", "Finalizada");	    

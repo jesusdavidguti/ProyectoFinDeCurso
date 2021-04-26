@@ -61,9 +61,11 @@ public class ValorhistController {
     }
 	
 	@GetMapping("/valoreshistBetweenFecs/{valorHistId}/{fechaD/{fechaH}")
-    public List<Valorhist> findAllBetweenFecs(@PathVariable int valorHistId,@PathVariable String fechaD, @PathVariable String fechaH){
+    public List<Valorhist> findAllBetweenFecs(@PathVariable int valorHistId, @PathVariable String fechaD, @PathVariable String fechaH){
 
-        return valorhistService.findByIdBetweenFecs(valorHistId,fechaD, fechaH);
+		System.out.println("fechaD:"+fechaD);
+		
+        return valorhistService.findByIdBetweenFecs(valorHistId, fechaD, fechaH);
     }	
 	
 	@GetMapping("/valoreshist/{valorHistId}/{fecha}")

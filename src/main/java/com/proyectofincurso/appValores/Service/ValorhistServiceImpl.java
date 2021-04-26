@@ -31,7 +31,7 @@ public class ValorhistServiceImpl implements ValorhistService {
 	@Override
 	public List<Valorhist> findByIdBetweenFecs(int id, String fecD, String fecH) {
 		// TODO Auto-generated method stub
-		return null;
+		return valorhistDAO.findByIdBetweenFecs(id, fecD, fecH);
 	}
 		
 	@Transactional

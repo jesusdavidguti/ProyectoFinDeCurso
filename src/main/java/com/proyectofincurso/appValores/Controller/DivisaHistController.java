@@ -79,6 +79,16 @@ public class DivisaHistController {
 		}				
     }
 	
+	@GetMapping("/divisashistBetweenFecs/{divisaHistId}/{fechaD}/{fechaH}")
+    public List<Divisahist> getDivisahistBetweenFecs(@PathVariable String divisaHistId, @PathVariable String fechaD, @PathVariable String fechaH){
+		
+		try {
+	        return divisahistService.findByIdBetweenFecs(divisaHistId, fechaD, fechaH);    
+		} catch (Exception e) {
+			throw new RuntimeException("Error recuperación divisa histórica " + divisaHistId + " " + fechaD + " " + fechaH);
+		}				
+    }
+		
 	// PETICONES POST	 
 	
 	 @PostMapping("/divisashist")

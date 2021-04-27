@@ -10,6 +10,8 @@ public interface DivisahistService {
 	public List<Divisahist> findAll();
 
     public Divisahist findById(String id, String fec);
+    
+	public List<Divisahist> findByIdBetweenFecs(String id, String fecD, String fecH);    
 
     public void save(Divisahist divisahist);
 

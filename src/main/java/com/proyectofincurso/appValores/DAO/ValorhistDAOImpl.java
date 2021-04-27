@@ -79,6 +79,9 @@ public class ValorhistDAOImpl implements ValorhistDAO {
    	    Date fecIni = inicio;
    	    Date fecFin = fin;
    	    
+   	    //System.out.println("fecIni: "+fecIni);
+   	    //System.out.println("fecFin: "+fecFin);   	    
+   	    
 		TypedQuery<Valorhist> query = entityManager.createQuery("select v from valorhist v where v.valorHistID.valor.idValor = ?1 and v.valorHistID.fecValor between ?2 and ?3", Valorhist.class);
 	    query.setParameter(1, id);
 	    query.setParameter(2, fecIni, TemporalType.TIMESTAMP);

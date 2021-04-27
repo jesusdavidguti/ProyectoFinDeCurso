@@ -520,6 +520,29 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "http://localhost:8080/apiValoresHist/valoreshistBetweenFecs/cod/fecD/fecH",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiDivisasHist/divisashistBetweenFecs/libr/10032021/11032021",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiDivisasHist",
+								"divisashistBetweenFecs",
+								"libr",
+								"10032021",
+								"11032021"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -654,6 +677,29 @@
 								"valoreshist",
 								"2",
 								"02022021"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/apiValoresHist/valoreshistBetweenFecs/cod/fecD/fecH",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiValoresHist/valoreshistBetweenFecs/2/10032021/14032021",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiValoresHist",
+								"valoreshistBetweenFecs",
+								"2",
+								"10032021",
+								"14032021"
 							]
 						}
 					},

@@ -32,6 +32,12 @@ public class DivisahistServiceImpl implements DivisahistService {
 		return divisahist;
 	}
 
+	@Override
+	public List<Divisahist> findByIdBetweenFecs(String id, String fecD, String fecH) {
+		// TODO Auto-generated method stub
+		return divisahistDAO.findByIdBetweenFecs(id, fecD, fecH);
+	}	
+	
 	@Transactional
 	@Override
 	public void save(Divisahist divisahist) {

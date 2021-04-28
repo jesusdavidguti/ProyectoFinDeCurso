@@ -6,6 +6,10 @@ Desarrollo de una aplicación web bursátil
 
 ![Diagrama E/R](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20E-R.png "Diagrama E/R")
 
+**Diagrama UML clases**
+
+![Diagrama E/R](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama clases.png "Diagrama UML")
+
 **Diagrama de despliegue**
 
 ![Diagrama de despliegue](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Despliegue.png "Diagrama de despliegue")

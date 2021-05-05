@@ -33,7 +33,13 @@ public class ValorhistServiceImpl implements ValorhistService {
 		// TODO Auto-generated method stub
 		return valorhistDAO.findByIdBetweenFecs(id, fecD, fecH);
 	}
-		
+
+	@Override
+	public List<Valorhist> findTopLowValor(int id, String fecD, String fecH) {
+		// TODO Auto-generated method stub
+		return valorhistDAO.findTopLowValor(id, fecD, fecH);
+	}	
+	
 	@Transactional
 	@Override
 	public void save(Valorhist valorhist) {

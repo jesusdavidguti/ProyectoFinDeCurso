@@ -3,6 +3,7 @@ package com.proyectofincurso.appValores.DAO;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -90,6 +91,82 @@ public class ValorhistDAOImpl implements ValorhistDAO {
 	    return query.getResultList();   	    		
 	}
 		
+	@Override
+	public List<Valorhist> findTopLowValor(int id, String fecD, String fecH) {
+		Date hoy = Calendar.getInstance().getTime();
+		
+		DateFormat sourceFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");		
+		Date inicio = null;
+		Date fin = null;
+
+		if (fecD.isEmpty()) {
+			fecD = formatter.format(hoy);
+		}				
+		String fechaDesde = fecD.substring(4, 8) + "-" + fecD.substring(2, 4) + "-" + fecD.substring(0, 2) + " 00:00:00";
+		
+		if (fecH.isEmpty()) {
+			fecH = formatter.format(hoy);
+		}			
+		String fechaHasta = fecH.substring(4, 8) + "-" + fecH.substring(2, 4) + "-" + fecH.substring(0, 2) + " 00:00:00";		
+		  				
+		try {
+			inicio = sourceFormat.parse(fechaDesde);
+			fin = sourceFormat.parse(fechaHasta);			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		 
+		    	    				
+   	    Date fecIni = inicio;
+   	    Date fecFin = fin;
+   	    
+   	    //System.out.println("fecIni: "+fecIni);
+   	    //System.out.println("fecFin: "+fecFin);   	    
+   	    
+		//TypedQuery<Valorhist> query = entityManager.createQuery("select v from valorhist v where v.valorHistID.valor.idValor = ?1 and v.valorHistID.fecValor between ?2 and ?3", Valorhist.class);
+		TypedQuery<Valorhist> query = entityManager.createQuery("select " 
+																+ "h.cotizacionUSdolar,"
+																+ "h_ayer.cotizacionUSdolar,"
+																+ "(h.cotizacionUSdolar - h_ayer.cotizacionUSdolar),"
+																+ "v.nombre,"
+																+ "m.nombre,"
+																+ "h.valorHistID.fecValor"
+																+ " FROM valorhist h, valor v, mercado m,"
+																+ "valorhist h_ayer"
+																+ " WHERE "
+																+ "h.valorHistID.fecValor = ?1 "
+																+ "AND h_ayer.valorHistID.fecValor = ?2 "
+																+ "AND h.valorHistID.valor.idValor = h_ayer.valorHistID.valor.idValor "
+																+ "AND m.codMercado = v.mercado.codMercado "
+																+ "AND v.idValor = h.valorHistID.valor.idValor "
+																+ "order by (h.cotizacionUSdolar - h_ayer.cotizacionUSdolar)"
+																, Valorhist.class);
+				
+	    //query.setParameter(1, id);
+	    query.setParameter(1, fecIni, TemporalType.TIMESTAMP);
+	    query.setParameter(2, fecFin, TemporalType.TIMESTAMP);	    
+
+	    
+//	    select 	h.cotizacionusdolar 'Hoy', 
+//				h_ayer.cotizacionusdolar 'Ayer', 
+//				(h.cotizacionusdolar - h_ayer.cotizacionusdolar) 'Diferencia', 
+//				v.nombre 'Valor', 
+//				m.nombre 'Mercado',
+//				h.fec_valor
+//        FROM 	valorhist h, valor v, mercado m,
+//				valorhist h_ayer
+//		WHERE	
+//				h.fec_valor = "2021-03-15"
+//		AND     h_ayer.fec_valor = "2021-03-14"
+//		AND		h.id_valor = h_ayer.id_valor
+//		AND		m.cod_mercado = v.cod_mercado
+//		AND		v.id_valor = h.id_valor
+//		order by (h.cotizacionusdolar - h_ayer.cotizacionusdolar) DESC	    
+	    	    	    
+	    return query.getResultList();
+	}
+			
 	@Transactional
 	@Override
 	public void save(Valorhist valorhist) {

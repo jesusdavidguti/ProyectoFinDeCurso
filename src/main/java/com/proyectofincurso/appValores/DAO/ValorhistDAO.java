@@ -12,6 +12,8 @@ public interface ValorhistDAO {
 	 public Valorhist findById(int id, String fec);
 	 
 	 public List<Valorhist> findByIdBetweenFecs(int id, String fecD, String fecH);
+
+	 public List<Valorhist> findTopLowValor(int id, String fecD, String fecH);	 
 	 
 	 public void save(Valorhist valorhist);
 

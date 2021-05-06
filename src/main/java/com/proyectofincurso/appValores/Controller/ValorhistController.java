@@ -65,6 +65,7 @@ public class ValorhistController {
     public List<Valorhistmaxmin> findTopLowValor(@PathVariable int valorHistId, @PathVariable String fechaD, @PathVariable String fechaH){
 
 		//System.out.println("fechaD:"+fechaD);
+		//System.out.println("fechaH:"+fechaH);
 		
         return valorhistService.findTopLowValor(valorHistId, fechaD, fechaH);
     }	

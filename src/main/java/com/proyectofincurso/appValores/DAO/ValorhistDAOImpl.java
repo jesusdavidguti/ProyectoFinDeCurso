@@ -94,32 +94,47 @@ public class ValorhistDAOImpl implements ValorhistDAO {
 		
 	@Override
 	public List<Valorhistmaxmin> findTopLowValor(int orden, String fecD, String fecH) {
-		
-		String sOrden;
-		Date hoy = Calendar.getInstance().getTime();
+				
+		String sOrden, fechaDesde = null, fechaHasta = null;
+		Date dHoy = Calendar.getInstance().getTime();
+		Date dAyer = Calendar.getInstance().getTime();
 		
 		DateFormat sourceFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");		
+		DateFormat formatter = new SimpleDateFormat("ddMMyyyy");		
 		Date inicio = null;
 		Date fin = null;
 
 		if (orden == 1) {
-			sOrden = " DESC";
+			sOrden = "ASC";
 		}
 		else {
-			sOrden = " ASC";
+			sOrden = "DESC";
 		}
-			
-		if (fecD.isEmpty()) {
-			fecD = formatter.format(hoy);
-		}				
-		String fechaDesde = fecD.substring(4, 8) + "-" + fecD.substring(2, 4) + "-" + fecD.substring(0, 2) + " 00:00:00";
 		
-		if (fecH.isEmpty()) {
-			fecH = formatter.format(hoy);
-		}			
-		String fechaHasta = fecH.substring(4, 8) + "-" + fecH.substring(2, 4) + "-" + fecH.substring(0, 2) + " 00:00:00";		
-		  				
+		// Si fechaD y fechaH están informadas
+		//
+		if ((fecD.trim().length() > 0) && (fecD.trim().length() > 0)) {		
+			fechaDesde = fecD.substring(4, 8) + "-" + fecD.substring(2, 4) + "-" + fecD.substring(0, 2) + " 00:00:00";
+			fechaHasta = fecH.substring(4, 8) + "-" + fecH.substring(2, 4) + "-" + fecH.substring(0, 2) + " 00:00:00";			
+		}
+		
+		// Si fechaD y fechaH NO están informadas, las informamos con hoy y ayer
+		//		
+		if ((fecD.trim().length() == 0) && (fecH.trim().length() == 0)) {
+
+			// Fecha de hoy
+			fecD = formatter.format(dHoy);							
+			fechaDesde = fecD.substring(4, 8) + "-" + fecD.substring(2, 4) + "-" + fecD.substring(0, 2) + " 00:00:00";
+			
+			// Fecha de ayer						
+			Calendar c = Calendar.getInstance();
+	        c.setTime(dHoy);
+	        c.add(Calendar.DAY_OF_MONTH, -1);
+	        dAyer = c.getTime();	
+	        fecH = formatter.format(dAyer);		        
+			fechaHasta = fecH.substring(4, 8) + "-" + fecH.substring(2, 4) + "-" + fecH.substring(0, 2) + " 00:00:00";
+		}
+				
 		try {
 			inicio = sourceFormat.parse(fechaDesde);
 			fin = sourceFormat.parse(fechaHasta);			
@@ -130,10 +145,7 @@ public class ValorhistDAOImpl implements ValorhistDAO {
 		    	    				
    	    Date fecIni = inicio;
    	    Date fecFin = fin;
-   	    
-   	    //System.out.println("fecIni: "+fecIni);
-   	    //System.out.println("fecFin: "+fecFin);   	    
-   	    
+   	       	    
 		//TypedQuery<Valorhist> query = entityManager.createQuery("select v from valorhist v where v.valorHistID.valor.idValor = ?1 and v.valorHistID.fecValor between ?2 and ?3", Valorhist.class);
    	    TypedQuery<Valorhistmaxmin> query = entityManager.createQuery("select NEW com.proyectofincurso.appValores.entity.Valorhistmaxmin(" 
 																+ "h.cotizacionUSdolar,"
@@ -150,13 +162,11 @@ public class ValorhistDAOImpl implements ValorhistDAO {
 																+ "AND h.valorHistID.valor.idValor = h_ayer.valorHistID.valor.idValor "
 																+ "AND m.codMercado = v.mercado.codMercado "
 																+ "AND v.idValor = h.valorHistID.valor.idValor "
-																+ "order by (h.cotizacionUSdolar - h_ayer.cotizacionUSdolar)"
+																+ "order by (h.cotizacionUSdolar - h_ayer.cotizacionUSdolar)" + sOrden
 																, Valorhistmaxmin.class);
 				
-	    //query.setParameter(1, id);
 	    query.setParameter(1, fecIni, TemporalType.TIMESTAMP);
 	    query.setParameter(2, fecFin, TemporalType.TIMESTAMP);	    
-
 	    
 //	    select 	h.cotizacionusdolar 'Hoy', 
 //				h_ayer.cotizacionusdolar 'Ayer', 

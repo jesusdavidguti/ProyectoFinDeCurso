@@ -134,7 +134,9 @@ Nuestra arquitectura de clases se base en cuatro elementos básicos sobre los qu
   - Valor: es la accion propiamante dicha que cotiza en un mercado a un precio en dólares.
   - Valorhist: al igual que en la divisa, este objeto representa las distintas cotizaciones que ha tenido un determinado valor a lo largo del tiempo.
   - ValorhistID: clase creada como propiedad de la anterior y que actua como clave de la misma. Se utiliza a nivel interno por la arquitectura.
-  - Valorhistmaxmin: objeto creado a nivel de arquitectura como necesidad de mapear una consulta muy concreta.
+  - Valorhistmaxmin: objeto creado a nivel de arquitectura como necesidad de mapear una consulta muy concreta. Estos objetos son necesarios debido a que las consultas gestionadas por Springboot sólo devuelven tipos "objeto" que hay que devolver a través del controlador.
+- Controladores: son la puerta de entrada a la API. Resiben las peticiones y las enrutan según su tipo (GET, PUT.,etc), nombre. Su función principal es recibir la petición HTTP y llamar al servicio correspondientes.
+  - 
 
 
 

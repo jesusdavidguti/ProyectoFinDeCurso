@@ -527,7 +527,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/apiDivisasHist/divisashistBetweenFecs/libr/10032021/11032021",
+							"raw": "http://localhost:8080/apiDivisasHist/divisashistBetweenFecs/libr/08032021/14032021",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -537,8 +537,8 @@
 								"apiDivisasHist",
 								"divisashistBetweenFecs",
 								"libr",
-								"10032021",
-								"11032021"
+								"08032021",
+								"14032021"
 							]
 						}
 					},
@@ -699,6 +699,29 @@
 								"valoreshistBetweenFecs",
 								"2",
 								"10032021",
+								"14032021"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/apiValoresHist/valoreshistTopLowValor/cod/fecD/fecH",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiValoresHist/valoreshistTopLowValor/2/15032021/14032021",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiValoresHist",
+								"valoreshistTopLowValor",
+								"2",
+								"15032021",
 								"14032021"
 							]
 						}

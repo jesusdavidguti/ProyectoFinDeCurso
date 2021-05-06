@@ -1,10 +1,7 @@
 package com.proyectofincurso.appValores.DAO;
 
-import java.util.Date;
 import java.util.List;
-
 import com.proyectofincurso.appValores.entity.Divisahist;
-import com.proyectofincurso.appValores.entity.Valorhist;
 
 public interface DivisahistDAO {
 

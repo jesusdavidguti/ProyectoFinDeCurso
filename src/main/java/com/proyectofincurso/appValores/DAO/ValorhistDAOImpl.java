@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.proyectofincurso.appValores.entity.Divisahist;
 import com.proyectofincurso.appValores.entity.Valorhist;
+import com.proyectofincurso.appValores.entity.Valorhistmaxmin;
 
 @Repository
 public class ValorhistDAOImpl implements ValorhistDAO {
@@ -92,7 +93,7 @@ public class ValorhistDAOImpl implements ValorhistDAO {
 	}
 		
 	@Override
-	public List<Valorhist> findTopLowValor(int id, String fecD, String fecH) {
+	public List<Valorhistmaxmin> findTopLowValor(int id, String fecD, String fecH) {
 		Date hoy = Calendar.getInstance().getTime();
 		
 		DateFormat sourceFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -125,13 +126,13 @@ public class ValorhistDAOImpl implements ValorhistDAO {
    	    //System.out.println("fecFin: "+fecFin);   	    
    	    
 		//TypedQuery<Valorhist> query = entityManager.createQuery("select v from valorhist v where v.valorHistID.valor.idValor = ?1 and v.valorHistID.fecValor between ?2 and ?3", Valorhist.class);
-		TypedQuery<Valorhist> query = entityManager.createQuery("select " 
+   	    TypedQuery<Valorhistmaxmin> query = entityManager.createQuery("select NEW com.proyectofincurso.appValores.entity.Valorhistmaxmin(" 
 																+ "h.cotizacionUSdolar,"
 																+ "h_ayer.cotizacionUSdolar,"
-																+ "(h.cotizacionUSdolar - h_ayer.cotizacionUSdolar),"
 																+ "v.nombre,"
 																+ "m.nombre,"
-																+ "h.valorHistID.fecValor"
+																+ "h.valorHistID.fecValor,"
+																+ "(h.cotizacionUSdolar - h_ayer.cotizacionUSdolar))"																
 																+ " FROM valorhist h, valor v, mercado m,"
 																+ "valorhist h_ayer"
 																+ " WHERE "
@@ -141,7 +142,7 @@ public class ValorhistDAOImpl implements ValorhistDAO {
 																+ "AND m.codMercado = v.mercado.codMercado "
 																+ "AND v.idValor = h.valorHistID.valor.idValor "
 																+ "order by (h.cotizacionUSdolar - h_ayer.cotizacionUSdolar)"
-																, Valorhist.class);
+																, Valorhistmaxmin.class);
 				
 	    //query.setParameter(1, id);
 	    query.setParameter(1, fecIni, TemporalType.TIMESTAMP);

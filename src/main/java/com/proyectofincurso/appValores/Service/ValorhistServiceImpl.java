@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.proyectofincurso.appValores.DAO.ValorhistDAO;
 import com.proyectofincurso.appValores.entity.Valorhist;
+import com.proyectofincurso.appValores.entity.Valorhistmaxmin;
 
 @Service
 public class ValorhistServiceImpl implements ValorhistService {
@@ -35,7 +36,7 @@ public class ValorhistServiceImpl implements ValorhistService {
 	}
 
 	@Override
-	public List<Valorhist> findTopLowValor(int id, String fecD, String fecH) {
+	public List<Valorhistmaxmin> findTopLowValor(int id, String fecD, String fecH) {
 		// TODO Auto-generated method stub
 		return valorhistDAO.findTopLowValor(id, fecD, fecH);
 	}	

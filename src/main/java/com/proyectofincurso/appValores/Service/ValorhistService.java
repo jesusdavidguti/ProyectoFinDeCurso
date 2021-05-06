@@ -3,6 +3,7 @@ package com.proyectofincurso.appValores.Service;
 import java.util.List;
 
 import com.proyectofincurso.appValores.entity.Valorhist;
+import com.proyectofincurso.appValores.entity.Valorhistmaxmin;
 
 public interface ValorhistService {
 
@@ -12,7 +13,7 @@ public interface ValorhistService {
 
     public List<Valorhist> findByIdBetweenFecs(int id, String fecD, String fecH);    
 
-    public List<Valorhist> findTopLowValor(int id, String fecD, String fecH);
+    public List<Valorhistmaxmin> findTopLowValor(int id, String fecD, String fecH);
     
     public void save(Valorhist valorhist);
 

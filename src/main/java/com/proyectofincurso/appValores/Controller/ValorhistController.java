@@ -29,6 +29,7 @@ import com.proyectofincurso.appValores.Service.ValorhistService;
 import com.proyectofincurso.appValores.entity.Valor;
 import com.proyectofincurso.appValores.entity.Valorhist;
 import com.proyectofincurso.appValores.entity.ValorhistID;
+import com.proyectofincurso.appValores.entity.Valorhistmaxmin;
 
 //Indiciamos que es un controlador rest así como la raíz de la URL que usaremos (http://localhost:8080/api/)
 @RestController
@@ -61,7 +62,7 @@ public class ValorhistController {
     }
 	
 	@GetMapping("/valoreshistTopLowValor/{valorHistId}/{fechaD}/{fechaH}")
-    public List<Valorhist> findTopLowValor(@PathVariable int valorHistId, @PathVariable String fechaD, @PathVariable String fechaH){
+    public List<Valorhistmaxmin> findTopLowValor(@PathVariable int valorHistId, @PathVariable String fechaD, @PathVariable String fechaH){
 
 		//System.out.println("fechaD:"+fechaD);
 		

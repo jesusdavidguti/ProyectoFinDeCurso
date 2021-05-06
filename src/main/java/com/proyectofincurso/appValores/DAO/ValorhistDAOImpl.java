@@ -93,7 +93,9 @@ public class ValorhistDAOImpl implements ValorhistDAO {
 	}
 		
 	@Override
-	public List<Valorhistmaxmin> findTopLowValor(int id, String fecD, String fecH) {
+	public List<Valorhistmaxmin> findTopLowValor(int orden, String fecD, String fecH) {
+		
+		String sOrden;
 		Date hoy = Calendar.getInstance().getTime();
 		
 		DateFormat sourceFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -101,6 +103,13 @@ public class ValorhistDAOImpl implements ValorhistDAO {
 		Date inicio = null;
 		Date fin = null;
 
+		if (orden == 1) {
+			sOrden = " DESC";
+		}
+		else {
+			sOrden = " ASC";
+		}
+			
 		if (fecD.isEmpty()) {
 			fecD = formatter.format(hoy);
 		}				

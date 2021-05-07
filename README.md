@@ -21,14 +21,21 @@ Desarrollo de una aplicación web bursátil
 
 ## Bibliografía
 
-- [Mi tutorial](https://github.com/jesusdavidguti/TutorialSpringJPA)
-- [Anotaciones JPA](https://www.objectdb.com/api/java/jpa/annotations/relationship) 
-- [Api REST](https://www.nigmacode.com/java/crear-api-rest-con-spring/)
-- [Persistencia con JPA](https://www.infoworld.com/article/3387643/java-persistence-with-jpa-and-hibernate-part-2-many-to-many-relationships.html)
-- [JPA @ OneToMany](https://www.arquitecturajava.com/jpa-onetomany/)
-- [JPA @ ManyToOne](https://www.arquitecturajava.com/jpa-manytoone/)
-- [@id automático](https://stackoverflow.com/questions/20603638/what-is-the-use-of-annotations-id-and-generatedvaluestrategy-generationtype)
-- [Sintaxis Github](https://docs.github.com/es/github/writing-on-github/basic-writing-and-formatting-syntax)
-- [Iconos](https://feathericons.com/)
-- [Anotar fecha y hora en JPA](https://www.it-swarm-es.com/es/java/como-almacenar-la-fechahora-y-las-marcas-de-tiempo-en-la-zona-horaria-utc-con-jpa-e-hibernate/958259387/)
-- [Query en Spring](https://spring.io/blog/2011/02/10/getting-started-with-spring-data-jpa/)
+- Sprin boot
+  - [Mi tutorial](https://github.com/jesusdavidguti/TutorialSpringJPA)
+  - [Anotaciones JPA](https://www.objectdb.com/api/java/jpa/annotations/relationship) 
+  - [Api REST](https://www.nigmacode.com/java/crear-api-rest-con-spring/)
+  - [Query en Spring](https://spring.io/blog/2011/02/10/getting-started-with-spring-data-jpa/)- 
+- JPA
+  - [Persistencia con JPA](https://www.infoworld.com/article/3387643/java-persistence-with-jpa-and-hibernate-part-2-many-to-many-relationships.html)
+  - [JPA @ OneToMany](https://www.arquitecturajava.com/jpa-onetomany/)
+  - [JPA @ ManyToOne](https://www.arquitecturajava.com/jpa-manytoone/)
+  - [@id automático](https://stackoverflow.com/questions/20603638/what-is-the-use-of-annotations-id-and-generatedvaluestrategy-generationtype)
+  - [Anotar fecha y hora en JPA](https://www.it-swarm-es.com/es/java/como-almacenar-la-fechahora-y-las-marcas-de-tiempo-en-la-zona-horaria-utc-con-jpa-e-hibernate/958259387/) 
+- Github
+  - [Sintaxis Github](https://docs.github.com/es/github/writing-on-github/basic-writing-and-formatting-syntax)
+  - [Iconos](https://feathericons.com/)
+- FrontEnd
+  - Diagramas estadísticos
+    - [Lineal](https://www.chartjs.org/docs/latest/charts/line.html)
+  

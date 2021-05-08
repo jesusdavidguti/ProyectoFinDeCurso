@@ -98,10 +98,11 @@ public class MercadoController {
 		 	Mercado mercadoLoad7 = new Mercado("TEST","TEST Mercados","XX","XXXXXX");		 			 	
 	        mercadoService.save(mercadoLoad7);	        	        
 
-	        
+	        List<Mercado> mercados = mercadoService.findAll();
+	        	        
 	        HashMap<String, String> map = new HashMap<>();
 		    map.put("Tabla:", "Mercados");
-		    map.put("Carga:", "Finalizada");	    
+		    map.put("Carga:", "Finalizada con "+mercados.size()+" elementos.");	    
 		    return map;
 	 }	 
 	 

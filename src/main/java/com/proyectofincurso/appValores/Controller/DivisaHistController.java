@@ -150,9 +150,11 @@ public class DivisaHistController {
 			    fecActual = inicio;
 		 }
 		 
+		 List<Divisahist> divisasHistorico = divisahistService.findAll();
+		 
 		 HashMap<String, String> map = new HashMap<>();
 		 map.put("Tabla:", "valorhist");
-		 map.put("Carga:", "Entre " + fechaDesde + " y " + fechaHasta);
+		 map.put("Carga:", "Entre " + fechaDesde + " y " + fechaHasta + " cargados " + divisasHistorico.size() + " registros.");
 		 
 		 return map;
 	 }	 

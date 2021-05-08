@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.proyectofincurso.appValores.Service.DivisahistService;
+import com.proyectofincurso.appValores.Service.DivisahistServiceImpl;
 import com.proyectofincurso.appValores.Service.ValorService;
 import com.proyectofincurso.appValores.Service.ValorhistService;
 import com.proyectofincurso.appValores.entity.Valor;
@@ -153,9 +155,11 @@ public class ValorhistController {
 			    actual = inicio;
 		 }
 		 
+		 List<Valorhist> valoresHist = valorhistService.findAll();
+		 
 		 HashMap<String, String> map = new HashMap<>();
 		 map.put("Tabla:", "valorhist");
-		 map.put("Carga:", "Entre " + fechaDesde + " y " + fechaHasta);
+		 map.put("Carga:", "Entre " + fechaDesde + " y " + fechaHasta + " cargados " + valoresHist.size() + " registros.");
 		 
 		 return map;
 	 }

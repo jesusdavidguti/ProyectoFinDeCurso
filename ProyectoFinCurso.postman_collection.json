@@ -711,7 +711,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/apiValoresHist/valoreshistTopLowValor/2/15032021/14032021",
+							"raw": "http://localhost:8080/apiValoresHist/valoreshistTopLowValor/2/10032021/11032021",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -721,8 +721,8 @@
 								"apiValoresHist",
 								"valoreshistTopLowValor",
 								"2",
-								"15032021",
-								"14032021"
+								"10032021",
+								"11032021"
 							]
 						}
 					},

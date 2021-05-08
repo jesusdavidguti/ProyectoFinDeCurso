@@ -102,12 +102,24 @@ public class ValorController {
 	        valorService.save(valor3);
 	        Valor valor4 = new Valor(0,"Valor Inmobiliario1","Inmobiliario", mercadoService.findById("NIKK"), divisaService.findById("yen"));
 	        valorService.save(valor4);
-	        Valor valor5 = new Valor(0,"Valor test","TEST", mercadoService.findById("TEST"), divisaService.findById("test"));
+	        Valor valor5 = new Valor(0,"Valor test1","TEST", mercadoService.findById("TEST"), divisaService.findById("test"));
 	        valorService.save(valor5);
 	        
+	        Valor valor6 = new Valor(0,"Valor Teleco2","Teleco", mercadoService.findById("NDQ"), divisaService.findById("bado"));
+	        valorService.save(valor6);
+	        Valor valor7 = new Valor(0,"Valor Banco2","Banca", mercadoService.findById("IBEX"), divisaService.findById("neru"));
+	        valorService.save(valor7);
+	        Valor valor8 = new Valor(0,"Valor Energia2","Energía", mercadoService.findById("FTSE"), divisaService.findById("rubl"));
+	        valorService.save(valor8);
+	        Valor valor9 = new Valor(0,"Valor Inmobiliario2","Inmobiliario", mercadoService.findById("NIKK"), divisaService.findById("sufr"));
+	        valorService.save(valor9);
+	        Valor valor10 = new Valor(0,"Valor test2","TEST", mercadoService.findById("TEST"), divisaService.findById("suco"));
+	        valorService.save(valor10);
+	        
+	        List<Valor> valores = valorService.findAll();
 	        
 		    map.put("Tabla:", "Valor");
-		    map.put("Carga:", "Finalizada");	    
+		    map.put("Carga:", "Finalizada con "+valores.size()+" elementos.");	    
 		    return map;
 	 }	 
 	

@@ -81,21 +81,32 @@ public class DivisaController {
 	 @PostMapping("/load")
 	 public Map<String, String> loadDivisa() {
 		 
-		 	Divisa divisaLoad1 = new Divisa("eur","Euro","EU",1.19);		 			 	
+		 	Divisa divisaLoad1 = new Divisa("eur","Euro","EUR",1.19);		 			 	
 	        divisaService.save(divisaLoad1);	        	        
-		 	Divisa divisaLoad2 = new Divisa("usdo","Dolar americano","USA",1.00);		 			 	
+		 	Divisa divisaLoad2 = new Divisa("usdo","Dolar americano","USD",1.00);		 			 	
 	        divisaService.save(divisaLoad2);	        	        
-		 	Divisa divisaLoad3 = new Divisa("libr","Libra esterlina","GB",1.37);		 			 	
+		 	Divisa divisaLoad3 = new Divisa("libr","Libra esterlina","GBP",1.37);		 			 	
 	        divisaService.save(divisaLoad3);	        	        
-		 	Divisa divisaLoad4 = new Divisa("yen","Yen japonés","JP",0.0092);		 			 	
+		 	Divisa divisaLoad4 = new Divisa("yen","Yen japonés","JPY",0.0092);		 			 	
 	        divisaService.save(divisaLoad4);	        	        
 		 	Divisa divisaLoad5 = new Divisa("test","test divisas","xx",0.01);		 			 	
 	        divisaService.save(divisaLoad5);
-
+		 	Divisa divisaLoad6 = new Divisa("bado","Dolar de las Bahamas","BSD",0.98);		 			 	
+	        divisaService.save(divisaLoad6);
+		 	Divisa divisaLoad7 = new Divisa("neru","Rupia nepalí","NPR",0.05);		 			 	
+	        divisaService.save(divisaLoad7);
+		 	Divisa divisaLoad8 = new Divisa("rubl","Rublo ruso","RUBL",1.43);		 			 	
+	        divisaService.save(divisaLoad8);
+		 	Divisa divisaLoad9 = new Divisa("sufr","Franco suizo","CHF",1.17);		 			 	
+	        divisaService.save(divisaLoad9);
+		 	Divisa divisaLoad10 = new Divisa("suco","Corona sueca","SEC",1.23);		 			 	
+	        divisaService.save(divisaLoad10);
 	        
+	        List<Divisa> divisas = divisaService.findAll();
+	        	        	        
 	        HashMap<String, String> map = new HashMap<>();
-		    map.put("Tabla:", "Divisas");
-		    map.put("Carga:", "Finalizada");	    
+		    map.put("Tabla:", "Divisas insertadas:");
+		    map.put("Carga:", "Finalizada con "+divisas.size()+" elementos.");	    
 		    return map;
 	 }
 

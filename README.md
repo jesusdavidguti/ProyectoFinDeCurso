@@ -10,6 +10,10 @@ Desarrollo de una aplicación web bursátil
 
 ![Diagrama E/R](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20clases.png "Diagrama UML")
 
+**Pruebas con Postman**
+
+![Pruebas con Postman](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Postman.png "Pruebas con Postman")
+
 **Diagrama de despliegue**
 
 ![Diagrama de despliegue](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Despliegue.png "Diagrama de despliegue")

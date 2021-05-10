@@ -153,7 +153,7 @@ public class ValorhistDAOImpl implements ValorhistDAO {
 																+ "v.nombre,"
 																+ "m.nombre,"
 																+ "h.valorHistID.fecValor,"
-																+ "(h.cotizacionUSdolar - h_ayer.cotizacionUSdolar))"																
+																+ "round((h.cotizacionUSdolar - h_ayer.cotizacionUSdolar),2))"																
 																+ " FROM valorhist h, valor v, mercado m,"
 																+ "valorhist h_ayer"
 																+ " WHERE "

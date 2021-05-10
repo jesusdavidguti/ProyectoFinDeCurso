@@ -12,7 +12,7 @@ Desarrollo de una aplicación web bursátil
 
 **Pruebas con Postman**
 
-![Pruebas con Postman](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Postman.png "Pruebas con Postman")
+![Pruebas con Postman](https://https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Postman.PNG "Pruebas con Postman")
 
 **Diagrama de despliegue**
 

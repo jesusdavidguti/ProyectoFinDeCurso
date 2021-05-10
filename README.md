@@ -10,6 +10,14 @@ Desarrollo de una aplicación web bursátil
 
 ![Diagrama E/R](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20clases.png "Diagrama UML")
 
+**Clase Divisahist**
+
+![Clase Divisahist](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Divisahist.PNG "Clase Divisahist")
+
+**Clase DivisahistID**
+
+![Clase DivisahistID](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/DivisahistID.PNG "Clase DivisahistID")
+
 **Pruebas con Postman**
 
 ![Pruebas con Postman](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Postman.PNG "Pruebas con Postman")

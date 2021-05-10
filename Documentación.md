@@ -165,5 +165,10 @@ Al haber optado por JPA a la hora de gestionar y desarrollar nuestra capa de per
 
 ![Diagrama E/R](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20E-R.png "Diagrama E/R")
 
-Como ya se ha mencionado en el epígrafe de clases, uno de los principales problemas a la hora de trabajar con JPA es establecer relaciones a nivel de ID de clase. Esto nos ha llevado a la creación de entidades intermedias de tipo ID o clave primaria que necesitamos a la hora de establecer dichas relaciones. Por otra parte, tal y como podemos ver en la imagen de más abajo....... COMPLETAR.
+Como ya se ha mencionado en el epígrafe de clases, uno de los principales problemas a la hora de trabajar con JPA es establecer relaciones a nivel de ID de clase. Esto nos ha llevado a la creación de entidades intermedias de tipo ID o clave primaria que necesitamos a la hora de establecer dichas relaciones. 
 
+![Clase Divisahist](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Divisahist.PNG "Clase Divisahist")
+
+La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta básicamente con una referencia a otro objeto (Divisa) y una propiedad más para identificarla univocamente, en este caso fecha.
+
+![Clase DivisahistID](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/DivisahistID.PNG "Clase DivisahistID")

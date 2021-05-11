@@ -30,6 +30,9 @@ Desarrollo de una aplicación web bursátil
 
 ![Despliegue de la BBDD](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GearBBDD.PNG "Despliegue de la BBDD")
 
+**Github: estructura del proyecto**
+
+[Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas.PNG "Ramas en Github")
 
 ## Bibliografía
 

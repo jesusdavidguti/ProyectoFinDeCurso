@@ -178,7 +178,20 @@ Nuestro sitio web constará de una página principal desde la que podremos acced
 
 Github será nuestra herraminta de versionado y de mantenimiento de las distintas ramas del desarrollo. Estas ramas nos ayudan a manterner ordenado y estructurado todo el trabajo realizado durante el desarrollo y, en última instancia, nos ayudarán a realizar el desplieque. Las ramas, tal y como se puede ver en la imagen de más abajo, son cinco:
 
-- Main: sería la presentación del proyecto y para información general.
-- 
+- Main: sería la presentación del proyecto y para información general del mismo
+- Frontend: contendrá la parte web ejecutada por el navegador(html, js, etc).
+- Backend: la API así como los elementos anexos a ella (ficheros de recursos, conexiones, etc) irán en esta rama.
+- Doc: toda la documentación que se genere durante el proyecto irá en esta rama, bien en formato .md bien en pdf
+- Img: las imágenes que utilizamos para ilustrar el proyecto, así como cualquier otra, irá ubicada aquí.
 
 ![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas.PNG "Ramas en Github")
+
+## Dificultades encontradas
+
+La ejecución de este proyecto así como su puesta en marcha, ha hecho que determinadas conclusiones
+
+## Conclusiones
+
+
+
+## Posibles mejoras

@@ -170,13 +170,15 @@ Como ya se ha mencionado en el epígrafe de clases, uno de los principales probl
 
 La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta básicamente con una referencia a otro objeto (Divisa) y una propiedad más para identificarla univocamente, en este caso fecha.
 
-![Clase DivisahistID](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/DivisahistID.PNG "Clase DivisahistID")
-
 ## Desarrollo web
 
 Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, 
 
 ### Control de versiones.
 
-Github será nuestra herraminta de versionado y de mantenimiento de las distintas ramas del desarrollo. 
+Github será nuestra herraminta de versionado y de mantenimiento de las distintas ramas del desarrollo. Estas ramas nos ayudan a manterner ordenado y estructurado todo el trabajo realizado durante el desarrollo y, en última instancia, nos ayudarán a realizar el desplieque. Las ramas, tal y como se puede ver en la imagen de más abajo, son cinco:
 
+- Main: sería la presentación del proyecto y para información general.
+- 
+
+![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas.PNG "Ramas en Github")

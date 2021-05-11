@@ -32,7 +32,7 @@ Desarrollo de una aplicación web bursátil
 
 **Github: estructura del proyecto**
 
-[Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas.PNG "Ramas en Github")
+![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas.PNG "Ramas en Github")
 
 ## Bibliografía
 

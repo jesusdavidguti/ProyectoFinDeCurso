@@ -104,6 +104,7 @@ La implantación deberá ser realizada en las siguientes fases para ir comproban
 - Backend.
   - Crearemos en Heroku nuestra aplicación dándola de alta y, utilizando la rama de backend de github, realizaremosl
 - Frontend
+  - Desde Github realizaremos el despliegue
 
 ## Programación.
 
@@ -122,7 +123,7 @@ Además de estos paquetes básicos, tendremos también otros como el de recursos
 
 ### Clases y métodos
 
-Nuestra arquitectura de clases se base en cuatro elementos básicos sobre los que se ha construido todo el sistema. En el diagrama de clases podemos ver más gráficamente cómo se estructuran las diferentes clases y cuales son sus propiedades y métodos. Los objetos serían los siguientes:
+Nuestra arquitectura de clases se base en cuatro elementos básicos sobre los que se ha construido todo el sistema. En el diagrama de clases podemos ver más gráficamente cómo se estructuran las diferentes clases y cuales son sus propiedades y métodos. Algunas entidades son sólo de uso interno y como apoyo de otras, tal es el caso de los ID necesarios en algunos casos y cuyo tratamiento es un poco más complejo y específico. Los objetos serían los siguientes:
 
 - Entidad: será nuestra vía para poder interaccionar con la tabla correspondiente en BB.DD. Sus propiedades o atributos serán los campos de la tabla. Contaremos con las siguientes entidades:
   - Divisa: este objeto será el encargado de almacenar la información relacionada con las divisas (moneda de un país) con las que puede operar el sistema.
@@ -147,8 +148,6 @@ Nuestra arquitectura de clases se base en cuatro elementos básicos sobre los qu
   - ValorhistServiceImpl: gestiona las peticiones realizadas en relación al histórico de valores y las redirecciona a su objeto DAO correspondiente.
 - Objeto de acceso a datos (DAO): estos serán los responsables realmente de acceder a la BB.DD. utilizando las entidades creadas al efecto. Gestionará las llamadas al servicio mediante los correspondientes métodos y utiliza también interfaces para su construcción.
 
-
-
 ### Pruebas
 
 #### Backend
@@ -172,3 +171,12 @@ Como ya se ha mencionado en el epígrafe de clases, uno de los principales probl
 La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta básicamente con una referencia a otro objeto (Divisa) y una propiedad más para identificarla univocamente, en este caso fecha.
 
 ![Clase DivisahistID](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/DivisahistID.PNG "Clase DivisahistID")
+
+## Desarrollo web
+
+Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, 
+
+### Control de versiones.
+
+Github será nuestra herraminta de versionado y de mantenimiento de las distintas ramas del desarrollo. 
+

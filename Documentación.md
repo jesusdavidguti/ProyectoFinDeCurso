@@ -188,10 +188,28 @@ Github será nuestra herraminta de versionado y de mantenimiento de las distinta
 
 ## Dificultades encontradas
 
-La ejecución de este proyecto así como su puesta en marcha, ha hecho que determinadas conclusiones
+- FrontEnd
+  - El objeto para dibujar gráficas, llamado "Chart", es muy útil pero presenta ciertas características en su manejo que debemos respetar y aprender para su correcto uso. Podemos trabajar con el como si fuese un objeto "plano", definiendo sus propiedades una a una., o bien acceder a las mismas con la notación punto. Es esta última  opción por la que nos hemos decantado a pesar de que sus propiedades están muy agrupadas y que el cambio de una sola puede afectar al resto.
+- BackEnd
+  - Spring requiere del uso de transacciones para que las acciones de inserción y actualización tengan efecto. Curiosamente no alerta de ..........................
 
 ## Conclusiones
 
+La ejecución de este proyecto así como su puesta en marcha ha hecho que determinadas conclusiones, aun siendo obvias, hayan sido más evidentes aún. Veamos algunas.
 
+- FrontEnd
+  - Las llamadas a la Api deben hacerse escalonadamente si la callback es la encargada de pasar la información a otro objeto. Así, a la hora de informar el chart, los datasets con la información se deben pasar uno a uno. Es por ello que las llamadas se hacen anidadas para que se ejecuten de una en una y en orden. De otra forma, se puede dar el caso de que algunas de las llamadas a la API no haya finalizado cuando ya estamos informando el objeto con el siguiente grupo de valores.
+- BackEnd
+  - Las queys que lancemos con JPA desde backend deben devolver siempre un objeto. No importa la simpleza  del dato a devolver (entero, decimal, cadena, etc.), si este no está integrado en un objeto Spring no lo gestionará.
+  - Las interfaces de los objetos DAO pueden ser exactamente iguales, por lo que sólo habría que hacer una. Sin embargo, las particularidades de cada objeto hacen que sea necesario introducir variaciones que poco o nada tienen que ver con la funcionalidad del resto de objetos. Es por ello que es preferible hacer una interfaz para cada objeto DAO.
+  - La BB.DD. no genera claves externas al uso una vez la creamos. Es JPA y Spring los que, mediante anotaciones, se encargan de generar dichas relaciones cuando activamos el servicio por vez primera. De hecho, las tablas son creadas en la BB.DD. como ficheros simples sin relación alguna y que podemos borrar desde el gestor de BB.DD. sin tener avisos de fallos de integridad.
 
 ## Posibles mejoras
+
+Las posibles mejoras podrían ser infinitas una vez visto el potencial que la API nos da. Algunas podrían ser las siguientes:
+
+- FrontEnd
+  - Area de mantenimiento: donde se podrán mantener las entidades padre (divisa, valor, mercado, etc.)
+- BackEnd
+  - Distintas consultas que nos darán información más detallada de los valores en sus ciclos de subida y bajada.
+

@@ -57,4 +57,8 @@ Desarrollo de una aplicación web bursátil
 - FrontEnd
   - Diagramas estadísticos
     - [Lineal](https://www.chartjs.org/docs/latest/charts/line.html)
+  - Bootstrap
+    - [Dropdowns](https://getbootstrap.com/docs/4.0/components/dropdowns/) 
+
+
   

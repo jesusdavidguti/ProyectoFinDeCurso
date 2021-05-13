@@ -69,7 +69,7 @@
 - Software: son varias las aplicaciones y herramientas que necesitaremos. Serían las siguientes:
 
   - S.O: Windows 10 Pro.
-  - IDE: utilizaremos Eclipse en la versión 2019-12
+  - IDE: utilizaremos Eclipse en la versión 2019-12 para backend y Visual Studio Code para frontend
   - SGBD: MySql administrado desde phpMyAdmin
   - Pruebas: Postman 8.1
   - Documentación: utilizaremos Typora como editor para Markdown así como LibreOffice Writter
@@ -191,6 +191,7 @@ Github será nuestra herraminta de versionado y de mantenimiento de las distinta
 - FrontEnd
   - A la hora de usar Ajax para recuperar y mostrar datos hay que tener en cuenta la "rapidez" con que se ejecutan las sentencias. Así, para mostrar datos o actualizar un objeto con datos procedentes de Ajax es necesario hacer que los métodos que pintas los datos no se ejecuten antes de que Ajax haya finalizado su ejecución y devuelto los datos.
   - El objeto para dibujar gráficas, llamado "Chart", es muy útil pero presenta ciertas características en su manejo que debemos respetar y aprender para su correcto uso. Podemos trabajar con el como si fuese un objeto "plano", definiendo sus propiedades una a una., o bien acceder a las mismas con la notación punto. Es esta última  opción por la que nos hemos decantado a pesar de que sus propiedades están muy agrupadas y que el cambio de una sola puede afectar al resto.
+  - Las versiones de Bootstrrap hacen que determinados componentes funcionen o no correctamente cuando iteraccionan con otros.
 - BackEnd
   - Spring requiere del uso de transacciones para que las acciones de inserción y actualización tengan efecto. Curiosamente no alerta de la no ejecución de acciones, simplemente no las realiza.
   - El uso de un identificador que requiera una entidad hace que se tengan que tener en cuenta una serie de aspectos a la hora de utilizarlo. El más importante es el hecho de que para poder realizar acciones de comparación es necesario añadir métodos específicos para comparación de objetos como si fuesen un ID.
@@ -199,8 +200,11 @@ Github será nuestra herraminta de versionado y de mantenimiento de las distinta
 
 La ejecución de este proyecto así como su puesta en marcha ha hecho que determinadas conclusiones, aun siendo obvias, hayan sido más evidentes aún. Veamos algunas.
 
+- Generales
+  - Una vez  más se cumple el dicho de que la *primera solución que pensamos no es la mejor casi nunca.*
 - FrontEnd
   - Las llamadas a la Api deben hacerse escalonadamente si la callback es la encargada de pasar la información a otro objeto. Así, a la hora de informar el chart, los datasets con la información se deben pasar uno a uno. Es por ello que las llamadas se hacen anidadas para que se ejecuten de una en una y en orden. De otra forma, se puede dar el caso de que algunas de las llamadas a la API no haya finalizado cuando ya estamos informando el objeto con el siguiente grupo de valores.
+  - A la hora de utilizar cualquier tipo de componente web hay que tener muy en cuenta su versión y compatibilidad con otros componentes.
 - BackEnd
   - Las queys que lancemos con JPA desde backend deben devolver siempre un objeto. No importa la simpleza  del dato a devolver (entero, decimal, cadena, etc.), si este no está integrado en un objeto Spring no lo gestionará.
   - Las interfaces de los objetos DAO pueden ser exactamente iguales, por lo que sólo habría que hacer una. Sin embargo, las particularidades de cada objeto hacen que sea necesario introducir variaciones que poco o nada tienen que ver con la funcionalidad del resto de objetos. Es por ello que es preferible hacer una interfaz para cada objeto DAO.
@@ -215,4 +219,8 @@ Las posibles mejoras podrían ser infinitas una vez visto el potencial que la AP
   - Moneda de uso: utilizamos el dolar americano por defecto para almacenar, pero podríamos mostrar la información en cualquier otra moneda simplemente convirtiendo los valores antes de ser mostrados.
 - BackEnd
   - Distintas consultas que nos darán información más detallada de los valores en sus ciclos de subida y bajada.
+
+## Fuentes de información
+
+La información a consultar ha sido muy amplia y precisa. En la rama main del [Proyecto en Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/main/README.md) aparece de forma más detallada cada una de dichas fuentes. La consulta de webs de programadores tales como StrackOverflow ha sido de gran ayuda y, a la vez, un fuente de dudas ya que el enfoque a un mismo problema ya resuelto puede ser muy variado.
 

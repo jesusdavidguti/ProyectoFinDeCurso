@@ -172,7 +172,7 @@ La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta 
 
 ## Desarrollo web
 
-Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, 
+Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.
 
 ### Control de versiones.
 
@@ -189,9 +189,11 @@ Github será nuestra herraminta de versionado y de mantenimiento de las distinta
 ## Dificultades encontradas
 
 - FrontEnd
+  - A la hora de usar Ajax para recuperar y mostrar datos hay que tener en cuenta la "rapidez" con que se ejecutan las sentencias. Así, para mostrar datos o actualizar un objeto con datos procedentes de Ajax es necesario hacer que los métodos que pintas los datos no se ejecuten antes de que Ajax haya finalizado su ejecución y devuelto los datos.
   - El objeto para dibujar gráficas, llamado "Chart", es muy útil pero presenta ciertas características en su manejo que debemos respetar y aprender para su correcto uso. Podemos trabajar con el como si fuese un objeto "plano", definiendo sus propiedades una a una., o bien acceder a las mismas con la notación punto. Es esta última  opción por la que nos hemos decantado a pesar de que sus propiedades están muy agrupadas y que el cambio de una sola puede afectar al resto.
 - BackEnd
-  - Spring requiere del uso de transacciones para que las acciones de inserción y actualización tengan efecto. Curiosamente no alerta de ..........................
+  - Spring requiere del uso de transacciones para que las acciones de inserción y actualización tengan efecto. Curiosamente no alerta de la no ejecución de acciones, simplemente no las realiza.
+  - El uso de un identificador que requiera una entidad hace que se tengan que tener en cuenta una serie de aspectos a la hora de utilizarlo. El más importante es el hecho de que para poder realizar acciones de comparación es necesario añadir métodos específicos para comparación de objetos como si fuesen un ID.
 
 ## Conclusiones
 
@@ -210,6 +212,7 @@ Las posibles mejoras podrían ser infinitas una vez visto el potencial que la AP
 
 - FrontEnd
   - Area de mantenimiento: donde se podrán mantener las entidades padre (divisa, valor, mercado, etc.)
+  - Moneda de uso: utilizamos el dolar americano por defecto para almacenar, pero podríamos mostrar la información en cualquier otra moneda simplemente convirtiendo los valores antes de ser mostrados.
 - BackEnd
   - Distintas consultas que nos darán información más detallada de los valores en sus ciclos de subida y bajada.
 

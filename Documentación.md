@@ -34,7 +34,7 @@
 
 # Objetivos
 
-​		El objetivo general es tener una app capaz de mostrar información comparativa de valores bursátiles y que dicha información sea accesible por distintos sistemas. La información será recogida y almacenada por un sistema back-end, que también desarrollaremos, y que permitirá no sólo el acceso sino también su mantenimiento (CRUD).
+​		El objetivo general es tener una app capaz de mostrar y comparar información relativa a valores bursátiles y divisas. Además, hacer que dicha información sea accesible por distintos sistemas. La información será recogida y almacenada por un sistema back-end, que también desarrollaremos, y que permitirá no sólo el acceso sino también su mantenimiento (CRUD).
 
 ​		De lo dicho anteriormente se deduce que los objetivos específicos a conseguir serán los siguientes:
 

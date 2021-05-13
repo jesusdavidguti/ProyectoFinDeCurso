@@ -53,8 +53,8 @@ Desarrollo de una aplicación web bursátil
   - [Anotar fecha y hora en JPA](https://www.it-swarm-es.com/es/java/como-almacenar-la-fechahora-y-las-marcas-de-tiempo-en-la-zona-horaria-utc-con-jpa-e-hibernate/958259387/) 
 - Github
   - [Sintaxis Github](https://docs.github.com/es/github/writing-on-github/basic-writing-and-formatting-syntax)
-  - [Iconos](https://feathericons.com/)
 - FrontEnd
+  - [Iconos](https://feathericons.com/)
   - Diagramas estadísticos
     - [Lineal](https://www.chartjs.org/docs/latest/charts/line.html)
   - Bootstrap

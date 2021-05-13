@@ -93,16 +93,11 @@
 
 ## Implantación.
 
-La implantación deberá ser realizada en las siguientes fases para ir comprobando el correcto funcionamiento de la aplicación.
+La implantación deberá ser realizada en las siguientes fases para ir comprobando el correcto funcionamiento antes de pasar de fase.
 
-- BB.DD: crearemos nuestra base de datos en GearHost indicando que se trata de una BB.DD de MySql. Tomaremos la cadena de conexión así como el usuario y la contraseña.
+1. BB.DD: crearemos nuestra base de datos en GearHost indicando que se trata de una BB.DD de MySql. Tomaremos la cadena de conexión así como el usuario y la contraseña.
 
-
-
-
-
-- Backend.
-  - Crearemos en Heroku nuestra aplicación dándola de alta y, utilizando la rama de backend de github, realizaremosl
+2. API: Crearemos en Heroku nuestra aplicación dándola de alta y, utilizando la rama de backend de github, realizaremos el despliegue
 - Frontend
   - Desde Github realizaremos el despliegue
 

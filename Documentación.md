@@ -12,17 +12,7 @@
 
 
 
-​																									                                                                                Módulo: DAW
-
-​																									                                                                                Proyecto: appValores
-
-​																									                                                                                Fecha de exposición: xx/xx/xx
-
-​																									                                                                                Alumno: Jesús David Gutiérrez Delgado
-
-​																									                                                                                Tutor: Alfonso 
-
-
+​																									                                                                                Módulo: DAW																									                                                                                Proyecto: appValores																									                                                                                Fecha de exposición: xx/xx/xx																									                                                                                Alumno: Jesús David Gutiérrez Delgado																									                                                                                Tutor: Alfonso 
 
 [TOC]
 

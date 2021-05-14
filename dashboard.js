@@ -18,9 +18,9 @@ var arrMeses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
 
   feather.replace()
 
-  // Divisas
-  var ctx = document.getElementById('divisasChart')
-  var divisasChart = new Chart(ctx, {
+  // Chart Divisas
+  var ctxDivisas = document.getElementById('divisasChart')
+  var divisasChart = new Chart(ctxDivisas, {
     type: 'line',
     data: {
  /*      labels: [
@@ -61,8 +61,8 @@ var arrMeses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
   })
 
   // Valores
-  var ctx = document.getElementById('valoresChart')
-  var valoresChart = new Chart(ctx, {
+  var ctxValores = document.getElementById('valoresChart')
+  var valoresChart = new Chart(ctxValores, {
     type: 'line',
     data: {      
      },
@@ -85,15 +85,15 @@ var arrMeses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
   })
 
   // Pintamos tres divisas
-  obtenerDatosChart(function(result){  
+  obtenerDatosChartDivisa(function(result){  
 
     addDatosDivisa("libr", result, divisasChart);
 
-      obtenerDatosChart(function(result){  
+      obtenerDatosChartDivisa(function(result){  
 
         addDatosDivisa("eur", result, divisasChart);
 
-          obtenerDatosChart(function(result){  
+          obtenerDatosChartDivisa(function(result){  
 
             addDatosDivisa("suco", result, divisasChart);
           },"apiDivisasHist/divisashistBetweenFecs/suco/07032021/13032021");
@@ -114,7 +114,54 @@ var arrMeses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
  
   },"apiValoresHist/valoreshistTopLowValor/1/10032021/11032021");
 
+  // Cargamos los valores en la dropdown
+
+  cargarValoresDropdown();
+
 })()
+
+//************************************************/
+// Carga de valores en dropdown
+//************************************************/
+function cargarValoresDropdown(){
+  let dropdownValores = document.getElementById("selectValor");
+  // Llamada a la api
+  obtenerDatosValores(function(resultValores){    
+    let jsonValor = resultValores;
+    let valor;
+    for (valor of jsonValor){
+        //console.log("Valor: "+valor.nombre + " " + valor.idVAlor);
+        let opt = document.createElement('option');
+        opt.value = valor.idVAlor;
+        opt.innerHTML = valor.nombre;
+        dropdownValores.appendChild(opt);
+    }
+  },"apiValores/valores");
+}
+
+//************************************************/
+// Evaluamos la fecha
+//************************************************/
+function cambiaFecha(){
+  let miFecha = document.getElementById("fechaValor");
+  alert(miFecha.value);
+}
+
+//************************************************/
+// Evaluamos el valor
+//************************************************/
+function cambiaValor(){
+  let myselect = document.getElementById("selectValor");
+  alert(myselect.options[myselect.selectedIndex].value);
+}
+
+//************************************************/
+// Evaluamos la periocidad
+//************************************************/
+function cambiaPeriodicidad(){
+  let myselect = document.getElementById("selectPeriodicidad");
+  alert(myselect.options[myselect.selectedIndex].value);
+}
 
 //************************************************/
 // Actualizamos datos de MEJOR cotización
@@ -184,7 +231,7 @@ function removeData(chart) {
 // Llamada a la API para mejores/peores valores
 //************************************************/
 function obtenerDatosMaxMin(callback, parUrl){
-  xhr = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   let urlMaxMin = dominioLocal + parUrl;
   xhr.open("GET", urlMaxMin, true);
   xhr.setRequestHeader("Content-type","application/json");
@@ -201,7 +248,7 @@ function obtenerDatosMaxMin(callback, parUrl){
 // Llamada a la API para obtener nombre divisa
 //************************************************/
 function obtenerNombreDivisa(callback, parDivisaNombre){
-  xhr3 = new XMLHttpRequest();
+  let xhr3 = new XMLHttpRequest();
   let url = dominioLocal + "apiDivisas/divisas/" + parDivisaNombre;
   xhr3.open("GET", url, true);
   xhr3.setRequestHeader("Content-type","application/json");
@@ -217,10 +264,10 @@ function obtenerNombreDivisa(callback, parDivisaNombre){
 }
 
 //************************************************/
-// Llamada a la API para el chart
+// Llamada a la API para el chart de divisas
 //************************************************/
-function obtenerDatosChart(callback, parUrl){
-  xhr2 = new XMLHttpRequest();
+function obtenerDatosChartDivisa(callback, parUrl){
+  let xhr2 = new XMLHttpRequest();
   let url = dominioLocal + parUrl;
   xhr2.open("GET", url, true);
   xhr2.setRequestHeader("Content-type","application/json");
@@ -229,16 +276,34 @@ function obtenerDatosChart(callback, parUrl){
       if (xhr2.readyState == 4 && xhr2.status == 200){
 
           let jsonDivisa = JSON.parse(xhr2.responseText);
-          let valor;
-          let array_valor = new Array();
-          for (valor of jsonDivisa){
-              array_valor.push(valor.cotizacionUSdolar); 
+          let divisa;
+          let array_divisa = new Array();
+          for (divisa of jsonDivisa){
+              array_divisa.push(divisa.cotizacionUSdolar); 
           }
-
-          return callback (array_valor);        
+          return callback (array_divisa);        
       }
   }
   xhr2.send(); 
+}
+
+//************************************************/
+// Llamada a la API para obtener valores
+//************************************************/
+function obtenerDatosValores(callback, parUrl){
+  let xhr4 = new XMLHttpRequest();
+  let url = dominioLocal + parUrl;
+  xhr4.open("GET", url, true);
+  xhr4.setRequestHeader("Content-type","application/json");
+  xhr4.onreadystatechange = function () {
+      
+      if (xhr4.readyState == 4 && xhr4.status == 200){
+
+          let jsonValor = JSON.parse(xhr4.responseText);
+          return callback (jsonValor);        
+      }
+  }
+  xhr4.send(); 
 }
 
 //************************************************/
@@ -250,7 +315,7 @@ function colorDivisa(paramDivisa) {
 
   switch (paramDivisa) {
     case "eur":
-        color = azul;
+        color=azul;
         break;
     case "usdo":
         color=rojo;

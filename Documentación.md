@@ -123,7 +123,7 @@ Nuestra web contará básicamente con un archivo JS (dashboard.js) donde almacen
 
 ### Clases y métodos
 
-Nuestra arquitectura de clases se base en cuatro elementos básicos sobre los que se ha construido todo el sistema. En el diagrama de clases podemos ver más gráficamente cómo se estructuran las diferentes clases y cuales son sus propiedades y métodos. Algunas entidades son sólo de uso interno y como apoyo de otras, tal es el caso de los ID necesarios en algunos casos y cuyo tratamiento es un poco más complejo y específico. Los objetos serían los siguientes:
+​		Nuestra arquitectura de clases se base en cuatro elementos básicos sobre los que se ha construido todo el sistema. En el diagrama de clases podemos ver más gráficamente cómo se estructuran las diferentes clases y cuales son sus propiedades y métodos. Algunas entidades son sólo de uso interno y como apoyo de otras, tal es el caso de los ID necesarios en algunos casos y cuyo tratamiento es un poco más complejo y específico. Los objetos serían los siguientes:
 
 - Entidad: será nuestra vía para poder interaccionar con la tabla correspondiente en BB.DD. Sus propiedades o atributos serán los campos de la tabla. Contaremos con las siguientes entidades:
   - Divisa: este objeto será el encargado de almacenar la información relacionada con las divisas (moneda de un país) con las que puede operar el sistema.
@@ -134,19 +134,28 @@ Nuestra arquitectura de clases se base en cuatro elementos básicos sobre los qu
   - Valorhist: al igual que en la divisa, este objeto representa las distintas cotizaciones que ha tenido un determinado valor a lo largo del tiempo.
   - ValorhistID: clase creada como propiedad de la anterior y que actua como clave de la misma. Se utiliza a nivel interno por la arquitectura.
   - Valorhistmaxmin: objeto creado a nivel de arquitectura como necesidad de mapear una consulta muy concreta. Estos objetos son necesarios debido a que las consultas gestionadas por Springboot sólo devuelven tipos "objeto" que hay que devolver a través del controlador.
+  
 - Controladores: son la puerta de entrada a la API. Reciben las peticiones y las enrutan según su tipo (GET, PUT.,etc) y nombre. Su función principal es recibir la petición HTTP y llamar al servicio correspondientes.
   - DivisaController: gestiona las llamadas a la API en relación con las divisas.
   - DivisaHistController: gestiona las llamadas a la API en relación con el histórico de divisas.
   - MercadoController: gestiona las llamadas a la API en relación con los mercados.
   - ValorController: gestiona las llamadas a la API en relación con los valores.
   - ValorhistController: gestiona las llamadas a la API en relación con el histórico de valores.
+  
 - Servicios: son el nexo entre el objeto de acceso a datos (DAO) y el controlador. Su misión es indipendizar ambas capas para permitir un mantenimiento más simple. Se ha generado una interfaz para cada uno de ellos  en previsión de posibles cambios futuros, como así ha sido. Esto evita que haya que propagar el cambio realizado en la interfaz, debido a una funcionalidad específica del objeto, en todos los objetos afectados.
   - DivisaServiceImpl: gestiona las peticiones realizadas en relación a las divisas y las redirecciona a su objeto DAO correspondiente.
   - DivisahistServiceImpl: gestiona las peticiones realizadas en relación al histórico de divisas y las redirecciona a su objeto DAO correspondiente.
   - MercadoServiceImpl: gestiona las peticiones realizadas en relación a los mercados y las redirecciona a su objeto DAO correspondiente.
   - ValorServiceImpl: gestiona las peticiones realizadas en relación a los valores y las redirecciona a su objeto DAO correspondiente.
   - ValorhistServiceImpl: gestiona las peticiones realizadas en relación al histórico de valores y las redirecciona a su objeto DAO correspondiente.
+  
 - Objeto de acceso a datos (DAO): estos serán los responsables realmente de acceder a la BB.DD. utilizando las entidades creadas al efecto. Gestionará las llamadas al servicio mediante los correspondientes métodos y utiliza también interfaces para su construcción.
+
+  
+
+  El siguiente esquema recoge las distintas clases y sus relaciones así como los métodos más específicos.
+
+![Diagrama de clases](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20clases.png "Diagrama de clases")
 
 ### Pruebas
 

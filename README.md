@@ -51,6 +51,8 @@ Desarrollo de una aplicación web bursátil
   - [JPA @ ManyToOne](https://www.arquitecturajava.com/jpa-manytoone/)
   - [@id automático](https://stackoverflow.com/questions/20603638/what-is-the-use-of-annotations-id-and-generatedvaluestrategy-generationtype)
   - [Anotar fecha y hora en JPA](https://www.it-swarm-es.com/es/java/como-almacenar-la-fechahora-y-las-marcas-de-tiempo-en-la-zona-horaria-utc-con-jpa-e-hibernate/958259387/) 
+- Modelización
+  - [Modelización UML](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/)
 - Github
   - [Sintaxis Github](https://docs.github.com/es/github/writing-on-github/basic-writing-and-formatting-syntax)
 - [Typora](https://support.typora.io/Links/#hyperlink)

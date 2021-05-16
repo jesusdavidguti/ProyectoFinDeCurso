@@ -1,6 +1,7 @@
 # ProyectoFinDeCurso
 ## Rama Main
-Desarrollo de una aplicación web bursátil
+Desarrollo de una aplicación web bursátil.
+Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo se llevo a cabo el mismo.
 
 **Diagrama E/R**
 

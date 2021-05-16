@@ -30,6 +30,10 @@ Desarrollo de una aplicación web bursátil
 
 ![Despliegue de la BBDD](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GearBBDD.PNG "Despliegue de la BBDD")
 
+**Maquetación web**
+
+![Maquetación web](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png "Maquetación web")
+
 **FrontEnd: Divisas**
 
 ![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/FrontEnd1.PNG "Datos de divisas")

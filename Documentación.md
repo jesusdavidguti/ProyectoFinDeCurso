@@ -242,9 +242,18 @@ La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta 
       - /apiValores/valores/(valorID)): borra el valor con id que le llega como parámetro.
   - Histórico de valores
     - GET
+      - /apiValoresHist/info: devuelve información genérica del controlador histórico de valores (nombre, versión, descripción, etc)
+      - /apiValoresHist/valoreshist: devuelve una lista de todo el histórico de valores.
+      - /apiValoresHist/valoreshist/{valoreshistId}/{fecha}: devuelve un objeto histórico de valor en base al id del valor y la fecha del histórico. Es decir, la cotización del valor a una fecha determinada.
+      - /apiValoresHist/valoreshistBetweenFecs/{divisaHistId}/{fechaD}/{fechaH}: devuelve todas las cotizaciones de un determinado valor entre dos fechas.
     - POST
+      - /apiValoresHist/valoreshist: da de alta un registro histórico para la divisa que le llegue en el cuerpo de la petición.
+      - /apiValoresHist/loadFecdesdeFechasta/{fecDesde}/{fecHasta}: genera aleatoriamente valores de cotización entre dos fechas dadas para todas las divisas del sistema.
+      - /apiValoresHist/load: genera un pequeño grupo de datos históricos de prueba para el euro.
     - PUT
+      - /apiValoresHist/valoreshist: actualiza los datos históricos para una determinada divisa que le llegue en el cuerpo de la petición.
     - DELETE
+      - /apiValoresHist/valoreshist/{divisahistId, fec}: borra los datos históricos de una divisa a una fecha determinada.
 - FrontEnd
 
   ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.

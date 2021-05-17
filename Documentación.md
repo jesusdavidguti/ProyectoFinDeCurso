@@ -185,9 +185,32 @@ La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta 
 
 ## Desarrollo web
 
-Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.
+- Backend
 
-![Maquetación](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png "Maquetación")
+  La API, a través de los objetos controladores, pone a nuestra disposición los siguientes puntos de entrada:
+
+  - Divisas
+    - GET		
+      - /info: devuelve información genérica del controlador divisa (nombre, versión, descripción, etc)
+      - /divisas: devuelve una lista de todas las divisas.
+      - /divisas/(divisaID): devuelve la divisa cuyo id coincida con el que le pasamos.
+    - POST
+      - /divisas: inserta el objeto divisa que le pasamos en el cuerpo de la peticón html
+      - /load: carga inicial de divisas de ejemplo.
+    - PUT
+      - /divisas: updatea el objeto divisa que le pasamos en el cuerpo de la peticón html
+    - DELETE
+      - /divisas/(divisaID)): borra la divisa con id que le llega como parámetro.
+  - Histórico de divisas
+  - Mercado
+  - Valores
+  - Histórico de valores
+
+- FrontEnd
+
+  ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.
+
+  ![Maquetación](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png "Maquetación")
 
 ## Control de versiones.
 

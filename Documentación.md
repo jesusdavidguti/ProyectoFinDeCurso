@@ -228,10 +228,19 @@ La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta 
     - DELETE
       - /apiMercados/mercados/(mercadoID)): borra el mercado con id que le llega como parámetro.
   - Valores
-    - GET
+    - GET		
+      - /apiValores/info: devuelve información genérica del controlador valor (nombre, versión, descripción, etc)
+      - /apiValores/valores: devuelve una lista de todas los valores.
+      - /apiValores/valores/(valorID): devuelve el valor cuyo id coincida con el que le pasamos.
+      - /apiValores/valoresNombre/(nombre): devuelve el valor cuyo nombre coincida con el que le pasamos.- 
     - POST
+      - /apiValores/valores: inserta el objeto valor que le pasamos en el cuerpo de la peticón html
+      - /apiValores/load: carga inicial de valores de ejemplo.
     - PUT
-    - DELETE   
+      - /apiValores/divisas: updatea el objeto divisa que le pasamos en el cuerpo de la peticón html
+    - DELETE
+      - /apiValores/divisas/(divisaID)): borra la divisa con id que le llega como parámetro.
+
   - Histórico de valores
     - GET
     - POST

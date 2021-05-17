@@ -50,7 +50,7 @@ Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo
   - [Mi tutorial](https://github.com/jesusdavidguti/TutorialSpringJPA)
   - [Anotaciones JPA](https://www.objectdb.com/api/java/jpa/annotations/relationship) 
   - [Api REST](https://www.nigmacode.com/java/crear-api-rest-con-spring/)
-  - [Query en Spring](https://spring.io/blog/2011/02/10/getting-started-with-spring-data-jpa/)- 
+  - [Query en Spring](https://spring.io/blog/2011/02/10/getting-started-with-spring-data-jpa/)
 - JPA
   - [Persistencia con JPA](https://www.infoworld.com/article/3387643/java-persistence-with-jpa-and-hibernate-part-2-many-to-many-relationships.html)
   - [JPA @ OneToMany](https://www.arquitecturajava.com/jpa-onetomany/)

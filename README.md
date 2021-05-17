@@ -61,7 +61,7 @@ Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo
   - [Asociación, agregación y composición](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/)
 - Github
   - [Sintaxis Github](https://docs.github.com/es/github/writing-on-github/basic-writing-and-formatting-syntax)
-- [Typora](https://support.typora.io/Links/#hyperlink)
+  - [Typora](https://support.typora.io/Links/#hyperlink)
 - FrontEnd
   - [Iconos](https://feathericons.com/)
   - Diagramas estadísticos

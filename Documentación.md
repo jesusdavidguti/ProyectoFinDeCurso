@@ -191,18 +191,32 @@ La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta 
 
   - Divisas
     - GET		
-      - /info: devuelve información genérica del controlador divisa (nombre, versión, descripción, etc)
-      - /divisas: devuelve una lista de todas las divisas.
-      - /divisas/(divisaID): devuelve la divisa cuyo id coincida con el que le pasamos.
+      - /apiDivisas/info: devuelve información genérica del controlador divisa (nombre, versión, descripción, etc)
+      - /apiDivisas/divisas: devuelve una lista de todas las divisas.
+      - /apiDivisas/divisas/(divisaID): devuelve la divisa cuyo id coincida con el que le pasamos.
     - POST
-      - /divisas: inserta el objeto divisa que le pasamos en el cuerpo de la peticón html
-      - /load: carga inicial de divisas de ejemplo.
+      - /apiDivisas/divisas: inserta el objeto divisa que le pasamos en el cuerpo de la peticón html
+      - /apiDivisas/load: carga inicial de divisas de ejemplo.
     - PUT
-      - /divisas: updatea el objeto divisa que le pasamos en el cuerpo de la peticón html
+      - /apiDivisas/divisas: updatea el objeto divisa que le pasamos en el cuerpo de la peticón html
     - DELETE
-      - /divisas/(divisaID)): borra la divisa con id que le llega como parámetro.
+      - /apiDivisas/divisas/(divisaID)): borra la divisa con id que le llega como parámetro.
   - Histórico de divisas
+    - GET
+      - /apiDivisasHist/info: devuelve información genérica del controlador histórico de divisas (nombre, versión, descripción, etc)
+      - /apiDivisasHist/divisashist: devuelve una lista de todo el histórico de divisas.
+      - /apiDivisasHist/divisashist/{divisahistId}/{fecha}: devuelve un objeto histórico de divisa en base al id de la divisa y la fecha del histórico. Es decir, la cotización de la divisa a una fecha determinada.
+      - /apiDivisasHist/divisashistBetweenFecs/{divisaHistId}/{fechaD}/{fechaH}: devuelve todas las cotizaciones de una determinada divisa entre dos fechas.
+    - POST
+      - /apiDivisasHist/divisashist: da de alta un registro histórico para la divisa que le llegue en el cuerpo de la petición.
+      - /apiDivisasHist/loadFecdesdeFechasta/{fecDesde}/{fecHasta}: genera aleatoriamente valores de cotización entre dos fechas dadas para todas las divisas del sistema.
+      - /apiDivisasHist/load: genera un pequeño grupo de datos históricos de prueba para el euro.
+    - PUT
+      - /apiDivisasHist/divisashist: actualiza los datos históricos para una determinada divisa que le llegue en el cuerpo de la petición.
+    - DELETE
+      - /apiDivisasHist/divisashist/{divisahistId, fec}: borra los datos históricos de una divisa a una fecha determinada.
   - Mercado
+    - GET
   - Valores
   - Histórico de valores
 

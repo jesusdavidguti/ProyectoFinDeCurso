@@ -237,10 +237,9 @@ La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta 
       - /apiValores/valores: inserta el objeto valor que le pasamos en el cuerpo de la peticón html
       - /apiValores/load: carga inicial de valores de ejemplo.
     - PUT
-      - /apiValores/divisas: updatea el objeto divisa que le pasamos en el cuerpo de la peticón html
+      - /apiValores/valores: updatea el objeto valor que le pasamos en el cuerpo de la peticón html
     - DELETE
-      - /apiValores/divisas/(divisaID)): borra la divisa con id que le llega como parámetro.
-
+      - /apiValores/valores/(valorID)): borra el valor con id que le llega como parámetro.
   - Histórico de valores
     - GET
     - POST

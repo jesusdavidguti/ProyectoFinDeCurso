@@ -217,9 +217,26 @@ La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta 
       - /apiDivisasHist/divisashist/{divisahistId, fec}: borra los datos históricos de una divisa a una fecha determinada.
   - Mercado
     - GET
+      - /apiMercados/info: devuelve información genérica del controlador mercado (nombre, versión, descripción, etc)  
+      - /apiMercados/mercados: devuelve una lista de todas los mercados.
+      - /apiMercados/mercados/(mercadoID): devuelve el mercado cuyo id coincida con el que le pasamos.
+    - POST
+      - /apiMercados/mercados: inserta el objeto mercado que le pasamos en el cuerpo de la peticón html
+      - /apiMercados/load: carga inicial de mercados de ejemplo.
+    - PUT
+      - /apiMercados/mercados: updatea el objeto mercado que le pasamos en el cuerpo de la peticón html.
+    - DELETE
+      - /apiMercados/mercados/(mercadoID)): borra el mercado con id que le llega como parámetro.
   - Valores
+    - GET
+    - POST
+    - PUT
+    - DELETE   
   - Histórico de valores
-
+    - GET
+    - POST
+    - PUT
+    - DELETE
 - FrontEnd
 
   ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.

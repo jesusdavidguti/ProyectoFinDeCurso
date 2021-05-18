@@ -1,25 +1,20 @@
 
 var valoresChart;
-
 // Dominios de llamada a la API
 var dominioLocal = "http://localhost:8080/";
-// Colores
-var rojo = '#F70958';
-var azul = '#098BF7';
-var azulfuerte = '#172ED3';
-var amarillo = '#D7CC1C';
-var negro = '#000000';
 // Arrays
 var arrDias = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
 var arrMeses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
                 'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+var arrValoresPintados = [];
+// Objetos
+var objetoUrl = new montaUrl();
 
 /* globals Chart:false, feather:false */
 (function () {
   'use strict'
 
   feather.replace()
-
   // Chart Divisas
   var ctxDivisas = document.getElementById('divisasChart')
   var divisasChart = new Chart(ctxDivisas, {
@@ -86,7 +81,7 @@ var arrMeses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
     }
   })
 
-  // Pintamos tres divisas
+  // Pintamos tres divisas en la semana actual
   obtenerDatosChartDivisa(function(result){  
 
     addDatosDivisa("libr", result, divisasChart);
@@ -98,11 +93,11 @@ var arrMeses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
           obtenerDatosChartDivisa(function(result){  
 
             addDatosDivisa("suco", result, divisasChart);
-          },"apiDivisasHist/divisashistBetweenFecs/suco/07032021/13032021");
+          },objetoUrl.getDivisashistBetweenFecs("suco",fechaHasta(3),fechaHasta(0)));          
+    
+      },objetoUrl.getDivisashistBetweenFecs("eur",fechaHasta(3),fechaHasta(0)));          
 
-      },"apiDivisasHist/divisashistBetweenFecs/eur/07032021/13032021");
-
-  },"apiDivisasHist/divisashistBetweenFecs/libr/07032021/13032021");
+  },objetoUrl.getDivisashistBetweenFecs("libr",fechaHasta(3),fechaHasta(0)));            
   
   // Pintamos los valores mejores y peores
   obtenerDatosMaxMin(function(resultMin){    
@@ -112,12 +107,11 @@ var arrMeses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
     obtenerDatosMaxMin(function(resultMax){    
 
       pintaDatosMax(resultMax);
-    },"apiValoresHist/valoreshistTopLowValor/2/10032021/11032021");
+    },objetoUrl.getValoreshistTopValor(fechaHasta(3),fechaHasta(0)));    
  
-  },"apiValoresHist/valoreshistTopLowValor/1/10032021/11032021");
+  },objetoUrl.getValoreshistLowValor(fechaHasta(3),fechaHasta(0)));    
 
   // Cargamos los valores en la dropdown
-
   cargarValoresDropdown();
 
   setChartValores(valoresChart);
@@ -133,13 +127,13 @@ function cargarValoresDropdown(){
     let jsonValor = resultValores;
     let valor;
     for (valor of jsonValor){
-        //console.log("Valor: "+valor.nombre + " " + valor.idVAlor);
+
         let opt = document.createElement('option');
         opt.value = valor.idVAlor;
         opt.innerHTML = valor.nombre;
         dropdownValores.appendChild(opt);
     }
-  },"apiValores/valores");
+  },objetoUrl.getValores());  
 }
 
 //************************************************/
@@ -173,16 +167,24 @@ function procesoRecuperaValor(){
   let idValorText = selectValor.options[selectValor.selectedIndex].innerText;
   let idPeriodoText = selectPeriodo.options[selectPeriodo.selectedIndex].innerText;
 
-  // let url = "apiValoresHist/valoreshistBetweenFecs/"+idValor+"/"+fechaHasta(idPeriodo)+"/"+fechaHasta(0);
-  // console.log("url:"+url);
-
   if (idValorText != "Seleccione valor" && idPeriodoText != "Seleccione periodicidad"){
 
-    obtenerDatosChartValor(function(result){  
+    // Comprobamos si ya lo hemos pintado antes.
+    if (!arrValoresPintados.includes(idValor)){
 
-      addDatosValor("suco", result, valoresChart);
-    //},"apiDivisasHist/divisashistBetweenFecs/suco/07032021/13032021");
-    },"apiValoresHist/valoreshistBetweenFecs/"+idValor+"/"+fechaHasta(idPeriodo)+"/"+fechaHasta(0));    
+      arrValoresPintados.push(idValor);      
+      // Datos históricos del valor
+      obtenerDatosHistChartValor(function(result){  
+        // Datos del valor
+        obtenerDatosValores(function(resultValor){    
+          let jsonValor = resultValor;
+          
+          addDatosValor(jsonValor, result, valoresChart);    
+
+        },objetoUrl.getValor(idValor));  
+      
+      },objetoUrl.getValoreshistBetweenFecs(idValor,fechaHasta(3),fechaHasta(0)));
+    }
   }
 }
 
@@ -219,24 +221,21 @@ function pintaDatosMin(paramDatosMin){
 //************************************************/
 // Añadimos y actualizamos datos al chart valores
 //************************************************/
-function addDatosValor(paramLabel, paramData, paramChart){
+function addDatosValor(paramValor, paramData, paramChart){
 
   paramChart.data.labels=arrDias;
 
-  obtenerNombreDivisa(function(nombreDiv){    
-
-    paramChart.data.datasets.push({      
-      label: nombreDiv,
+  paramChart.data.datasets.push({      
+      label: paramValor.nombre,
       lineTension: 0,
       backgroundColor: 'transparent',
-      borderColor: colorDivisa(paramLabel),
+      borderColor: colorDivisa(paramValor.divisa.codDivisa),
       borderWidth: 4,
       pointBackgroundColor: '#007bff',
       data: paramData
     });
 
     paramChart.update();
-  },paramLabel);
 }
 
 //************************************************/
@@ -278,7 +277,8 @@ function removeData(chart) {
 //************************************************/
 function obtenerDatosMaxMin(callback, parUrl){
   let xhr = new XMLHttpRequest();
-  let urlMaxMin = dominioLocal + parUrl;
+  //let urlMaxMin = dominioLocal + parUrl;
+  let urlMaxMin = parUrl;  
   xhr.open("GET", urlMaxMin, true);
   xhr.setRequestHeader("Content-type","application/json");
   xhr.onreadystatechange = function () {
@@ -333,7 +333,8 @@ function obtenerValor(callback, parIdValor){
 //************************************************/
 function obtenerDatosChartDivisa(callback, parUrl){
   let xhr2 = new XMLHttpRequest();
-  let url = dominioLocal + parUrl;
+  //let url = dominioLocal + parUrl;
+  let url = parUrl;  
   xhr2.open("GET", url, true);
   xhr2.setRequestHeader("Content-type","application/json");
   xhr2.onreadystatechange = function () {
@@ -355,9 +356,10 @@ function obtenerDatosChartDivisa(callback, parUrl){
 //************************************************/
 // Llamada a la API para el chart de valores hist.
 //************************************************/
-function obtenerDatosChartValor(callback, parUrl){
+function obtenerDatosHistChartValor(callback, parUrl){
   let xhr = new XMLHttpRequest();
-  let url = dominioLocal + parUrl;
+  //let url = dominioLocal + parUrl;
+  let url = parUrl;  
   xhr.open("GET", url, true);
   xhr.setRequestHeader("Content-type","application/json");
   xhr.onreadystatechange = function () {
@@ -376,15 +378,13 @@ function obtenerDatosChartValor(callback, parUrl){
   xhr.send(); 
 }
 
-
-
-
 //************************************************/
 // Llamada a la API para obtener valores
 //************************************************/
 function obtenerDatosValores(callback, parUrl){
   let xhr4 = new XMLHttpRequest();
-  let url = dominioLocal + parUrl;
+  //let url = dominioLocal + parUrl;
+  let url = parUrl;  
   xhr4.open("GET", url, true);
   xhr4.setRequestHeader("Content-type","application/json");
   xhr4.onreadystatechange = function () {
@@ -402,7 +402,12 @@ function obtenerDatosValores(callback, parUrl){
 // Color en función de divisa
 //************************************************/
 function colorDivisa(paramDivisa) {
-
+  // Colores
+  let rojo = '#F70958';
+  let azul = '#098BF7';
+  let azulfuerte = '#172ED3';
+  let amarillo = '#D7CC1C';
+  let negro = '#000000';
   let color = "";
 
   switch (paramDivisa) {
@@ -425,7 +430,7 @@ function colorDivisa(paramDivisa) {
         color=rojo;
         break;    
     case "rubl":
-        color=rojo;
+        color=azulfuerte;
         break;    
     case "sufr":
         color=rojo;
@@ -454,35 +459,33 @@ function fechaHasta(paramPeriodicidad){
 
   switch (paramPeriodicidad) {
       // 1 día
-      case "1":
+      case 1:
           fechaCalculada.setDate(fechaCalculada.getDate() - 1);
           break;  
       // 5 días
-      case "2":
+      case 2:
           fechaCalculada.setDate(fechaCalculada.getDate() - 5);
-          //console.log("fechaCalculada:"+fechaCalculada);          
           break;    
       // 1 semana
-      case "3":
+      case 3:
           fechaCalculada.setDate(fechaCalculada.getDate() - 7);
-          //console.log("fechaCalculada:"+fechaCalculada);
           break;
       // Mensual
-      case "4":
+      case 4:
           fechaCalculada.setMonth(fechaCalculada.getMonth() - 1);
-          //console.log("fechaCalculada:"+fechaCalculada);          
           break;
       // Semestral
-      case "5":
+      case 5:
           fechaCalculada.setMonth(fechaCalculada.getMonth() - 6);
           break;
       // Anual
-      case "6":
+      case 6:
           fechaCalculada.setMonth(fechaCalculada.getMonth() - 12);
           break;
       // Hoy
       default:
           fechaCalculada = fechaHoy
+          //console.log("fechaCalculada default:"+fechaCalculada);          
           break;
     }
     return fechaddMMyyyy(fechaCalculada);
@@ -508,31 +511,3 @@ function setChartValores(paramValoresChart){
   valoresChart = paramValoresChart;
 }
 
-//************************************************/
-// Objeto Url para montar la cadena 
-// url de las APIS
-//************************************************/
-
-function Url(){
-
-    // Propiedades
-    this.rutaLocal = "http://localhost:8080/";
-    this.rutaGlobal = "";
-    this.ruta = "";
-
-    // Métodos SET
-
-    this.setRutaLocal = function(){
-      this.ruta = this.rutaLocal;
-    }
-
-    this.setRutaGlobal = function(){
-      this.ruta = this.rutaGlobal;
-    }
-
-    // Métodos GET
-
-    this.getValoreshistBetweenFecs = function(paramIdValor,paramFecDesde, paramFecHasta){    
-        return (this.ruta+"apiValoresHist/valoreshistBetweenFecs/"+paramIdValor+"/"+paramFecDesde+"/"+paramFecHasta);
-    }
-}

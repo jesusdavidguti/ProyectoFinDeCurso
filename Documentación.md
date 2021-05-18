@@ -101,6 +101,16 @@ La implantación deberá ser realizada en las siguientes fases para ir comproban
 
 Completar.
 
+PSR-01 y PSR-02+
+
+10:28 a. m.
+github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
+
+10:28 a. m.
+github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
+
+
+
 ### Organización del código
 
 #### Backend. 
@@ -137,9 +147,14 @@ La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta 
 
 ​		En base al proceso de modelización del punto anterior, se han detectado las siguientes entidades:
 
-- Mercado: corresponde a 
+- Mercado: representa a los mercados en los que cotizan los distintos valores.
+- Valor: es el valor que cotiza en un mercado
+- Valor histórico: serían las distintas cotizaciones que ha sufrido el valor a lo largo del tiempo.
+- Divisa: 
+- Divisa histórica
+- Clases y métodos
 
-### Clases y métodos
+### Arquitectura de clases
 
 ​		Nuestra arquitectura de clases se base en cuatro elementos básicos sobre los que se ha construido todo el sistema. En el diagrama de clases podemos ver más gráficamente cómo se estructuran las diferentes clases y cuales son sus propiedades y métodos. Algunas entidades son sólo de uso interno y como apoyo de otras, tal es el caso de los ID necesarios en algunos casos y cuyo tratamiento es un poco más complejo y específico. Los objetos serían los siguientes:
 

@@ -137,22 +137,37 @@ El código del proyecto estará estructurado en cuatro paquetes básicos que nos
 
 ![Diagrama E/R](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20E-R.png "Diagrama E/R")
 
-Como ya se ha mencionado en el epígrafe de clases, uno de los principales problemas a la hora de trabajar con JPA es establecer relaciones a nivel de ID de clase. Esto nos ha llevado a la creación de entidades intermedias de tipo ID o clave primaria que necesitamos a la hora de establecer dichas relaciones. 
+​		En base al proceso de modelización del punto anterior, podemos ver las siguientes entidades:
+
+- Mercado: representa a los mercados en los que cotizan los distintos valores. Se compone de: 
+  - CodMercado: clave
+  - Nombre.
+  - CodPais: país al que pertenece.
+  - Continente.
+- Valor: es el valor que cotiza en un mercado. Se compone de: 
+  - Idvalor: clave
+  - Nombre.
+  - Sector: industrial, teleco, banca, etc.
+  - CodMercado: mercado en el que cotiza.
+  - CodDivisa: divisa en la que cotiza.
+- Valor histórico: serían las distintas cotizaciones que ha sufrido el valor a lo largo del tiempo. Se compone de: 
+  - IdValor: clave
+  - FecValor: clave, fecha de la cotización.
+  - Cotización: en dolares US.
+- Divisa: moneda en la que cotiza un valor. Se compone de: 
+  - CodDivisa: clave
+  - Nombre.
+  - CodPais: país al que pertenece
+- Divisa histórica: distintas cotizaciones de la divisa a lo largo del tiempo. Se compone de: 
+  - CodDivisa: clave
+  - FecDivisa: fecha de la cotización de la divisa.
+  - Cotización: en dolares US.
+
+​		Como ya veremos más adelante, uno de los principales problemas a la hora de trabajar con JPA es establecer relaciones a nivel de ID de clase. Esto nos ha llevado a la creación de entidades intermedias de tipo ID o clave primaria que necesitamos a la hora de establecer dichas relaciones. 
 
 ![Clase Divisahist](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Divisahist.PNG "Clase Divisahist")
 
-La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta básicamente con una referencia a otro objeto (Divisa) y una propiedad más para identificarla univocamente, en este caso fecha.
-
-### Entidades
-
-​		En base al proceso de modelización del punto anterior, se han detectado las siguientes entidades:
-
-- Mercado: representa a los mercados en los que cotizan los distintos valores.
-- Valor: es el valor que cotiza en un mercado
-- Valor histórico: serían las distintas cotizaciones que ha sufrido el valor a lo largo del tiempo.
-- Divisa: 
-- Divisa histórica
-- Clases y métodos
+​		La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta básicamente con una referencia a otro objeto (Divisa) y una propiedad más para identificarla univocamente, en este caso fecha.
 
 ### Arquitectura de clases
 

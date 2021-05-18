@@ -119,7 +119,25 @@ El código del proyecto estará estructurado en cuatro paquetes básicos que nos
 
 #### Frontend. 
 
-Nuestra web contará básicamente con un archivo JS (dashboard.js) donde almacenaremos todo el código necesario y organizado en funciones reutilizables. Una ventana principal, index, será el inicio de la navegación y donde se nos ofrecerán las distintas funcionalidades.
+​		Nuestra web contará básicamente con un archivo JS (dashboard.js) donde almacenaremos todo el código necesario y organizado en funciones reutilizables. Una ventana principal, index, será el inicio de la navegación y donde se nos ofrecerán las distintas funcionalidades.
+
+### Modelado de datos.
+
+​		Al haber optado por JPA a la hora de gestionar y desarrollar nuestra capa de persistencia, la BB.DD. aparece reflejada como entidades que se relacionan entre sí utilizando etiquetas. De esta forma hemos evitado la creación de un script de creación propiamente dicho (create, alters, etc.) pero, por otra parte, hemos tenido que ser más cuidadosos a la hora del diseño de las entidades ya que son estas un reflejo de las tablas, como veremos más adelante. En cualquier caso, se ha diseñado un diagrama E/R como elemento previo y de ayuda para el diseño de las clases y su etiquetado.
+
+![Diagrama E/R](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20E-R.png "Diagrama E/R")
+
+Como ya se ha mencionado en el epígrafe de clases, uno de los principales problemas a la hora de trabajar con JPA es establecer relaciones a nivel de ID de clase. Esto nos ha llevado a la creación de entidades intermedias de tipo ID o clave primaria que necesitamos a la hora de establecer dichas relaciones. 
+
+![Clase Divisahist](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Divisahist.PNG "Clase Divisahist")
+
+La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta básicamente con una referencia a otro objeto (Divisa) y una propiedad más para identificarla univocamente, en este caso fecha.
+
+### Entidades
+
+​		En base al proceso de modelización del punto anterior, se han detectado las siguientes entidades:
+
+- Mercado: corresponde a 
 
 ### Clases y métodos
 
@@ -170,18 +188,6 @@ Para algunos puntos de entrada algo más específicos, como el de localización 
 #### Frontend
 
 ​		Las pruebas de la web se han realizado con varios navegadores (Chrome, Edge, etc.) a fin de confirmar que su aspecto y respuesta es la correcta. Gracias a estas pruebas se detectaron algunas incidencias importantes en el rendimiento de los accesos a la API. Por su importancia, han quedado  reflejadas en el apartado "Conclusiones".
-
-## Base de Datos.
-
-​		Al haber optado por JPA a la hora de gestionar y desarrollar nuestra capa de persistencia, la BB.DD. aparece reflejada como entidades que se relacionan entre sí utilizando etiquetas. De esta forma hemos evitado la creación de un script de creación propiamente dicho (create, alters, etc.) pero, por otra parte, hemos tenido que ser más cuidadosos a la hora del diseño de las entidades ya que son estas un reflejo de las tablas, como veremos más adelante. En cualquier caso, se ha diseñado un diagrama E/R como elemento previo y de ayuda para el diseño de las clases y su etiquetado.
-
-![Diagrama E/R](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20E-R.png "Diagrama E/R")
-
-Como ya se ha mencionado en el epígrafe de clases, uno de los principales problemas a la hora de trabajar con JPA es establecer relaciones a nivel de ID de clase. Esto nos ha llevado a la creación de entidades intermedias de tipo ID o clave primaria que necesitamos a la hora de establecer dichas relaciones. 
-
-![Clase Divisahist](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Divisahist.PNG "Clase Divisahist")
-
-La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta básicamente con una referencia a otro objeto (Divisa) y una propiedad más para identificarla univocamente, en este caso fecha.
 
 ## Desarrollo web
 

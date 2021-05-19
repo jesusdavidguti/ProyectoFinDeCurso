@@ -129,7 +129,13 @@ El código del proyecto estará estructurado en cuatro paquetes básicos que nos
 
 #### Frontend. 
 
-​		Nuestra web contará básicamente con un archivo JS (dashboard.js) donde almacenaremos todo el código necesario y organizado en funciones reutilizables. Una ventana principal, index, será el inicio de la navegación y donde se nos ofrecerán las distintas funcionalidades.
+​		Nuestra web constará de los siguientes elementos:
+
+- Código JavaScript:
+  - dashboard.js: contendrá la funcionalidad principla de acceso a la API, llamadas AJAX, así como el tratamiento de los datos recibidos.
+  - objetos.js: contiene las clases creadas para el tratamiento de la información.
+
+- Ventanas: una ventana principal, index, será el inicio de la navegación y donde se nos ofrecerán las distintas funcionalidades.
 
 ### Modelado de datos.
 
@@ -211,7 +217,7 @@ El código del proyecto estará estructurado en cuatro paquetes básicos que nos
 
 ​		Las pruebas en backend estarán gestionadas por Postman. Para cada una de los objetos/entidades se ha creado una batería de pruebas que engloba todo el ciclo de vida del mismo (CRUD). Además, se incluyen llamadas a métodos de carga masiva, aleatoria y parametrizable para cada una de dichas entidades y así facilitar la casuística de las pruebas. Estas baterías de pruebas, agrupadas por entidad en carpetas, son ejecutables masivamente utilizando la herramienta "Runner" de Postman. No se descarta realizar pruebas unitarias más específicas desde el IDE basándonos en Junit si se dispone en un futuro de tiempo para ello.
 
-Para algunos puntos de entrada algo más específicos, como el de localización de valores que más suben o bajan entre dos fechas, se ha realizado una prueba más específica para detectar posibles errores en los valores devueltos.
+​		Para algunos puntos de entrada algo más específicos, como el de localización de valores que más suben o bajan entre dos fechas, se ha realizado una prueba más específica para detectar posibles errores en los valores devueltos.
 
 ![Pruebas con Postman](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Postman.PNG "Pruebas con Postman")
 
@@ -290,10 +296,13 @@ Para algunos puntos de entrada algo más específicos, como el de localización 
       - /apiValoresHist/valoreshist: actualiza los datos históricos para un determinado valor que le llegue en el cuerpo de la petición.
     - DELETE
       - /apiValoresHist/valoreshist/{valorhistId, fec}: borra los datos históricos de un valor a una fecha determinada.
+  
 - FrontEnd
 
   ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.
 
+  ​		Poner las url de acceso			completar
+  
   ![Maquetación](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png "Maquetación")
 
 ## Control de versiones.

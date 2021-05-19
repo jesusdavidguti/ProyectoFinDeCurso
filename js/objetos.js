@@ -22,6 +22,8 @@ class montaUrl{
       this.ruta = this.rutaGlobal;
     }
 
+    // Métodos GET
+    //
     // Divisas
 
     getDivisashistBetweenFecs (paramIdDivisa,paramFecDesde, paramFecHasta){    
@@ -30,13 +32,17 @@ class montaUrl{
                                                                   +paramFecHasta);
     }
 
+    getDivisaId(parDivisaNombre){
+        return (this.ruta+"apiDivisas/divisas/" + parDivisaNombre +"/")
+    }
+
     // Valores 
 
     getValores(){
         return (this.ruta+"apiValores/valores");
     }
 
-    getValor(paramIdValor){
+    getValorId(paramIdValor){
         return (this.ruta+"apiValores/valores/"+paramIdValor);
     }
 
@@ -55,6 +61,4 @@ class montaUrl{
         return (this.ruta+"apiValoresHist/valoreshistTopLowValor/1/"+paramFecDesde+"/"
                                                                     +paramFecHasta);
     }
-
-
 }

@@ -52,25 +52,31 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="divisas.html">
+            <a class="nav-link" href="#divisas">
               <span data-feather="dollar-sign"></span>
               Divisas
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="mercados.html">
+            <a class="nav-link" href="#">
               <span data-feather="shopping-cart"></span>
               Mercados
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="#valores">
               <span data-feather="tag"></span>
-              Valores
+              Evolución valores
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#compraValores">
+              <span data-feather="tag"></span>
+              Compra valores
+            </a>
+          </li>          
         </ul>
-
+        
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
           <span>Saved reports</span>
           <a class="link-secondary" href="#" aria-label="Add a new report">
@@ -108,22 +114,22 @@
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Divisas</h1>
+        <h1 id="divisas" class="h2">Divisas</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button> -->
           </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+<!--           <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
             This week
-          </button>
+          </button> -->
         </div>
       </div>
 
       <canvas class="my-4 w-100" id="divisasChart" width="900" height="380"></canvas>
 
-      <h2>Resumen valores</h2>
+      <h2 id= "tablaResumen">Resumen valores</h2>
       <table id= "tablaValores" class="table table-striped">
         <thead>
           <tr>
@@ -186,16 +192,11 @@
       </table>
       
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Valores</h1>
+        <h1 id="valores" class="h2">Evolución de valores</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           
-
-          <!--Date picker -->
-          <!-- <input type="date" id="fechaValor" name="fechaValor" onchange="cambiaFecha();"> -->
-
           <select id="selectValor" onchange="cambiaValor()" class="form-select" aria-label="Default select example">
             <option selected>Seleccione valor</option>
-
           </select>        
           <select id="selectPeriodicidad" onchange="cambiaPeriodicidad()" class="form-select" aria-label="Default select example">
             <option selected>Seleccione periodicidad</option>
@@ -212,11 +213,21 @@
 
       <canvas class="my-4 w-100" id="valoresChart" width="900" height="380"></canvas>
 
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 id="compraValores" class="h2">Compra valores</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          
+          <label for="cantidaValores">Cantidad de acciones</label>
+          <input id="cantidaValores" type="number" min="1"></input>
+
+        </div>
+      </div>
+
+      <canvas class="my-4 w-100" id="compraValoresChart" width="900" height="380"></canvas>
+
     </main>
   </div>
 </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>    
@@ -227,7 +238,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>    
     
     <script src="js/objetos.js"></script>      
-    <script src="dashboard.js"></script>
+    <script src="js/dashboard.js"></script>
 
   </body>
 </html>

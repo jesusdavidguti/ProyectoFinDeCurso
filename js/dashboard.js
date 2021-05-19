@@ -1,11 +1,10 @@
-
+// Globales
 var valoresChart;
-// Dominios de llamada a la API
-var dominioLocal = "http://localhost:8080/";
+var compraValoresChart;
 // Arrays
 var arrDias = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
-var arrMeses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
-                'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+//var arrMeses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+//                'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 var arrValoresPintados = [];
 // Objetos
 var objetoUrl = new montaUrl();
@@ -81,6 +80,30 @@ var objetoUrl = new montaUrl();
     }
   })
 
+  // Chart compra de valores
+  var ctxCompraValores = document.getElementById('compraValoresChart')
+  var compraValoresChart = new Chart(ctxCompraValores, {
+    type: 'bar',
+    data: {      
+     },
+    options: {    
+      scales: {
+        yAxes: [{
+          ticks: {
+            min: 0,
+            max: 3,
+            stepSize: 0.2,
+            display: true,
+            beginAtZero: true,            
+          }
+        }]
+      },
+      legend: {
+        display: true
+      }
+    }
+  })  
+
   // Pintamos tres divisas en la semana actual
   obtenerDatosChartDivisa(function(result){  
 
@@ -111,10 +134,11 @@ var objetoUrl = new montaUrl();
  
   },objetoUrl.getValoreshistLowValor(fechaHasta(3),fechaHasta(0)));    
 
-  // Cargamos los valores en la dropdown
+  // Cargamos los valores en la dropdown para selección.
   cargarValoresDropdown();
-
+  // Propagamos los objetos.
   setChartValores(valoresChart);
+  setChartCompraValores(compraValoresChart);
 })()
 
 //************************************************/
@@ -140,8 +164,6 @@ function cargarValoresDropdown(){
 // Evaluamos el valor
 //************************************************/
 function cambiaValor(){
-  //let myselect = document.getElementById("selectValor");
-  //alert(myselect.options[myselect.selectedIndex].value);
   procesoRecuperaValor();
 }
 
@@ -149,8 +171,6 @@ function cambiaValor(){
 // Evaluamos la periocidad
 //************************************************/
 function cambiaPeriodicidad(){
-  //let myselect = document.getElementById("selectPeriodicidad");
-  //alert(myselect.options[myselect.selectedIndex].value);
   procesoRecuperaValor();  
 }
 
@@ -163,7 +183,7 @@ function procesoRecuperaValor(){
   let selectValor = document.getElementById("selectValor");
   let selectPeriodo = document.getElementById("selectPeriodicidad");
   let idValor = selectValor.options[selectValor.selectedIndex].value;
-  let idPeriodo = selectPeriodo.options[selectPeriodo.selectedIndex].value;
+  let idPeriodo =  parseInt(selectPeriodo.options[selectPeriodo.selectedIndex].value);
   let idValorText = selectValor.options[selectValor.selectedIndex].innerText;
   let idPeriodoText = selectPeriodo.options[selectPeriodo.selectedIndex].innerText;
 
@@ -173,17 +193,17 @@ function procesoRecuperaValor(){
     if (!arrValoresPintados.includes(idValor)){
 
       arrValoresPintados.push(idValor);      
-      // Datos históricos del valor
-      obtenerDatosHistChartValor(function(result){  
-        // Datos del valor
+      // Datos históricos de cotización del valor
+      obtenerDatosHistChartValor(function(resultDatos,resultPeriodo){  
+        // Datos del valor en si.
         obtenerDatosValores(function(resultValor){    
           let jsonValor = resultValor;
           
-          addDatosValor(jsonValor, result, valoresChart);    
+          addDatosValor(jsonValor, resultDatos, resultPeriodo, valoresChart);    
 
-        },objetoUrl.getValor(idValor));  
+        },objetoUrl.getValorId(idValor));  
       
-      },objetoUrl.getValoreshistBetweenFecs(idValor,fechaHasta(3),fechaHasta(0)));
+      },objetoUrl.getValoreshistBetweenFecs(idValor,fechaHasta(idPeriodo),fechaHasta(0)));
     }
   }
 }
@@ -221,9 +241,9 @@ function pintaDatosMin(paramDatosMin){
 //************************************************/
 // Añadimos y actualizamos datos al chart valores
 //************************************************/
-function addDatosValor(paramValor, paramData, paramChart){
+function addDatosValor(paramValor, paramData, paramPeriodo, paramChart){
 
-  paramChart.data.labels=arrDias;
+  paramChart.data.labels=paramPeriodo;
 
   paramChart.data.datasets.push({      
       label: paramValor.nombre,
@@ -277,7 +297,6 @@ function removeData(chart) {
 //************************************************/
 function obtenerDatosMaxMin(callback, parUrl){
   let xhr = new XMLHttpRequest();
-  //let urlMaxMin = dominioLocal + parUrl;
   let urlMaxMin = parUrl;  
   xhr.open("GET", urlMaxMin, true);
   xhr.setRequestHeader("Content-type","application/json");
@@ -295,7 +314,7 @@ function obtenerDatosMaxMin(callback, parUrl){
 //************************************************/
 function obtenerNombreDivisa(callback, parDivisaNombre){
   let xhr3 = new XMLHttpRequest();
-  let url = dominioLocal + "apiDivisas/divisas/" + parDivisaNombre;
+  let url = objetoUrl.getDivisaId(parDivisaNombre);
   xhr3.open("GET", url, true);
   xhr3.setRequestHeader("Content-type","application/json");
   xhr3.onreadystatechange = function () {
@@ -314,7 +333,7 @@ function obtenerNombreDivisa(callback, parDivisaNombre){
 //************************************************/
 function obtenerValor(callback, parIdValor){
   let xhr6 = new XMLHttpRequest();
-  let url = dominioLocal + "apiValores/valores/" + parIdValor;
+  let url = objetoUrl.getValorId(parIdValor);  
   xhr6.open("GET", url, true);
   xhr6.setRequestHeader("Content-type","application/json");
   xhr6.onreadystatechange = function () {
@@ -333,7 +352,6 @@ function obtenerValor(callback, parIdValor){
 //************************************************/
 function obtenerDatosChartDivisa(callback, parUrl){
   let xhr2 = new XMLHttpRequest();
-  //let url = dominioLocal + parUrl;
   let url = parUrl;  
   xhr2.open("GET", url, true);
   xhr2.setRequestHeader("Content-type","application/json");
@@ -355,10 +373,11 @@ function obtenerDatosChartDivisa(callback, parUrl){
 
 //************************************************/
 // Llamada a la API para el chart de valores hist.
+// Devuelve los datos y la fecha de cada dato en
+// sendos arrays.
 //************************************************/
 function obtenerDatosHistChartValor(callback, parUrl){
   let xhr = new XMLHttpRequest();
-  //let url = dominioLocal + parUrl;
   let url = parUrl;  
   xhr.open("GET", url, true);
   xhr.setRequestHeader("Content-type","application/json");
@@ -368,11 +387,15 @@ function obtenerDatosHistChartValor(callback, parUrl){
 
           let jsonValorHist = JSON.parse(xhr.responseText);
           let valorHist;
+          let fecha;
           let array_valorHist = new Array();
+          let array_fechas = new Array();
           for (valorHist of jsonValorHist){
               array_valorHist.push(valorHist.cotizacionUSdolar); 
+              fecha = valorHist.valorHistID.fecValor              
+              array_fechas.push(fecha.substring(0,10));
           }
-          return callback (array_valorHist);        
+          return callback (array_valorHist, array_fechas);        
       }
   }
   xhr.send(); 
@@ -383,7 +406,6 @@ function obtenerDatosHistChartValor(callback, parUrl){
 //************************************************/
 function obtenerDatosValores(callback, parUrl){
   let xhr4 = new XMLHttpRequest();
-  //let url = dominioLocal + parUrl;
   let url = parUrl;  
   xhr4.open("GET", url, true);
   xhr4.setRequestHeader("Content-type","application/json");
@@ -399,7 +421,7 @@ function obtenerDatosValores(callback, parUrl){
 }
 
 //************************************************/
-// Color en función de divisa
+// Color en función de divisa.
 //************************************************/
 function colorDivisa(paramDivisa) {
   // Colores
@@ -447,13 +469,19 @@ function colorDivisa(paramDivisa) {
 
 //************************************************/
 // Devuelve la fecha "hasta" en función de la 
-// periodicidad o la fecha de hoy.
+// periodicidad seleccionada.
+// Devuelve la fecha de hoy por defecto
 //************************************************/
 
 function fechaHasta(paramPeriodicidad){
 
   let dateHoy = new Date();
   let fechaCalculada = new Date();
+
+  // Trampa
+  fechaCalculada.setDate(fechaCalculada.getDate() + 1);
+  dateHoy.setDate(dateHoy.getDate() + 1);
+  // Trampa  
 
   let fechaHoy = dateHoy;
 
@@ -464,11 +492,11 @@ function fechaHasta(paramPeriodicidad){
           break;  
       // 5 días
       case 2:
-          fechaCalculada.setDate(fechaCalculada.getDate() - 5);
+          fechaCalculada.setDate(fechaCalculada.getDate() - 4);
           break;    
       // 1 semana
       case 3:
-          fechaCalculada.setDate(fechaCalculada.getDate() - 7);
+          fechaCalculada.setDate(fechaCalculada.getDate() - 6);
           break;
       // Mensual
       case 4:
@@ -485,7 +513,6 @@ function fechaHasta(paramPeriodicidad){
       // Hoy
       default:
           fechaCalculada = fechaHoy
-          //console.log("fechaCalculada default:"+fechaCalculada);          
           break;
     }
     return fechaddMMyyyy(fechaCalculada);
@@ -504,10 +531,17 @@ function fechaddMMyyyy(paramDate){
 }
 
 //************************************************/
-// Hacemos que el chart sea global
+// Hacemos que el chart de valores sea global
 //************************************************/
 function setChartValores(paramValoresChart){
 
   valoresChart = paramValoresChart;
 }
 
+//************************************************/
+// Hacemos que el chart de valores sea global
+//************************************************/
+function setChartCompraValores(paramCompraValoresChart){
+
+  compraValoresChart = paramCompraValoresChart;
+}

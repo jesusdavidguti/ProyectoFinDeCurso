@@ -64,11 +64,14 @@ public class ValorhistDAOImpl implements ValorhistDAO {
 	@Override
 	public List<Valorhist> findByIdBetweenFecs(int id, String fecD, String fecH) {
 		DateFormat sourceFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");		
+		//DateFormat sourceFormat = new SimpleDateFormat("yyyy-MM-dd");		
 		Date inicio = null;
 		Date fin = null;
 				
 		String fechaDesde = fecD.substring(4, 8) + "-" + fecD.substring(2, 4) + "-" + fecD.substring(0, 2) + " 00:00:00";
 		String fechaHasta = fecH.substring(4, 8) + "-" + fecH.substring(2, 4) + "-" + fecH.substring(0, 2) + " 00:00:00";		
+		//String fechaDesde = fecD.substring(4, 8) + "-" + fecD.substring(2, 4) + "-" + fecD.substring(0, 2);
+		//String fechaHasta = fecH.substring(4, 8) + "-" + fecH.substring(2, 4) + "-" + fecH.substring(0, 2);		
 		  				
 		try {
 			inicio = sourceFormat.parse(fechaDesde);
@@ -84,7 +87,8 @@ public class ValorhistDAOImpl implements ValorhistDAO {
    	    //System.out.println("fecIni: "+fecIni);
    	    //System.out.println("fecFin: "+fecFin);   	    
    	    
-		TypedQuery<Valorhist> query = entityManager.createQuery("select v from valorhist v where v.valorHistID.valor.idValor = ?1 and v.valorHistID.fecValor between ?2 and ?3", Valorhist.class);
+		//TypedQuery<Valorhist> query = entityManager.createQuery("select v from valorhist v where v.valorHistID.valor.idValor = ?1 and v.valorHistID.fecValor between ?2 and ?3", Valorhist.class);
+		TypedQuery<Valorhist> query = entityManager.createQuery("select v from valorhist v where v.valorHistID.valor.idValor = ?1 and (v.valorHistID.fecValor >= ?2 and v.valorHistID.fecValor <= ?3)", Valorhist.class);		
 	    query.setParameter(1, id);
 	    query.setParameter(2, fecIni, TemporalType.TIMESTAMP);
 	    query.setParameter(3, fecFin, TemporalType.TIMESTAMP);	    

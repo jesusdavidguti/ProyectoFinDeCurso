@@ -115,7 +115,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
 
 #### Backend. 
 
-El código del proyecto estará estructurado en cuatro paquetes básicos que nos darán una idea bastante clara de la jerarquía de los objetos que contienen. Son los siguientes:
+​		El código del proyecto estará estructurado en cuatro paquetes básicos que nos darán una idea bastante clara de la jerarquía de los objetos que contienen. Son los siguientes:
 
 - Entidades: representarán a la tupla de la BBDD y contendrán los constructores y métodos básicos de acceso a sus propiedades. En algunos casos también contendrá a las clases "clave" que nos servirán para identificar al objeto univocamente utilizando otro objeto contenido en el.
 
@@ -129,7 +129,7 @@ El código del proyecto estará estructurado en cuatro paquetes básicos que nos
 
 #### Frontend. 
 
-​		Nuestra web constará de los siguientes elementos:
+​		Nuestra web constará de los siguientes elementos a nivel de desarrollo:
 
 - Código JavaScript:
   - dashboard.js: contendrá la funcionalidad principla de acceso a la API, llamadas AJAX, así como el tratamiento de los datos recibidos.

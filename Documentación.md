@@ -88,12 +88,19 @@
 
 ## Implantación.
 
-La implantación deberá ser realizada en las siguientes fases para ir comprobando el correcto funcionamiento antes de pasar a la siguiente fase.
+​		La implantación deberá ser realizada en las siguientes fases para ir comprobando el correcto funcionamiento antes de pasar a la siguiente fase.
 
 1. BB.DD: crearemos nuestra base de datos en GearHost indicando que se trata de una BB.DD de MySql. Tomaremos la cadena de conexión que nos proporcione este alojamiento, así como el usuario y la contraseña que decidamos, para incorporarlos a los parámetros de configuración de nuestra API.
+
 2. API: crearemos en Heroku nuestra aplicación dándola de alta y, utilizando la rama de backend de github, realizaremos el despliegue
+
 3. Pruebas: comprobaremos mediante la batería de pruebas creadas en Postman si la API responde correctamente a nuestras peiticones. Las pruebas habrá que redirigirlas hacia la nueva URL que nos proporcione Heroku en vez de hacia la ubicación local de nuestra máquina.
+
 4. Web: desde Github realizaremos el despliegue de la aplicación web en Vercel y comprobaremos si las llamadas Ajax a la API así como la respuesta de la página es la correcta.
+
+   El siguiente esquema condensa la forma en la que se va a realizar el despliegue:
+
+   ![Despliegue](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Despliegue.png?raw=true "Despliegue")
 
 ## Programación.
 
@@ -319,7 +326,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
 
 ## Control de versiones.
 
-Github será nuestra herraminta de versionado y de mantenimiento de las distintas ramas del desarrollo. Estas ramas nos ayudan a manterner ordenado y estructurado todo el trabajo realizado durante el desarrollo y, en última instancia, nos ayudarán a realizar el desplieque. Las ramas, tal y como se puede ver en la imagen de más abajo, son cinco:
+​		Github será nuestra herraminta de versionado y de mantenimiento de las distintas ramas del desarrollo. Estas ramas nos ayudan a manterner ordenado y estructurado todo el trabajo realizado durante el desarrollo y, en última instancia, nos ayudarán a realizar el desplieque. Las ramas, tal y como se puede ver en la imagen de más abajo, son cinco:
 
 - Main: sería la presentación del proyecto y para información general del mismo
 - Frontend: contendrá la parte web ejecutada por el navegador(html, js, etc).
@@ -342,7 +349,7 @@ Github será nuestra herraminta de versionado y de mantenimiento de las distinta
 
 # Conclusiones
 
-La ejecución de este proyecto así como su puesta en marcha ha hecho que determinadas conclusiones, aun siendo obvias, hayan sido más evidentes aún. Veamos algunas.
+​		La ejecución de este proyecto así como su puesta en marcha ha hecho que determinadas conclusiones, aun siendo obvias, hayan sido más evidentes aún. Veamos algunas.
 
 - Generales
   - Una vez  más se cumple el dicho de que la *primera solución que pensamos no es la mejor casi nunca.*

@@ -183,7 +183,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
 
 ​		Como ya veremos más adelante, uno de los principales problemas a la hora de trabajar con JPA es establecer relaciones a nivel de ID de clase. Esto nos ha llevado a la creación de entidades intermedias de tipo ID o clave primaria que necesitamos a la hora de establecer dichas relaciones. 
 
-![Clase Divisahist](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Divisahist.PNG "Clase Divisahist")
+![Clase Divisahist](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Divisahist.PNG?raw=true "Clase Divisahist")
 
 ​		La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta básicamente con una referencia a otro objeto (Divisa) y una propiedad más para identificarla univocamente, en este caso fecha.
 
@@ -221,7 +221,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
 
   El siguiente esquema recoge las distintas clases y sus relaciones así como los métodos más específicos.
 
-![Diagrama de clases](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20clases.png "Diagrama de clases")
+![Diagrama de clases](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20clases.png?raw=true "Diagrama de clases")
 
 ### Pruebas
 
@@ -231,7 +231,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
 
 ​		Para algunos puntos de entrada algo más específicos, como el de localización de valores que más suben o bajan entre dos fechas, se ha realizado una prueba más específica para detectar posibles errores en los valores devueltos.
 
-![Pruebas con Postman](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Postman.PNG "Pruebas con Postman")
+![Pruebas con Postman](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Postman.PNG?raw=true "Pruebas con Postman")
 
 #### Frontend
 
@@ -315,7 +315,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
 
   ​		Poner las url de acceso			completar
   
-  ![Maquetación](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png "Maquetación")
+  ![Maquetación](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png?raw=true "Maquetación")
 
 ## Control de versiones.
 
@@ -327,7 +327,7 @@ Github será nuestra herraminta de versionado y de mantenimiento de las distinta
 - Doc: toda la documentación que se genere durante el proyecto irá en esta rama, bien en formato .md bien en pdf
 - Img: las imágenes que utilizamos para ilustrar el proyecto, así como cualquier otra, irá ubicada aquí.
 
-![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas.PNG "Ramas en Github")
+![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas.PNG?raw=true "Ramas en Github")
 
 # Dificultades encontradas
 

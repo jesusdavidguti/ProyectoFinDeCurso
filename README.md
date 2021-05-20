@@ -20,6 +20,10 @@ Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo
 
 ![Clase DivisahistID](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/DivisahistID.PNG "Clase DivisahistID")
 
+**Clase Url**
+
+![Clase DivisahistID](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/VSobjeto.PNG?raw=true "Clase Url")
+
 **Pruebas con Postman**
 
 ![Pruebas con Postman](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Postman.PNG "Pruebas con Postman")

@@ -339,7 +339,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
 # Dificultades encontradas
 
 - FrontEnd
-  - A la hora de usar Ajax para recuperar y mostrar datos hay que tener en cuenta la "rapidez" con que se ejecutan las sentencias. Así, para mostrar datos o actualizar un objeto con datos procedentes de Ajax es necesario hacer que los métodos que pintas los datos no se ejecuten antes de que Ajax haya finalizado su ejecución y devuelto los datos.
+  - A la hora de usar Ajax para recuperar y mostrar datos hay que tener en cuenta la "rapidez" con que se ejecutan las sentencias. Así, para mostrar datos o actualizar un objeto con datos procedentes de Ajax es necesario hacer que los métodos que pintan los datos no se ejecuten antes de que Ajax haya finalizado su ejecución y devuelto los datos.
   - El objeto para dibujar gráficas, llamado "Chart", es muy útil pero presenta ciertas características en su manejo que debemos respetar y aprender para su correcto uso. Podemos trabajar con el como si fuese un objeto "plano", definiendo sus propiedades una a una., o bien acceder a las mismas con la notación punto. Es esta última  opción por la que nos hemos decantado a pesar de que sus propiedades están muy agrupadas y que el cambio de una sola puede afectar al resto.
   - Las versiones de Bootstrrap hacen que determinados componentes funcionen o no correctamente cuando iteraccionan con otros.
 - BackEnd

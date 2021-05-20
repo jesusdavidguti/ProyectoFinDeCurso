@@ -99,6 +99,20 @@ La implantación deberá ser realizada en las siguientes fases para ir comproban
 
 ### Guía de estilo
 
+​		Eclipse nos proporciona opciones para personalizar, si lo deseamos, casi cualquier aspecto del proceso de codificación. En nuestro caso, hemos optado por seguir el estilo marcado por la herramienta, ya de por sí, es un estandar. Tabulaciones, apertura y cierre de llaves, organización y orden de librerías son sólo algunos de los aspectos que podemos parametrizar. 
+
+![Formateo de código Java](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/EclipseFormatter.PNG?raw=true "Formateador")
+
+​		La limpieza de código es otro aspecto que podemos controlar automatizando determinadas tareas rutinarias.
+
+![Limpieza de código Java](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/EclipseClean.PNG?raw=true "Reglas de limpieza")
+
+​		Por último, y a modo de ejemplo, vemos que también es posible la organizació de los paquetes del desarrollo siguiendo una determinada pauta.
+
+![Paquetes Java](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/EclipseOrganizer.PNG?raw=true "Organización de paquetes")
+
+
+
 Completar.
 
 PSR-01 y PSR-02+
@@ -108,8 +122,6 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.m
 
 10:28 a. m.
 github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
-
-
 
 ### Organización del código
 
@@ -141,7 +153,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
 
 ​		Al haber optado por JPA a la hora de gestionar y desarrollar nuestra capa de persistencia, la BB.DD. aparece reflejada como entidades que se relacionan entre sí utilizando etiquetas. De esta forma hemos evitado la creación de un script de creación propiamente dicho (create, alters, etc.) pero, por otra parte, hemos tenido que ser más cuidadosos a la hora del diseño de las entidades ya que son estas un reflejo de las tablas, como veremos más adelante. En cualquier caso, se ha diseñado un diagrama E/R como elemento previo y de ayuda para el diseño de las clases y su etiquetado.
 
-![Diagrama E/R](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20E-R.png "Diagrama E/R")
+![Diagrama E/R](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20E-R.png?raw=true "Diagrama E/R")
 
 ​		En base al proceso de modelización del punto anterior, podemos ver las siguientes entidades:
 

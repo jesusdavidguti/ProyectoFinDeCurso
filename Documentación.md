@@ -18,11 +18,11 @@
 
 
 
-# Introducción
+# 1. Introducción
 
 ​		El objetivo de este proyecto es el desarrollo de una aplicación web capaz de almacenar y mostrar información de valores bursátiles y su evolución en el tiempo. La aplicación se podrá ejecutar en los principales navegadores así como en distintos dispositivos móviles. Su funcionalidad será muy básica en un primer momento por lo que será susceptible de mejoras en un futuro. Esta funcionalidad básica es lo que hace que vaya orientada al gran público o a personas con pocos o ningún conocimiento sobre infromática y que sólo dispongan de un dispositivo móvil o tablet.
 
-# Objetivos
+# 2. Objetivos
 
 ​		El objetivo general es tener una app capaz de mostrar y comparar información relativa a valores bursátiles y divisas. Además, hacer que dicha información sea accesible por distintos sistemas. La información será recogida y almacenada por un sistema back-end, que también desarrollaremos, y que permitirá no sólo el acceso sino también su mantenimiento (CRUD).
 
@@ -40,7 +40,7 @@
   - Permita consultar el historial de un valor, mostrando gráficas con su evolución en 1 día, 5 días, una semana, un mes, 6 meses y un año. Se podrá consultar más de un valor a la vez.
   - Permita definir una cartera de inversión (añadir cuántas acciones se dispone de cada valor) y muestre gráficas e información sobre la composición de la cartera, su precio y su historial.
 
-# Análisis previo.
+# 3. Análisis previo.
 
 ​		Para la consecución de nuestros objetivos deberemos contar con un software capaz de acceder a un sistema remoto de almacenamiento donde tendremos los datos. Deberemos contar también con un gestor de BB.DD (SGBD) y las herramientas necesarias para interactuar con el. La interfaz con el usuario, o front-end, será independiente del sistema de gestión de los datos, de hecho tendrán alojamiento en distintos servidores. 
 
@@ -55,7 +55,7 @@
 - Backend: posibilidades de uso de frameworks tipo Symfony (PHP), Angular(typescrpt) o Springboot(JAVA). Todos son de amplio uso y funcionalidades más que avanzadas, sin embargo, en aras de una mayor rapidez en el desarrollo y una curva de aprendizaje lo más pronunciada posible, utilizaremos Springboot.
 - Frontend: aquí son también amplias las posibilidades en cuanto a la implementación de una interfaz de usuario, pero optaremos por una solución convencional y a la vez muy extendida: Javascript
 
-# Recursos
+# 4. Recursos
 
 ​		Para llevar a cabo este proyecto, necesitaremos contar con los siguientes recursos:
 
@@ -84,9 +84,9 @@
   - Despliegue SGBD: [Gearhost](https://www.gearhost.com/)																																																																														
 
 
-# Desarrollo del proyecto.
+# 5. Desarrollo del proyecto.
 
-## Implantación.
+## 5.1 Implantación.
 
 ​		La implantación deberá ser realizada en las siguientes fases para ir comprobando el correcto funcionamiento antes de pasar a la siguiente fase.
 
@@ -102,9 +102,9 @@
 
    ![Despliegue](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Despliegue.png?raw=true "Despliegue")
 
-## Programación.
+## 5.2 Programación.
 
-### Guía de estilo
+### 5.2.1 Guía de estilo
 
 ​		Eclipse nos proporciona opciones para personalizar, si lo deseamos, casi cualquier aspecto del proceso de codificación. En nuestro caso, hemos optado por seguir el estilo marcado por la herramienta, ya de por sí, es un estandar. Tabulaciones, apertura y cierre de llaves, organización y orden de librerías son sólo algunos de los aspectos que podemos parametrizar. 
 
@@ -118,9 +118,11 @@
 
 ![Paquetes Java](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/EclipseOrganizer.PNG?raw=true "Organización de paquetes")
 
+​		Por otra parte, señalamos a continuación las reglas de estilo más reseñables que se han puesto en práctica durante el desarrollo:
+
+Completar
 
 
-Completar.
 
 PSR-01 y PSR-02+
 
@@ -130,7 +132,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.m
 10:28 a. m.
 github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
 
-### Organización del código
+### 5.2.2 Organización del código
 
 #### Backend. 
 
@@ -156,7 +158,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
 
 - Ventanas: una ventana principal, index, será el inicio de la navegación y donde se nos ofrecerán las distintas funcionalidades.
 
-### Modelado de datos.
+### 5.2.3 Modelado de datos.
 
 ​		Al haber optado por JPA a la hora de gestionar y desarrollar nuestra capa de persistencia, la BB.DD. aparece reflejada como entidades que se relacionan entre sí utilizando etiquetas. De esta forma hemos evitado la creación de un script de creación propiamente dicho (create, alters, etc.) pero, por otra parte, hemos tenido que ser más cuidadosos a la hora del diseño de las entidades ya que son estas un reflejo de las tablas, como veremos más adelante. En cualquier caso, se ha diseñado un diagrama E/R como elemento previo y de ayuda para el diseño de las clases y su etiquetado.
 
@@ -194,7 +196,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
 
 ​		La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta básicamente con una referencia a otro objeto (Divisa) y una propiedad más para identificarla univocamente, en este caso fecha.
 
-### Arquitectura de clases
+### 5.2.4 Arquitectura de clases
 
 ​		Nuestra arquitectura de clases se base en cuatro elementos básicos sobre los que se ha construido todo el sistema. En el diagrama de clases podemos ver más gráficamente cómo se estructuran las diferentes clases y cuales son sus propiedades y métodos. Algunas entidades son sólo de uso interno y como apoyo de otras, tal es el caso de los ID necesarios en algunos casos y cuyo tratamiento es un poco más complejo y específico. Los objetos serían los siguientes:
 
@@ -230,7 +232,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
 
 ![Diagrama de clases](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20clases.png?raw=true "Diagrama de clases")
 
-### Pruebas
+### 5.2.5 Pruebas
 
 #### Backend
 
@@ -244,7 +246,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
 
 ​		Las pruebas de la web se han realizado con varios navegadores (Chrome, Edge, etc.) a fin de confirmar que su aspecto y respuesta es la correcta. Gracias a estas pruebas se detectaron algunas incidencias importantes en el rendimiento de los accesos a la API. Por su importancia, han quedado  reflejadas en el apartado "Conclusiones".
 
-## Desarrollo web
+## 5. 3 Desarrollo web
 
 - Backend
 
@@ -324,7 +326,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
   
   ![Maquetación](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png?raw=true "Maquetación")
 
-## Control de versiones.
+## 5.4 Control de versiones.
 
 ​		Github será nuestra herraminta de versionado y de mantenimiento de las distintas ramas del desarrollo. Estas ramas nos ayudan a manterner ordenado y estructurado todo el trabajo realizado durante el desarrollo y, en última instancia, nos ayudarán a realizar el desplieque. Las ramas, tal y como se puede ver en la imagen de más abajo, son cinco:
 
@@ -336,7 +338,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
 
 ![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas.PNG?raw=true "Ramas en Github")
 
-# Dificultades encontradas
+# 6. Dificultades encontradas
 
 - FrontEnd
   - A la hora de usar Ajax para recuperar y mostrar datos hay que tener en cuenta la "rapidez" con que se ejecutan las sentencias. Así, para mostrar datos o actualizar un objeto con datos procedentes de Ajax es necesario hacer que los métodos que pintan los datos no se ejecuten antes de que Ajax haya finalizado su ejecución y devuelto los datos.
@@ -347,7 +349,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
   - El uso de un identificador que requiera una entidad hace que se tengan que tener en cuenta una serie de aspectos a la hora de utilizarlo. El más importante es el hecho de que para poder realizar acciones de comparación es necesario añadir métodos específicos para comparación de objetos como si fuesen un ID.
   - El envío de fechas a la API se ha relizado en formato ddMMyyyy. Se ha optado por la simplicidad del dato inicial de entrada y su posterior tratamiento en la API.
 
-# Conclusiones
+# 7. Conclusiones
 
 ​		La ejecución de este proyecto así como su puesta en marcha ha hecho que determinadas conclusiones, aun siendo obvias, hayan sido más evidentes aún. Veamos algunas.
 
@@ -361,7 +363,7 @@ github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standar
   - Las interfaces de los objetos DAO pueden ser exactamente iguales, por lo que sólo habría que hacer una. Sin embargo, las particularidades de cada objeto hacen que sea necesario introducir variaciones que poco o nada tienen que ver con la funcionalidad del resto de objetos. Es por ello que es preferible hacer una interfaz para cada objeto DAO.
   - La BB.DD. no genera claves externas al uso una vez la creamos. Son JPA y Spring los que, mediante anotaciones, se encargan de generar dichas relaciones cuando activamos el servicio por vez primera. De hecho, las tablas son creadas en la BB.DD. como ficheros simples sin relación alguna y que podemos borrar desde el gestor de BB.DD. sin tener avisos de fallos de integridad.
 
-# Posibles mejoras
+# 8. Posibles mejoras
 
 Las posibles mejoras podrían ser infinitas una vez visto el potencial que la API nos da. Algunas podrían ser las siguientes:
 
@@ -369,9 +371,10 @@ Las posibles mejoras podrían ser infinitas una vez visto el potencial que la AP
   - Area de mantenimiento: donde se podrán mantener las entidades padre (divisa, valor, mercado, etc.)
   - Moneda de uso: utilizamos el dolar americano por defecto para almacenar, pero podríamos mostrar la información en cualquier otra moneda simplemente convirtiendo los valores antes de ser mostrados.
 - BackEnd
+  - Carga de datos más parametrizada: para una sola entidad, limitando los importes máximo y mínimo, etc.
   - Distintas consultas que nos darán información más detallada de los valores en sus ciclos de subida y bajada.
 
-# Fuentes de información
+# 9. Fuentes de información
 
 La información a consultar ha sido muy amplia y precisa. En la rama main del [Proyecto en Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/main/README.md) aparece de forma más detallada cada una de dichas fuentes. La consulta de webs de programadores tales como StrackOverflow ha sido de gran ayuda y, a la vez, un fuente de dudas ya que el enfoque a un mismo problema ya resuelto puede ser muy variado.
 

@@ -1,11 +1,10 @@
 // Globales
 var valoresChart;
 var compraValoresChart;
+
 // Arrays
 var arrDias = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
-//var arrMeses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
-//                'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-var arrValoresPintados = [];
+
 // Objetos
 var objetoUrl = new montaUrl();
 
@@ -14,71 +13,12 @@ var objetoUrl = new montaUrl();
   'use strict'
 
   feather.replace()
-  // Chart Divisas
-  var ctxDivisas = document.getElementById('divisasChart')
-  var divisasChart = new Chart(ctxDivisas, {
-    type: 'line',
-    data: {
- /*      labels: [
-         'Lunes',
-         'Martes',
-         'Miércoles',
-         'Jueves',
-         'Viernes',
-         'Sábado',
-         'Domingo'
-      ] */
-/*       ,
-      datasets: [{
-        data: [],
-        lineTension: 0,
-        backgroundColor: 'transparent',
-        borderColor: '#007bff',
-        borderWidth: 4,
-        pointBackgroundColor: '#007bff'
-      }] */
-    },
-    options: {    
-      scales: {
-        yAxes: [{
-          ticks: {
-            min: 0,
-            max: 3,
-            stepSize: 0.2,
-            display: true,
-            beginAtZero: true,            
-          }
-        }]
-      },
-      legend: {
-        display: true
-      }
-    }
-  })
+  // Creamos Chart para Divisas
+  var divisasChart = creaChart(document.getElementById('divisasChart'));
 
-  // Chart valores
-  var ctxValores = document.getElementById('valoresChart')
-  var valoresChart = new Chart(ctxValores, {
-    type: 'line',
-    data: {      
-     },
-    options: {    
-      scales: {
-        yAxes: [{
-          ticks: {
-            min: 0,
-            max: 3,
-            stepSize: 0.2,
-            display: true,
-            beginAtZero: true,            
-          }
-        }]
-      },
-      legend: {
-        display: true
-      }
-    }
-  })
+  // Creamos Chart para los valores
+  // y lo propagamos.
+  setChartValores(creaChart(document.getElementById('valoresChart')));
 
   // Chart compra de valores
   var ctxCompraValores = document.getElementById('compraValoresChart')
@@ -104,7 +44,7 @@ var objetoUrl = new montaUrl();
     }
   })  
 
-  // Pintamos tres divisas en la semana actual
+  // Pintamos tres divisas en la semana en curso
   obtenerDatosChartDivisa(function(result){  
 
     addDatosDivisa("libr", result, divisasChart);
@@ -134,18 +74,19 @@ var objetoUrl = new montaUrl();
  
   },objetoUrl.getValoreshistLowValor(fechaHasta(3),fechaHasta(0)));    
 
-  // Cargamos los valores en la dropdown para selección.
+  // Cargamos los valores en las dropdown para selección.
   cargarValoresDropdown();
+
   // Propagamos los objetos.
-  setChartValores(valoresChart);
   setChartCompraValores(compraValoresChart);
 })()
 
 //************************************************/
-// Carga de valores en dropdown
+// Carga de valores en las dropdown
 //************************************************/
 function cargarValoresDropdown(){
-  let dropdownValores = document.getElementById("selectValor");
+  let dropdownValores = document.getElementById("selectValorUno");
+  let dropdownValoresDos = document.getElementById("selectValorDos");  
   // Llamada a la api
   obtenerDatosValores(function(resultValores){    
     let jsonValor = resultValores;
@@ -153,59 +94,91 @@ function cargarValoresDropdown(){
     for (valor of jsonValor){
 
         let opt = document.createElement('option');
+        let optDos = document.createElement('option');        
         opt.value = valor.idVAlor;
         opt.innerHTML = valor.nombre;
+        optDos.value = valor.idVAlor;
+        optDos.innerHTML = valor.nombre;        
         dropdownValores.appendChild(opt);
+        dropdownValoresDos.appendChild(optDos);
     }
   },objetoUrl.getValores());  
 }
 
 //************************************************/
-// Evaluamos el valor
+// Si se produce algún cambio en las
+// selects de valores.
 //************************************************/
-function cambiaValor(){
-  procesoRecuperaValor();
+function cambiaSelect(){
+  removeData(valoresChart);
+  setChartValores(creaChart(document.getElementById('valoresChart')));
+  cambiaValor(1);
+  cambiaValor(2);
 }
 
 //************************************************/
-// Evaluamos la periocidad
+// Evaluamos el valor y lo pintamos.
+//************************************************/
+function cambiaValor(paramSelect){
+
+  let selectValor;
+  let idValor;
+  let idValorText;
+
+  let selectPeriodo = document.getElementById("selectPeriodicidad");  
+  let idPeriodoText = selectPeriodo.options[selectPeriodo.selectedIndex].innerText;
+
+  if (parseInt(paramSelect) == 1){
+    selectValor = document.getElementById("selectValorUno");
+  }
+  else{
+    selectValor = document.getElementById("selectValorDos");
+  }
+
+  idValor = selectValor.options[selectValor.selectedIndex].value;        
+  idValorText = selectValor.options[selectValor.selectedIndex].innerText;
+
+  if (idValorText != "Seleccione valor" && idPeriodoText != "Seleccione periodicidad"){
+    procesoRecuperaValor(idValor);
+  }
+}
+
+//************************************************/
+// Evaluamos la periocidad y recalculamos todo
 //************************************************/
 function cambiaPeriodicidad(){
-  procesoRecuperaValor();  
+
+  let selectPeriodo = document.getElementById("selectPeriodicidad");  
+  let idPeriodoText = selectPeriodo.options[selectPeriodo.selectedIndex].innerText;
+
+  if (idPeriodoText != "Seleccione periodicidad"){
+      removeData(valoresChart);
+      setChartValores(creaChart(document.getElementById('valoresChart')));
+      cambiaValor(1);
+      cambiaValor(2);
+  }
 }
 
 //************************************************/
 // Recuperamos los datos del valor en función
 // de su id y de la period. (mensual, anual, etc)
 //************************************************/
-function procesoRecuperaValor(){
+function procesoRecuperaValor(paramIdValor){
 
-  let selectValor = document.getElementById("selectValor");
   let selectPeriodo = document.getElementById("selectPeriodicidad");
-  let idValor = selectValor.options[selectValor.selectedIndex].value;
-  let idPeriodo =  parseInt(selectPeriodo.options[selectPeriodo.selectedIndex].value);
-  let idValorText = selectValor.options[selectValor.selectedIndex].innerText;
-  let idPeriodoText = selectPeriodo.options[selectPeriodo.selectedIndex].innerText;
+  let idPeriodo = parseInt(selectPeriodo.options[selectPeriodo.selectedIndex].value);  
 
-  if (idValorText != "Seleccione valor" && idPeriodoText != "Seleccione periodicidad"){
-
-    // Comprobamos si ya lo hemos pintado antes.
-    if (!arrValoresPintados.includes(idValor)){
-
-      arrValoresPintados.push(idValor);      
-      // Datos históricos de cotización del valor
-      obtenerDatosHistChartValor(function(resultDatos,resultPeriodo){  
-        // Datos del valor en si.
-        obtenerDatosValores(function(resultValor){    
-          let jsonValor = resultValor;
-          
-          addDatosValor(jsonValor, resultDatos, resultPeriodo, valoresChart);    
-
-        },objetoUrl.getValorId(idValor));  
+  // Datos históricos de cotización del valor
+  obtenerDatosHistChartValor(function(resultDatos,resultPeriodo){
+    // Datos del valor en si.
+    obtenerDatosValores(function(resultValor){    
+      let jsonValor = resultValor;
       
-      },objetoUrl.getValoreshistBetweenFecs(idValor,fechaHasta(idPeriodo),fechaHasta(0)));
-    }
-  }
+      addDatosValor(jsonValor, resultDatos, resultPeriodo, valoresChart);    
+
+    },objetoUrl.getValorId(paramIdValor));  
+  
+  },objetoUrl.getValoreshistBetweenFecs(paramIdValor,fechaHasta(idPeriodo),fechaHasta(0)));
 }
 
 //************************************************/
@@ -282,14 +255,11 @@ function addDatosDivisa(paramLabel, paramData, paramChart){
 }
 
 //************************************************/
-// Limpiamos el chart
+// Limpiamos el chart de valores
 //************************************************/
-function removeData(chart) {
-  chart.data.labels.pop();
-  chart.data.datasets.forEach((dataset) => {
-      dataset.data.pop();
-  });
-  chart.update();
+function removeData(paramChart) {
+    paramChart.clear();
+    paramChart.destroy();    
 }
 
 //************************************************/
@@ -449,7 +419,7 @@ function colorDivisa(paramDivisa) {
         color=rojo;
         break;    
     case "neru":
-        color=rojo;
+        color=negro;
         break;    
     case "rubl":
         color=azulfuerte;
@@ -528,6 +498,38 @@ function fechaddMMyyyy(paramDate){
   let ann = paramDate.getFullYear();
 
   return (dia + mes + ann);
+}
+
+//************************************************/
+// Creamos un chart genérico.
+//************************************************/
+function creaChart(paramCtx){
+
+  //let ctxValores = document.getElementById('valoresChart')
+  let ctxValores = paramCtx;  
+  let valoresChart = new Chart(ctxValores, {
+    type: 'line',
+    data: {      
+     },
+    options: {    
+      scales: {
+        yAxes: [{
+          ticks: {
+            min: 0,
+            max: 3,
+            stepSize: 0.2,
+            display: true,
+            beginAtZero: true,            
+          }
+        }]
+      },
+      legend: {
+        display: true
+      }
+    }
+  })
+
+  return valoresChart;
 }
 
 //************************************************/

@@ -17,6 +17,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet"/> 
 
     <style>
+      html {
+        scroll-behavior: smooth;
+      }      
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -195,17 +198,22 @@
         <h1 id="valores" class="h2">Evolución de valores</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           
-          <select id="selectValor" onchange="cambiaValor()" class="form-select" aria-label="Default select example">
+          <!-- <button type="button" class="btn btn-warning" onclick="removeData()">Reset</button> -->
+
+          <select id="selectValorUno" onchange="cambiaSelect()" class="form-select" aria-label="Default select example">
             <option selected>Seleccione valor</option>
           </select>        
+          <select id="selectValorDos" onchange="cambiaSelect()" class="form-select" aria-label="Default select example">
+            <option selected>Seleccione valor</option>
+          </select>                  
           <select id="selectPeriodicidad" onchange="cambiaPeriodicidad()" class="form-select" aria-label="Default select example">
             <option selected>Seleccione periodicidad</option>
             <option value="1">1 día</option>            
             <option value="2">5 días</option>
             <option value="3">1 semana</option>            
-            <option value="4">Mensual</option>
-            <option value="5">Semestral</option>            
-            <option value="6">Anual</option>
+            <option value="4">1 mes</option>
+            <option value="5">6 meses</option>            
+            <option value="6">1 año</option>
           </select>
 
         </div>

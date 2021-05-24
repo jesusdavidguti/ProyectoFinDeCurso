@@ -412,6 +412,7 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
   - Spring requiere del uso de transacciones para que las acciones de inserción y actualización tengan efecto. Curiosamente no alerta de la no ejecución de acciones, simplemente no las realiza.
   - El uso de un identificador que requiera una entidad hace que se tengan que tener en cuenta una serie de aspectos a la hora de utilizarlo. El más importante es el hecho de que para poder realizar acciones de comparación es necesario añadir métodos específicos para comparación de objetos como si fuesen un ID.
   - El envío de fechas a la API se ha relizado en formato ddMMyyyy. Se ha optado por la simplicidad del dato inicial de entrada y su posterior tratamiento en la API.
+  - La carga inicial de datos en la BB.DD. remota ha sido problematica ya que había que insertar datos para, al menos, un año de cotización. Las peticiones a la API para este tipo de acciones (load) se ralentizaban mucho y no se acababan de completar ya que la llamda http se cancelaba por tiempo. Para solventar este problema, hubo que lanzar el proceso en local pero atacando a la BB.DD. remota.
 
 # 7. Conclusiones
 

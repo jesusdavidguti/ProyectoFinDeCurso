@@ -53,7 +53,10 @@
 ​	Para la consecucución de los objetivios esbozados en las líneas anteriores se podrían tener en cuenta las siguientes soluciones:
 
 - Backend: posibilidades de uso de frameworks tipo Symfony (PHP), Angular(typescrpt) o Springboot(JAVA). Todos son de amplio uso y funcionalidades más que avanzadas, sin embargo, en aras de una mayor rapidez en el desarrollo y una curva de aprendizaje lo más pronunciada posible, utilizaremos Springboot.
-- Frontend: aquí son también amplias las posibilidades en cuanto a la implementación de una interfaz de usuario, pero optaremos por una solución convencional y a la vez muy extendida: Javascript. Por otra parte, necesitaremos algún tipo de componente web que nos permita implementar de forma rápida y eficaz las distintas gráficas que necesitaremos para mostrar al usuario la evolución temporal de valores, divisas, etc. El componente [Chart.js](https://www.chartjs.org/docs/latest/) es, a priori, el que presenta una mayor facilidad de uso. La integración con JScript es total y la faciclidad a la hora de implementar distintos tipos de gráficas "alimentadas" por datos proporcionados por nuestra API hacen que sea una opción más que factible.
+
+- Frontend: aquí son también amplias las posibilidades en cuanto a la implementación de una interfaz de usuario, pero optaremos por una solución convencional y a la vez muy extendida: Javascript. Para estandarizar el desarrollo todo lo posible, en su parte de diseño y estilo optaremos por Bootstrap que nos aportará facilidad y rapidez a la hora de implementar el estilo de la web.
+
+  ​	 Por otra parte, necesitaremos algún tipo de componente que nos permita implementar de forma rápida y eficaz las distintas gráficas que necesitaremos para mostrar al usuario la evolución temporal de valores, divisas, etc. El componente [Chart.js](https://www.chartjs.org/docs/latest/) es, a priori, el que presenta una mayor facilidad de uso. La integración con JScript es total y la faciclidad a la hora de implementar distintos tipos de gráficas "alimentadas" por datos proporcionados por nuestra API hacen que sea una opción más que factible.
 
 # 4. Recursos
 
@@ -438,5 +441,29 @@ Las posibles mejoras podrían ser infinitas una vez visto el potencial que la AP
 
 # 9. Fuentes de información
 
-La información a consultar ha sido muy amplia y precisa. En la rama main del [Proyecto en Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/main/README.md) aparece de forma más detallada cada una de dichas fuentes. La consulta de webs de programadores tales como StrackOverflow ha sido de gran ayuda y, a la vez, un fuente de dudas ya que el enfoque a un mismo problema ya resuelto puede ser muy variado.
+En líneas generales, la información a consultar ha sido muy amplia y precisa. En la rama main del [Proyecto en Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/main/README.md) aparece de forma más detallada cada una de dichas fuentes. La consulta de webs de programadores tales como StrackOverflow ha sido de gran ayuda y, a la vez, un fuente de dudas ya que el enfoque a un mismo problema ya resuelto puede ser muy variado.
 
+Estas son algunas de las fuentes de información consultadas principalmente:
+
+- Sprin boot
+  - Mi tutorial: https://github.com/jesusdavidguti/TutorialSpringJPA
+  - Anotaciones JPA: (https://www.objectdb.com/api/java/jpa/annotations/relationship
+  - [Api REST](https://www.nigmacode.com/java/crear-api-rest-con-spring/)
+  - [Query en Spring](https://spring.io/blog/2011/02/10/getting-started-with-spring-data-jpa/)
+- JPA
+  - [Persistencia con JPA](https://www.infoworld.com/article/3387643/java-persistence-with-jpa-and-hibernate-part-2-many-to-many-relationships.html)
+  - [JPA @ OneToMany](https://www.arquitecturajava.com/jpa-onetomany/)
+  - [JPA @ ManyToOne](https://www.arquitecturajava.com/jpa-manytoone/)
+  - [@id automático](https://stackoverflow.com/questions/20603638/what-is-the-use-of-annotations-id-and-generatedvaluestrategy-generationtype)
+  - [Anotar fecha y hora en JPA](https://www.it-swarm-es.com/es/java/como-almacenar-la-fechahora-y-las-marcas-de-tiempo-en-la-zona-horaria-utc-con-jpa-e-hibernate/958259387/)
+- Modelización
+  - [Asociación, agregación y composición](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/)
+- Github
+  - [Sintaxis Github](https://docs.github.com/es/github/writing-on-github/basic-writing-and-formatting-syntax)
+  - [Typora](https://support.typora.io/Links/#hyperlink)
+- FrontEnd
+  - [Iconos](https://feathericons.com/)
+  - Diagramas estadísticos
+    - [Lineal](https://www.chartjs.org/docs/latest/charts/line.html)
+  - Bootstrap
+    - [Dropdowns](https://getbootstrap.com/docs/4.0/components/dropdowns/)

@@ -124,15 +124,19 @@
 
 Para la declaración de las variables se utiliza una declaración de cada vez y no se permiten dejar variables locales sin inicializar salvo en el caso de que sean propiedades de un objeto bean.
 
-La codificación correcta sería:
 
-La declaración de las variables locales a una clase, método o bloque de código se realizan al principio del mismo y no justo antes de necesitarse la utilización de la variable.
-
-La única excepción a esta regla son las variables que gestionan los bucles *for*.
-
-Las variables de avance  de bucles *for* no podrán ser modificadas de ninguna manera fuera de la propia sentencia del bucle.
-La duplicidad de los nombres de variables en diferentes niveles dentro de la misma clase se tiene que evitar.
-
+	 @PostMapping("/loadFecdesdeFechasta/{fecDesde}/{fecHasta}")
+	 public Map<String, String> loadFecdesdeFechasta(@PathVariable String fecDesde, @PathVariable String fecHasta)  throws ParseException {
+		 		 
+		 double start = 1.5;
+		 double end = 0.5;
+		 double random, result;
+		 
+		 DateFormat sourceFormat = new SimpleDateFormat("dd/MM/yyyy");
+		
+		 DecimalFormatSymbols simbolos = new DecimalFormatSymbols();
+		 simbolos.setDecimalSeparator('.');
+		 DecimalFormat df = new DecimalFormat("#.00",simbolos);
 #### 5.2.1.2 Constantes
 
 Como norma general todas las constantes numéricas no deberían codificarse directamente, salvo la excepción de -1, 0 y 1.
@@ -141,11 +145,28 @@ Como norma general todas las constantes numéricas no deberían codificarse dire
 
 El acceso/modificación de las propiedades de una clase (no constantes) siempre mediante métodos de acceso get/set.
 
+	public Valor getValor() {
+		return valor;
+	}
+	
+	public void setValor(Valor valor) {
+		this.valor = valor;
+	}
+	
+	public Date getFecValor() {
+		return fecValor;
+	}
 La asignación de variables / propiedades no podrá ser consecutiva.
 
-Variable1 = variable2 = "hola mundo"                                                               No válido
-No utilizar el operador asignación en sitios donde se pueda confundir con el operador igualdad. Ni dentro de expresiones complejas.
 
+		 inicio = sourceFormat.parse(fechaDesde);		 
+		 fin = sourceFormat.parse(fechaHasta);
+		 
+		 Date actual = inicio;
+		 
+		 // Recuperamos todos los valores
+		 List<Valor> listaValores;
+		 listaValores = valorService.findAll();
 #### 5.2.1.4 Métodos
 
 Los métodos deberán ser verbos (en infinitivo), en mayúsculas y minúsculas con la primera letra del nombre en minúsculas, y con la primera letra de cada palabra interna en mayúsculas (lowerCamelCase).
@@ -154,6 +175,20 @@ No se permiten caracteres especiales.
 
 El nombre ha de ser lo suficientemente descriptivo, no importando a priori la longitud del mismo.
 
+
+	 @DeleteMapping("valores/{valorHistId}/{fecha}")
+	 public String deleteValorHist(@PathVariable int valorHistId, @PathVariable String fecha) {
+	
+	        Valorhist valorHist = valorhistService.findById(valorHistId, fecha);
+	
+	        if(valorHist == null) {
+	            throw new RuntimeException("Valor histórico desconocido id:"+valorHistId);
+	        }
+	
+	        valorhistService.deleteById(valorHistId,fecha);
+	
+	        return "Valor histórico borrado con id - "+valorHistId + " y fecha "+fecha;
+	  }
 ### 5.2.2 Organización del código
 
 #### Backend. 
@@ -342,8 +377,12 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
   
 - FrontEnd
 
-  ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.
+  - Maquetación
 
+  ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.
+  
+  ​	Estilos bootstrap: indicar
+  
   ​		Poner las url de acceso			completar
   
   ![Maquetación](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png?raw=true "Maquetación")

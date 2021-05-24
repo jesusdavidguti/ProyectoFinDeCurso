@@ -294,7 +294,7 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
 
 ### 5.2.5 Pruebas
 
-#### Backend
+#### 5.2.5.1 Backend
 
 ​		Las pruebas en backend estarán gestionadas por Postman. Para cada una de los objetos/entidades se ha creado una batería de pruebas que engloba todo el ciclo de vida del mismo (CRUD). Además, se incluyen llamadas a métodos de carga masiva, aleatoria y parametrizable para cada una de dichas entidades y así facilitar la casuística de las pruebas. Estas baterías de pruebas, agrupadas por entidad en carpetas, son ejecutables masivamente utilizando la herramienta "Runner" de Postman. No se descarta realizar pruebas unitarias más específicas desde el IDE basándonos en Junit si se dispone en un futuro de tiempo para ello.
 
@@ -302,7 +302,7 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
 
 ![Pruebas con Postman](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Postman.PNG?raw=true "Pruebas con Postman")
 
-#### Frontend
+#### 5.2.5.2 Frontend
 
 ​		Las pruebas de la web se han realizado con varios navegadores (Chrome, Edge, etc.) a fin de confirmar que su aspecto y respuesta es la correcta. Gracias a estas pruebas se detectaron algunas incidencias importantes en el rendimiento de los accesos a la API. Por su importancia, han quedado  reflejadas en el apartado "Conclusiones".
 
@@ -445,6 +445,8 @@ En líneas generales, la información a consultar ha sido muy amplia y precisa. 
 
 Estas son algunas de las fuentes de información consultadas principalmente:
 
+- Funcionalidad
+  - Bolsa de Madrid: https://www.bolsamadrid.es/esp/aspx/Portada/Portada.aspx
 - Sprin boot
   - Mi tutorial sobre Spring: https://github.com/jesusdavidguti/TutorialSpringJPA
   - Anotaciones JPA: https://www.objectdb.com/api/java/jpa/annotations/relationship
@@ -455,15 +457,15 @@ Estas son algunas de las fuentes de información consultadas principalmente:
   - JPA @ OneToMany: https://www.arquitecturajava.com/jpa-onetomany/
   - JPA @ ManyToOne: https://www.arquitecturajava.com/jpa-manytoone/
   - @id automático: https://stackoverflow.com/questions/20603638/what-is-the-use-of-annotations-id-and-generatedvaluestrategy-generationtype
-  - [Anotar fecha y hora en JPA](https://www.it-swarm-es.com/es/java/como-almacenar-la-fechahora-y-las-marcas-de-tiempo-en-la-zona-horaria-utc-con-jpa-e-hibernate/958259387/)
+  - Anotar fecha y hora en JPA: https://www.it-swarm-es.com/es/java/como-almacenar-la-fechahora-y-las-marcas-de-tiempo-en-la-zona-horaria-utc-con-jpa-e-hibernate/958259387/
 - Modelización
-  - [Asociación, agregación y composición](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/)
+  - Asociación, agregación y composición: https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/
 - Github
-  - [Sintaxis Github](https://docs.github.com/es/github/writing-on-github/basic-writing-and-formatting-syntax)
-  - [Typora](https://support.typora.io/Links/#hyperlink)
+  - Sintaxis Github: https://docs.github.com/es/github/writing-on-github/basic-writing-and-formatting-syntax
+  - Typora: https://support.typora.io/Links/#hyperlink
 - FrontEnd
-  - [Iconos](https://feathericons.com/)
+  - Iconos: https://feathericons.com/
   - Diagramas estadísticos
-    - [Lineal](https://www.chartjs.org/docs/latest/charts/line.html)
+    - Lineal: https://www.chartjs.org/docs/latest/charts/line.html
   - Bootstrap
-    - [Dropdowns](https://getbootstrap.com/docs/4.0/components/dropdowns/)
+    - Dropdowns: https://getbootstrap.com/docs/4.0/components/dropdowns/

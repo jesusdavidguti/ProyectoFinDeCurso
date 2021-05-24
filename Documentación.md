@@ -118,19 +118,41 @@
 
 ![Paquetes Java](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/EclipseOrganizer.PNG?raw=true "Organización de paquetes")
 
-​		Por otra parte, señalamos a continuación las reglas de estilo más reseñables que se han puesto en práctica durante el desarrollo:
+​		Por otra parte, señalamos a continuación las reglas de estilo y buenas prácticas que se han puesto en práctica durante el desarrollo y algunos ejemplos de los mismos en el código:
 
-Completar
+#### 5.2.1.1 Declaraciones
 
+Para la declaración de las variables se utiliza una declaración de cada vez y no se permiten dejar variables locales sin inicializar salvo en el caso de que sean propiedades de un objeto bean.
 
+La codificación correcta sería:
 
-PSR-01 y PSR-02+
+La declaración de las variables locales a una clase, método o bloque de código se realizan al principio del mismo y no justo antes de necesitarse la utilización de la variable.
 
-10:28 a. m.
-github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
+La única excepción a esta regla son las variables que gestionan los bucles *for*.
 
-10:28 a. m.
-github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
+Las variables de avance  de bucles *for* no podrán ser modificadas de ninguna manera fuera de la propia sentencia del bucle.
+La duplicidad de los nombres de variables en diferentes niveles dentro de la misma clase se tiene que evitar.
+
+#### 5.2.1.2 Constantes
+
+Como norma general todas las constantes numéricas no deberían codificarse directamente, salvo la excepción de -1, 0 y 1.
+
+#### 5.2.1.3 Propiedades
+
+El acceso/modificación de las propiedades de una clase (no constantes) siempre mediante métodos de acceso get/set.
+
+La asignación de variables / propiedades no podrá ser consecutiva.
+
+Variable1 = variable2 = "hola mundo"                                                               No válido
+No utilizar el operador asignación en sitios donde se pueda confundir con el operador igualdad. Ni dentro de expresiones complejas.
+
+#### 5.2.1.4 Métodos
+
+Los métodos deberán ser verbos (en infinitivo), en mayúsculas y minúsculas con la primera letra del nombre en minúsculas, y con la primera letra de cada palabra interna en mayúsculas (lowerCamelCase).
+
+No se permiten caracteres especiales.
+
+El nombre ha de ser lo suficientemente descriptivo, no importando a priori la longitud del mismo.
 
 ### 5.2.2 Organización del código
 

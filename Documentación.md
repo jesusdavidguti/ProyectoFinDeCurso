@@ -194,7 +194,7 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
 	  }
 ### 5.2.2 Organización del código
 
-#### Backend. 
+#### 5.2.2.1 Backend. 
 
 ​		El código del proyecto estará estructurado en cuatro paquetes básicos que nos darán una idea bastante clara de la jerarquía de los objetos que contienen. Son los siguientes:
 
@@ -208,7 +208,7 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
 
   Además de estos paquetes básicos, tendremos también otros como el de recursos donde almacenaremos la parametrización de la conexión a BBDD.
 
-#### Frontend. 
+#### 5.2.2.2 Frontend. 
 
 ​		Nuestra web constará de los siguientes elementos a nivel de desarrollo:
 
@@ -463,7 +463,7 @@ Estas son algunas de las fuentes de información consultadas principalmente:
 - Github
   - Sintaxis Github: https://docs.github.com/es/github/writing-on-github/basic-writing-and-formatting-syntax
   - Typora: https://support.typora.io/Links/#hyperlink
-- FrontEnd
+- Interfaz
   - Iconos: https://feathericons.com/
   - Diagramas estadísticos
     - Lineal: https://www.chartjs.org/docs/latest/charts/line.html

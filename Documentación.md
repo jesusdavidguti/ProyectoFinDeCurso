@@ -446,15 +446,15 @@ En líneas generales, la información a consultar ha sido muy amplia y precisa. 
 Estas son algunas de las fuentes de información consultadas principalmente:
 
 - Sprin boot
-  - Mi tutorial: https://github.com/jesusdavidguti/TutorialSpringJPA
-  - Anotaciones JPA: (https://www.objectdb.com/api/java/jpa/annotations/relationship
-  - [Api REST](https://www.nigmacode.com/java/crear-api-rest-con-spring/)
-  - [Query en Spring](https://spring.io/blog/2011/02/10/getting-started-with-spring-data-jpa/)
+  - Mi tutorial sobre Spring: https://github.com/jesusdavidguti/TutorialSpringJPA
+  - Anotaciones JPA: https://www.objectdb.com/api/java/jpa/annotations/relationship
+  - Api REST: https://www.nigmacode.com/java/crear-api-rest-con-spring/
+  - Query en Spring: https://spring.io/blog/2011/02/10/getting-started-with-spring-data-jpa/
 - JPA
-  - [Persistencia con JPA](https://www.infoworld.com/article/3387643/java-persistence-with-jpa-and-hibernate-part-2-many-to-many-relationships.html)
-  - [JPA @ OneToMany](https://www.arquitecturajava.com/jpa-onetomany/)
-  - [JPA @ ManyToOne](https://www.arquitecturajava.com/jpa-manytoone/)
-  - [@id automático](https://stackoverflow.com/questions/20603638/what-is-the-use-of-annotations-id-and-generatedvaluestrategy-generationtype)
+  - Persistencia con JPA: https://www.infoworld.com/article/3387643/java-persistence-with-jpa-and-hibernate-part-2-many-to-many-relationships.html
+  - JPA @ OneToMany: https://www.arquitecturajava.com/jpa-onetomany/
+  - JPA @ ManyToOne: https://www.arquitecturajava.com/jpa-manytoone/
+  - @id automático: https://stackoverflow.com/questions/20603638/what-is-the-use-of-annotations-id-and-generatedvaluestrategy-generationtype
   - [Anotar fecha y hora en JPA](https://www.it-swarm-es.com/es/java/como-almacenar-la-fechahora-y-las-marcas-de-tiempo-en-la-zona-horaria-utc-con-jpa-e-hibernate/958259387/)
 - Modelización
   - [Asociación, agregación y composición](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/)

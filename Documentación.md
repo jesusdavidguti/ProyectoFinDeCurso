@@ -53,7 +53,7 @@
 ​	Para la consecucución de los objetivios esbozados en las líneas anteriores se podrían tener en cuenta las siguientes soluciones:
 
 - Backend: posibilidades de uso de frameworks tipo Symfony (PHP), Angular(typescrpt) o Springboot(JAVA). Todos son de amplio uso y funcionalidades más que avanzadas, sin embargo, en aras de una mayor rapidez en el desarrollo y una curva de aprendizaje lo más pronunciada posible, utilizaremos Springboot.
-- Frontend: aquí son también amplias las posibilidades en cuanto a la implementación de una interfaz de usuario, pero optaremos por una solución convencional y a la vez muy extendida: Javascript
+- Frontend: aquí son también amplias las posibilidades en cuanto a la implementación de una interfaz de usuario, pero optaremos por una solución convencional y a la vez muy extendida: Javascript. Por otra parte, necesitaremos algún tipo de componente web que nos permita implementar de forma rápida y eficaz las distintas gráficas que necesitaremos para mostrar al usuario la evolución temporal de valores, divisas, etc. El componente [Chart.js](https://www.chartjs.org/docs/latest/) es, a priori, el que presenta una mayor facilidad de uso. La integración con JScript es total y la faciclidad a la hora de implementar distintos tipos de gráficas "alimentadas" por datos proporcionados por nuestra API hacen que sea una opción más que factible.
 
 # 4. Recursos
 
@@ -432,6 +432,7 @@ Las posibles mejoras podrían ser infinitas una vez visto el potencial que la AP
   - Area de mantenimiento: donde se podrán mantener las entidades padre (divisa, valor, mercado, etc.)
   - Moneda de uso: utilizamos el dolar americano por defecto para almacenar, pero podríamos mostrar la información en cualquier otra moneda simplemente convirtiendo los valores antes de ser mostrados.
 - BackEnd
+  - Incluir batería de pruebas con JUnit para un testeo más exhaustivo de los métodos, tanto públicos como privados.
   - Carga de datos más parametrizada: para una sola entidad, limitando los importes máximo y mínimo, etc.
   - Distintas consultas que nos darán información más detallada de los valores en sus ciclos de subida y bajada.
 

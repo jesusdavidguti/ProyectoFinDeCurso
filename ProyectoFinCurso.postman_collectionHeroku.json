@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "81ffe099-1336-48e0-8690-ff13d004204e",
-		"name": "ProyectoFinCurso",
+		"name": "ProyectoFinCursoHeroku",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -15,11 +15,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiMercados/info",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiMercados",
 								"info"
@@ -35,11 +35,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiMercados/mercados",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiMercados",
 								"mercados"
@@ -55,11 +55,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiMercados/load",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiMercados",
 								"load"
@@ -75,11 +75,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiMercados/mercados/IBEX",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiMercados",
 								"mercados",
@@ -105,11 +105,11 @@
 						},
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiMercados/mercados",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiMercados",
 								"mercados"
@@ -134,11 +134,11 @@
 						},
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiMercados/mercados",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiMercados",
 								"mercados"
@@ -154,11 +154,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiMercados/mercados/TEST",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiMercados",
 								"mercados",
@@ -180,11 +180,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisas/info",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisas",
 								"info"
@@ -200,11 +200,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisas/divisas",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisas",
 								"divisas"
@@ -220,11 +220,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisas/load",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisas",
 								"load"
@@ -240,11 +240,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisas/divisas/eur",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisas",
 								"divisas",
@@ -270,11 +270,11 @@
 						},
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisas/divisas",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisas",
 								"divisas"
@@ -290,11 +290,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisas/divisas/usdo",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisas",
 								"divisas",
@@ -320,11 +320,11 @@
 						},
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisas/divisas",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisas",
 								"divisas"
@@ -345,11 +345,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisasHist/info",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisasHist",
 								"info"
@@ -365,11 +365,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisasHist/divisashist",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisasHist",
 								"divisashist"
@@ -385,11 +385,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisasHist/load",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisasHist",
 								"load"
@@ -405,11 +405,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisasHist/divisashist/test/02022021",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisasHist",
 								"divisashist",
@@ -436,11 +436,11 @@
 						},
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisasHist/divisashist",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisasHist",
 								"divisashist"
@@ -456,11 +456,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisasHist/divisashist/usdo",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisasHist",
 								"divisashist",
@@ -486,11 +486,11 @@
 						},
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisasHist/divisashist",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisasHist",
 								"divisashist"
@@ -506,11 +506,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisasHist/loadFecdesdeFechasta/01032021/10032021",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisasHist",
 								"loadFecdesdeFechasta",
@@ -528,11 +528,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisasHist/divisashistBetweenFecs/libr/08032021/14032021",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisasHist",
 								"divisashistBetweenFecs",
@@ -556,11 +556,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValoresHist/info",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValoresHist",
 								"info"
@@ -585,11 +585,11 @@
 						},
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValoresHist/valoreshist",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValoresHist",
 								"valoreshist"
@@ -605,11 +605,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValoresHist/load",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValoresHist",
 								"load"
@@ -625,11 +625,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValoresHist/valoreshist",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValoresHist",
 								"valoreshist"
@@ -645,11 +645,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValoresHist/loadFecdesdeFechasta/01022021/10022021",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValoresHist",
 								"loadFecdesdeFechasta",
@@ -667,11 +667,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValoresHist/valoreshist/2/02022021",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValoresHist",
 								"valoreshist",
@@ -689,11 +689,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValoresHist/valoreshistBetweenFecs/2/10032021/14032021",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValoresHist",
 								"valoreshistBetweenFecs",
@@ -712,11 +712,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValoresHist/valoreshistTopLowValor/2/10032021/11032021",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValoresHist",
 								"valoreshistTopLowValor",
@@ -740,11 +740,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValores/info",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValores",
 								"info"
@@ -760,11 +760,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValores/valores",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValores",
 								"valores"
@@ -780,11 +780,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValores/valores/2",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValores",
 								"valores",
@@ -801,11 +801,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValores/valoresNombre/Valor Inmobiliario1",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValores",
 								"valoresNombre",
@@ -831,11 +831,11 @@
 						},
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValores/valores",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValores",
 								"valores"
@@ -860,11 +860,11 @@
 						},
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValores/valores",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValores",
 								"valores"
@@ -880,11 +880,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValores/load",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValores",
 								"load"
@@ -900,11 +900,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValores/valores/5",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValores",
 								"valores",
@@ -926,11 +926,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiMercados/load",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiMercados",
 								"load"
@@ -946,11 +946,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisas/load",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisas",
 								"load"
@@ -966,11 +966,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValores/load",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValores",
 								"load"
@@ -986,11 +986,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiValoresHist/loadFecdesdeFechasta/01032021/16032021",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiValoresHist",
 								"loadFecdesdeFechasta",
@@ -1008,11 +1008,11 @@
 						"header": [],
 						"url": {
 							"raw": "https://proyectofincurso.herokuapp.com/apiDivisasHist/loadFecdesdeFechasta/01032021/16032021",
-							"protocol": "http",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"proyectofincurso.herokuapp.com"
 							],
-							"port": "8080",
+							 
 							"path": [
 								"apiDivisasHist",
 								"loadFecdesdeFechasta",

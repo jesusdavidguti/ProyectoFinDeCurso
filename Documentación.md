@@ -68,7 +68,7 @@
 
   - S.O: Windows 10 Pro.
   - IDE: utilizaremos Eclipse en la versión 2019-12 para backend y Visual Studio Code para frontend
-  - SGBD: MySql administrado desde phpMyAdmin
+  - SGBD: MySql administrado desde la versión web de phpMyAdmin en local y desde Dbvisualizer cuando la BB.DD. está ya en el servidor remoto
   - Pruebas: Postman 8.1
   - Documentación: utilizaremos Typora como editor para Markdown así como LibreOffice Writter
 

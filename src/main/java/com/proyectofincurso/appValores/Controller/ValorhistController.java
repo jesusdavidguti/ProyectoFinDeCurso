@@ -120,9 +120,7 @@ public class ValorhistController {
 		 Date inicio, fin;
  		 String fechaDesde = fecDesde.substring(0, 2)+"/"+fecDesde.substring(2, 4)+"/"+fecDesde.substring(4, 8);
  		 String fechaHasta = fecHasta.substring(0, 2)+"/"+fecHasta.substring(2, 4)+"/"+fecHasta.substring(4, 8);
- 		 
- 		 System.out.println("fechaDede:" + fechaDesde);
- 		 
+ 		  		 
 		 inicio = sourceFormat.parse(fechaDesde);		 
 		 fin = sourceFormat.parse(fechaHasta);
 		 

@@ -32,6 +32,10 @@ Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo
 
 ![Diagrama de despliegue](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Despliegue.png "Diagrama de despliegue")
 
+**Despliegue en Heroku**
+
+![Despliegue de la API](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/DespliegueBackend.PNG "Despliegue de la API")
+
 **Despliegue en Gearhost**
 
 ![Despliegue de la BBDD](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GearBBDD.PNG "Despliegue de la BBDD")

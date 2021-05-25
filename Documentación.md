@@ -302,16 +302,27 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
 
 ![Pruebas con Postman](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Postman.PNG?raw=true "Pruebas con Postman")
 
+​		Las pruebas que vemos en la imagen de más arriba están direccionadas a una máquina local (localhost:8080). Añadiremos otro juego de pruebas, una vez realizado el despliegue tanto de la API como de la BB.DD., que apunte a la ubicacion remota de la API para poder confirmar que funciona correctamente
+
 #### 5.2.5.2 Frontend
 
 ​		Las pruebas de la web se han realizado con varios navegadores (Chrome, Edge, etc.) a fin de confirmar que su aspecto y respuesta es la correcta. Gracias a estas pruebas se detectaron algunas incidencias importantes en el rendimiento de los accesos a la API. Por su importancia, han quedado  reflejadas en el apartado "Conclusiones".
+
+Completar con capturas.
+
+
 
 ## 5. 3 Desarrollo web
 
 - Backend
 
-  La API, a través de los objetos controladores, pone a nuestra disposición los siguientes puntos de entrada:
+  Dependiendo de si estamos realizando las llamadas a la API en local (pruebas) o de si ya está desplegada en Heroku, utilizaremos las siguientes URL:
 
+  - Local: http://localhost:8080/
+  - Desplegada: https://proyectofincurso.herokuapp.com/
+  
+  La API, a través de los objetos controladores, pone a nuestra disposición los siguientes puntos de entrada:
+  
   - Divisas
     - GET		
       - /apiDivisas/info: devuelve información genérica del controlador divisa (nombre, versión, descripción, etc)
@@ -383,12 +394,18 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
   - Maquetación
 
   ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.
-  
-  ​	Estilos bootstrap: indicar
-  
+
   ​		Poner las url de acceso			completar
-  
+
   ![Maquetación](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png?raw=true "Maquetación")
+
+  - Estilos bootstrap.
+
+    Al utilizar bootstrap, se fijan una serie de estilos por defecto:
+
+    - El color de fondo del cuerpo background-color: #fff
+      - Las fuentes que vamos a utlizar son las denominadas "base" por bootstrap, tanto en su familia, tamaño y altura. Es lo que sería la tipografía base de bootstrap.
+      - 
 
 ## 5.4 Control de versiones.
 

@@ -227,16 +227,19 @@
           
           <button type="button" class="btn btn-warning" id="btnComprar"
             onclick="resetCompra()">Reset
-          </button>           
+          </button>
+          <button type="button" class="btn btn-success" id="btnComprar"
+          onclick="compraValor()">Comprar
+          </button> 
+                              
           <select id="selectValorCompra" class="form-select" aria-label="Default select example">
             <option selected>Seleccione valor</option>
           </select>                            
           <label for="cantidaValores"></label>
           <input id="cantidaValores" type="number" min="1"></input>
-          <button type="button" class="btn btn-success" id="btnComprar"
-            onclick="compraValor()">Comprar
-          </button> 
-
+           
+          <label for="importe"></label>
+          <input id="importe" type="number" disabled></input>
         </div>
       </div>
 

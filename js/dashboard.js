@@ -98,15 +98,17 @@ function compraValor(){
 //************************************************/
 function addDatosCompras(paramColor, paramLabel, paramData){
 
-  //paramChart.data.labels=paramPeriodo;
-  //console.log("paramValor:"+paramValor);
-  console.log("paramData:"+paramData);
-  //console.log("paramChart:"+paramChart);
-  console.log("paramLabel:"+paramLabel);
-
+  let importe=0
+  let totalImporte=0;
+  
   // Reiniciamos y pintamos.
   removeData(compraValoresChart);
   setChartCompraValores(creaChartDonut(document.getElementById('compraValoresChart')));
+
+  for(importe of paramData){
+    totalImporte = totalImporte + importe;
+  }
+  document.getElementById("importe").value = totalImporte;
 
   compraValoresChart.data.labels=paramLabel;
 
@@ -123,6 +125,8 @@ function addDatosCompras(paramColor, paramLabel, paramData){
 // Borramos e inicializamos el chart de compras
 //************************************************/
 function resetCompra(){
+  document.getElementById("importe").value = "";
+  document.getElementById("cantidaValores").value = "";
   arrayCompras = [];
   arrayLabelCompras = [];
   arrayColor = [];

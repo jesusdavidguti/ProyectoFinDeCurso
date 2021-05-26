@@ -49,6 +49,14 @@ Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo
 
 ![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/FrontEndDivisas.PNG "Datos de divisas")
 
+**FrontEnd: Valores**
+
+![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/FrontEndValores.PNG "Valores mejores y peores")
+
+**FrontEnd: Evolución de valores**
+
+![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/FrontEndValoresEvolución.PNG "Evolución de valores")
+
 **Github: estructura del proyecto**
 
 ![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas.PNG "Ramas en Github")

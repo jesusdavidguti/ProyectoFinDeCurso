@@ -47,7 +47,7 @@ Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo
 
 **FrontEnd: Divisas**
 
-![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/FrontEnd1.PNG "Datos de divisas")
+![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/FrontEndDivisas.PNG "Datos de divisas")
 
 **Github: estructura del proyecto**
 

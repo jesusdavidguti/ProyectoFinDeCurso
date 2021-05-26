@@ -74,53 +74,14 @@
           </li>          
         </ul>
         
-<!--         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>Saved reports</span>
-          <a class="link-secondary" href="#" aria-label="Add a new report">
-            <span data-feather="plus-circle"></span>
-          </a>
-        </h6>
-        <ul class="nav flex-column mb-2">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Current month
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Last quarter
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Social engagement
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Year-end sale
-            </a>
-          </li>
-        </ul>
- -->      </div>
+
+      </div>
     </nav>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 id="divisas" class="h2">Divisas</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
-            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button> -->
-          </div>
-<!--           <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            This week
-          </button> -->
         </div>
       </div>
 
@@ -192,14 +153,14 @@
         <h1 id="valores" class="h2">Evolución de valores</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           
-          <!-- <button type="button" class="btn btn-warning" onclick="removeData()">Reset</button> -->
-
           <select id="selectValorUno" onchange="cambiaSelect()" class="form-select" aria-label="Default select example">
             <option selected>Seleccione valor</option>
           </select>        
+
           <select id="selectValorDos" onchange="cambiaSelect()" class="form-select" aria-label="Default select example">
             <option selected>Seleccione valor</option>
           </select>                  
+
           <select id="selectPeriodicidad" onchange="cambiaPeriodicidad()" class="form-select" aria-label="Default select example">
             <option selected>Seleccione periodicidad</option>
             <option value="1">1 día</option>            
@@ -233,11 +194,11 @@
           <input id="cantidaValores" type="number" min="1"></input>
            
           <label for="importe"></label>
-          <input id="importe" type="number" disabled></input>
+          <input id="importe" type="string" disabled></input>
         </div>
       </div>
 
-      <canvas class="my-4 w-100" id="compraValoresChart" width="500" height="150"></canvas>
+      <canvas class="my-4 w-100" id="compraValoresChart" width="900" height="380"></canvas>
 
     </main>
   </div>

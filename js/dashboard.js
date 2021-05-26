@@ -108,7 +108,8 @@ function addDatosCompras(paramColor, paramLabel, paramData){
   for(importe of paramData){
     totalImporte = totalImporte + importe;
   }
-  document.getElementById("importe").value = totalImporte;
+
+  document.getElementById("importe").value = "Total " + totalImporte.toFixed(2).toString() + " $US";
 
   compraValoresChart.data.labels=paramLabel;
 
@@ -127,6 +128,7 @@ function addDatosCompras(paramColor, paramLabel, paramData){
 function resetCompra(){
   document.getElementById("importe").value = "";
   document.getElementById("cantidaValores").value = "";
+  document.getElementById("selectValorCompra").selectedIndex = "0";
   arrayCompras = [];
   arrayLabelCompras = [];
   arrayColor = [];
@@ -141,10 +143,19 @@ function creaChartDonut(paramCtx){
 
   //let ctxValores = document.getElementById('valoresChart')
   let ctxValores = paramCtx;  
+  //ctxValores.height = 300;
   let compraChart = new Chart(ctxValores, {
     type: 'doughnut',
     data: {},
+    options:{
+      cutout: 90,
+      //maintainAspectRatio : false,
+      //cutoutPercentage: 70,
+      //responsive: true,
+      //aspectRatio: 1
+    },
   })
+
   return compraChart;
 }
 

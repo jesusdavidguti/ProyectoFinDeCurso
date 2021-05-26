@@ -3,7 +3,6 @@ var valoresChart;
 var compraValoresChart;
 
 // Arrays
-var arrDias = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
 var arrayCompras = new Array();
 var arrayLabelCompras = new Array();
 var arrayColor = new Array();
@@ -320,7 +319,8 @@ function addDatosValor(paramValor, paramData, paramPeriodo, paramChart){
 //************************************************/
 function addDatosDivisa(paramLabel, paramData, paramChart){
 
-    paramChart.data.labels=arrDias;
+    // Calculamos una semana hacia atrás.    
+    paramChart.data.labels=fechasSemanaAtras();
 
     obtenerNombreDivisa(function(nombreDiv){    
 
@@ -581,11 +581,33 @@ function fechaHasta(paramPeriodicidad){
 //************************************************/
 function fechaddMMyyyy(paramDate){
 
-  let dia = (paramDate.getDate() > 9 ? paramDate.getDate() : "0"+paramDate.getDate());
-  let mes = ((paramDate.getMonth()+1) > 9 ? (paramDate.getMonth()+1) : "0"+(paramDate.getMonth()+1));
-  let ann = paramDate.getFullYear();
+  let dia = (paramDate.getDate() > 9 ? paramDate.getDate() : "0"+paramDate.getDate()).toString();
+  let mes = ((paramDate.getMonth()+1) > 9 ? (paramDate.getMonth()+1) : "0"+(paramDate.getMonth()+1)).toString();
+  let ann = paramDate.getFullYear().toString();
 
   return (dia + mes + ann);
+}
+
+//************************************************/
+// Fechas de una semana hacia atrás partiendo de hoy
+//************************************************/
+function fechasSemanaAtras(){
+
+  let dateHoy = new Date();
+  let dias = 7;
+  let arrayFechas = new Array();
+
+  while (dias > 0) {
+
+    let dia = (dateHoy.getDate() > 9 ? dateHoy.getDate() : "0"+dateHoy.getDate()).toString();
+    let mes = ((dateHoy.getMonth()+1) > 9 ? (dateHoy.getMonth()+1) : "0"+(dateHoy.getMonth()+1)).toString();
+    let ann = dateHoy.getFullYear().toString();
+
+    arrayFechas.push(dia+"-"+mes+"-"+ann);
+    dias--;
+    dateHoy.setDate(dateHoy.getDate() - 1);
+  }
+  return arrayFechas.reverse();
 }
 
 //************************************************/

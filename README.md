@@ -55,7 +55,7 @@ Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo
 
 **FrontEnd: Evolución de valores**
 
-![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/FrontEndValoresEvolución.PNG "Evolución de valores")
+![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/FrontEndValoresEvolucion.PNG "Evolución de valores")
 
 **Github: estructura del proyecto**
 

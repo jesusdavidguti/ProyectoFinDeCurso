@@ -473,6 +473,9 @@ function colorDivisa(paramDivisa) {
   let azulfuerte = '#172ED3';
   let amarillo = '#D7CC1C';
   let negro = '#000000';
+  let verde = '#3CFF33';
+  let morado = '#B233FF';
+  
   let color = "";
 
   switch (paramDivisa) {
@@ -483,13 +486,13 @@ function colorDivisa(paramDivisa) {
         color=rojo;
         break;    
     case "libr":
-        color=rojo;
+        color=azulfuerte;
         break;    
     case "yen":
         color=amarillo;
         break;    
     case "bado":
-        color=rojo;
+        color=morado;
         break;    
     case "neru":
         color=negro;
@@ -498,7 +501,7 @@ function colorDivisa(paramDivisa) {
         color=azulfuerte;
         break;    
     case "sufr":
-        color=rojo;
+        color=verde;
         break;    
     case "suco":
         color=amarillo;
@@ -532,7 +535,7 @@ function fechaHasta(paramPeriodicidad){
   switch (paramPeriodicidad) {
       // 1 día
       case 1:
-          fechaCalculada.setDate(fechaCalculada.getDate() - 1);
+          fechaCalculada.setDate(fechaCalculada.getDate() - 2);
           break;  
       // 5 días
       case 2:

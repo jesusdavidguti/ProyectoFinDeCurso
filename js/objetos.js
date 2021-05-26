@@ -1,14 +1,15 @@
 //************************************************/
 // Objeto Url para montar la cadena 
-// url de las APIS
+// url de conexión a la API
 //************************************************/
 
 class montaUrl{
 
     // Constructor
     constructor() {
-        this.rutaLocal = "http://localhost:8080/";
-        this.ruta = this.rutaLocal;
+        this.rutaHeroku = "https://proyectofincurso.herokuapp.com/";
+        this.rutaLocal = "http://localhost:8080/";        
+        this.ruta = this.rutaHeroku; 
         //console.log("this.ruta:"+this.ruta);
     }
 
@@ -44,6 +45,11 @@ class montaUrl{
 
     getValorId(paramIdValor){
         return (this.ruta+"apiValores/valores/"+paramIdValor);
+    }
+
+    getValoreshist (paramIdValor,paramFec){    
+        return (this.ruta+"apiValoresHist/valoreshist/"+paramIdValor+"/"
+                                                       +paramFec);
     }
 
     getValoreshistBetweenFecs (paramIdValor,paramFecDesde, paramFecHasta){    

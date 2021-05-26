@@ -4,7 +4,9 @@ var compraValoresChart;
 
 // Arrays
 var arrDias = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
-
+var arrayCompras = new Array();
+var arrayLabelCompras = new Array();
+var arrayColor = new Array();
 // Objetos
 var objetoUrl = new montaUrl();
 
@@ -13,6 +15,7 @@ var objetoUrl = new montaUrl();
   'use strict'
 
   feather.replace()
+
   // Creamos Chart para Divisas
   var divisasChart = creaChart(document.getElementById('divisasChart'));
 
@@ -20,30 +23,10 @@ var objetoUrl = new montaUrl();
   // y lo propagamos.
   setChartValores(creaChart(document.getElementById('valoresChart')));
 
-  // Chart compra de valores
-  var ctxCompraValores = document.getElementById('compraValoresChart')
-  var compraValoresChart = new Chart(ctxCompraValores, {
-    type: 'bar',
-    data: {      
-     },
-    options: {    
-      scales: {
-        yAxes: [{
-          ticks: {
-            min: 0,
-            max: 3,
-            stepSize: 0.2,
-            display: true,
-            beginAtZero: true,            
-          }
-        }]
-      },
-      legend: {
-        display: true
-      }
-    }
-  })  
-
+  // Creamos Chart compra de valores
+  // y lo propagamos.
+  setChartCompraValores(creaChartDonut(document.getElementById('compraValoresChart')));
+  
   // Pintamos tres divisas en la semana en curso
   obtenerDatosChartDivisa(function(result){  
 
@@ -74,12 +57,92 @@ var objetoUrl = new montaUrl();
  
   },objetoUrl.getValoreshistLowValor(fechaHasta(3),fechaHasta(0)));    
 
-  // Cargamos los valores en las dropdown para selección.
+  // Cargamos los valores en las dropdown de la página para selección.
   cargarValoresDropdown();
 
-  // Propagamos los objetos.
-  setChartCompraValores(compraValoresChart);
 })()
+
+//************************************************/
+// Botón de compra valor seleccionado
+//************************************************/
+function compraValor(){
+
+  let selectValorCompra = document.getElementById("selectValorCompra");  
+  let idValor = selectValorCompra.options[selectValorCompra.selectedIndex].value;        
+  let idValorText = selectValorCompra.options[selectValorCompra.selectedIndex].innerText;
+  let cantidad = parseInt(document.getElementById("cantidaValores").value);
+  let importe = 0;
+
+  // Comprobamos que hemos seleccionado algo
+  if (idValorText != "Seleccione valor" && cantidad > 0){
+
+    // Recuperamos el valor para saber su precio HOY.
+    obtenerDatosValores(function(resultValor){    
+      let jsonValor = resultValor;
+      
+      importe = cantidad * jsonValor.cotizacionUSdolar
+
+      arrayCompras.push(importe); 
+      arrayLabelCompras.push(jsonValor.valorHistID.valor.nombre);
+      arrayColor.push(colorDivisa(jsonValor.valorHistID.valor.divisa.codDivisa));
+
+      addDatosCompras(arrayColor, arrayLabelCompras, arrayCompras);
+
+    },objetoUrl.getValoreshist(idValor,fechaHasta(0))); 
+
+  }
+}
+
+//************************************************/
+// Añadimos y actualizamos datos al chart compras
+//************************************************/
+function addDatosCompras(paramColor, paramLabel, paramData){
+
+  //paramChart.data.labels=paramPeriodo;
+  //console.log("paramValor:"+paramValor);
+  console.log("paramData:"+paramData);
+  //console.log("paramChart:"+paramChart);
+  console.log("paramLabel:"+paramLabel);
+
+  // Reiniciamos y pintamos.
+  removeData(compraValoresChart);
+  setChartCompraValores(creaChartDonut(document.getElementById('compraValoresChart')));
+
+  compraValoresChart.data.labels=paramLabel;
+
+  compraValoresChart.data.datasets.push({      
+      label: paramLabel,
+      data: paramData,
+      backgroundColor: paramColor
+    });
+
+    compraValoresChart.update();
+}
+
+//************************************************/
+// Borramos e inicializamos el chart de compras
+//************************************************/
+function resetCompra(){
+  arrayCompras = [];
+  arrayLabelCompras = [];
+  arrayColor = [];
+  removeData(compraValoresChart);
+  setChartCompraValores(creaChartDonut(document.getElementById('compraValoresChart')));
+}
+
+//************************************************/
+// Creamos un chart genérico tipo donut
+//************************************************/
+function creaChartDonut(paramCtx){
+
+  //let ctxValores = document.getElementById('valoresChart')
+  let ctxValores = paramCtx;  
+  let compraChart = new Chart(ctxValores, {
+    type: 'doughnut',
+    data: {},
+  })
+  return compraChart;
+}
 
 //************************************************/
 // Carga de valores en las dropdown
@@ -87,6 +150,7 @@ var objetoUrl = new montaUrl();
 function cargarValoresDropdown(){
   let dropdownValores = document.getElementById("selectValorUno");
   let dropdownValoresDos = document.getElementById("selectValorDos");  
+  let dropdownValoresCompra = document.getElementById("selectValorCompra");    
   // Llamada a la api
   obtenerDatosValores(function(resultValores){    
     let jsonValor = resultValores;
@@ -95,19 +159,23 @@ function cargarValoresDropdown(){
 
         let opt = document.createElement('option');
         let optDos = document.createElement('option');        
+        let optCompra = document.createElement('option');
         opt.value = valor.idVAlor;
         opt.innerHTML = valor.nombre;
         optDos.value = valor.idVAlor;
         optDos.innerHTML = valor.nombre;        
+        optCompra.value = valor.idVAlor;
+        optCompra.innerHTML = valor.nombre;        
         dropdownValores.appendChild(opt);
         dropdownValoresDos.appendChild(optDos);
+        dropdownValoresCompra.appendChild(optCompra);
     }
   },objetoUrl.getValores());  
 }
 
 //************************************************/
 // Si se produce algún cambio en las
-// selects de valores.
+// selects de valores recalculamos y pintamos.
 //************************************************/
 function cambiaSelect(){
   removeData(valoresChart);
@@ -144,7 +212,8 @@ function cambiaValor(paramSelect){
 }
 
 //************************************************/
-// Evaluamos la periocidad y recalculamos todo
+// Si hay cambios en la periodicidad, evaluamos 
+// y recalculamos todo
 //************************************************/
 function cambiaPeriodicidad(){
 
@@ -255,7 +324,7 @@ function addDatosDivisa(paramLabel, paramData, paramChart){
 }
 
 //************************************************/
-// Limpiamos el chart de valores
+// Limpiamos y destruimos el chart de valores
 //************************************************/
 function removeData(paramChart) {
     paramChart.clear();
@@ -450,7 +519,8 @@ function fechaHasta(paramPeriodicidad){
 
   // Trampa
   fechaCalculada.setDate(fechaCalculada.getDate() + 1);
-  dateHoy.setDate(dateHoy.getDate() + 1);
+  //dateHoy.setDate(dateHoy.getDate() + 1);
+  dateHoy.setDate(dateHoy.getDate());
   // Trampa  
 
   let fechaHoy = dateHoy;
@@ -462,11 +532,11 @@ function fechaHasta(paramPeriodicidad){
           break;  
       // 5 días
       case 2:
-          fechaCalculada.setDate(fechaCalculada.getDate() - 4);
+          fechaCalculada.setDate(fechaCalculada.getDate() - 5);
           break;    
       // 1 semana
       case 3:
-          fechaCalculada.setDate(fechaCalculada.getDate() - 6);
+          fechaCalculada.setDate(fechaCalculada.getDate() - 7);
           break;
       // Mensual
       case 4:
@@ -501,7 +571,7 @@ function fechaddMMyyyy(paramDate){
 }
 
 //************************************************/
-// Creamos un chart genérico.
+// Creamos un chart genérico de lineas
 //************************************************/
 function creaChart(paramCtx){
 

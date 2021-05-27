@@ -306,11 +306,15 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
 
 #### 5.2.5.2 Frontend
 
-​		Las pruebas de la web se han realizado con varios navegadores (Chrome, Edge, etc.) a fin de confirmar que su aspecto y respuesta es la correcta. Gracias a estas pruebas se detectaron algunas incidencias importantes en el rendimiento de los accesos a la API. Por su importancia, han quedado  reflejadas en el apartado "Conclusiones".
+​		Las pruebas de la web se han realizado con varios navegadores (Chrome y Edge) a fin de confirmar que su aspecto y respuesta es la correcta. Gracias a estas pruebas se detectaron algunas incidencias importantes en el rendimiento de los accesos a la API. Por su importancia, han quedado  reflejadas en el apartado "Conclusiones".
 
-Completar con capturas.
+Chrome.
 
+![Pruebas con Chrome](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Chrome.PNG?raw=true "Pruebas con Chrome")
 
+Edge.
+
+![Pruebas con Edge](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Edge.PNG?raw=true "Pruebas con Edge")
 
 ## 5. 3 Desarrollo web
 

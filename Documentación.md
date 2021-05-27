@@ -395,14 +395,16 @@ Completar con capturas.
 
   ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.
 
-  ​		Poner las url de acceso			completar
+  ​		Para acceder a nuestra aplicación, una vez desplegada en Vercel, utilizaremos la siguiente URL:
+
+  ​		 https://proyecto-fin-de-curso-front-end.vercel.app/		
 
   ![Maquetación](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png?raw=true "Maquetación")
 
   - Estilos bootstrap.
 
     Al utilizar bootstrap, se fijan una serie de estilos por defecto:
-
+  
     - El color de fondo del cuerpo background-color: #fff
       - Las fuentes que vamos a utlizar son las denominadas "base" por bootstrap, tanto en su familia, tamaño y altura. Es lo que sería la tipografía base de bootstrap.
       - 

@@ -6,7 +6,7 @@
 
 
 
-![AppValores](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/bolsa.png "AppValores")
+![AppValores](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/bolsa.png?raw=true "AppValores")
 
 
 
@@ -89,7 +89,7 @@
 
 # 5. Desarrollo del proyecto.
 
-## 5.1 Implantación.
+## 5.1 Implantación y despliegue.
 
 ​		La implantación deberá ser realizada en las siguientes fases para ir comprobando el correcto funcionamiento antes de pasar a la siguiente fase.
 
@@ -316,7 +316,9 @@ Edge.
 
 ![Pruebas con Edge](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Edge.PNG?raw=true "Pruebas con Edge")
 
-## 5. 3 Desarrollo web
+## 5.3 Desarrollo web
+
+### 5.3.1 Estructura del sitio web
 
 - Backend
 
@@ -399,21 +401,20 @@ Edge.
 
   ​		 https://proyecto-fin-de-curso-front-end.vercel.app/
 
-  - Maquetación
+
+### 5.3.2 Maquetación
 
   ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.
 
-  ​		
-
   ![Maquetación](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png?raw=true "Maquetación")
 
-  - Estilos bootstrap.
-  
-    Al utilizar bootstrap, se fijan una serie de estilos por defecto:
-  
-    - El color de fondo del cuerpo background-color: #fff
-      - Las fuentes que vamos a utlizar son las denominadas "base" por bootstrap, tanto en su familia, tamaño y altura. Es lo que sería la tipografía base de bootstrap.
-      - 
+### 5.3.3 Manual de estilo.
+
+Al utilizar bootstrap, se fijan una serie de estilos por defecto:
+
+- El color de fondo del cuerpo background-color: #fff
+  - Las fuentes que vamos a utlizar son las denominadas "base" por bootstrap, tanto en su familia, tamaño y altura. Es lo que sería la tipografía base de bootstrap.
+  - 
 
 ## 5.4 Control de versiones.
 

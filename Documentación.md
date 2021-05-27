@@ -105,120 +105,7 @@
 
    ![Despliegue](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Despliegue.png?raw=true "Despliegue")
 
-## 5.2 Programación.
-
-### 5.2.1 Guía de estilo
-
-​		Eclipse nos proporciona opciones para personalizar, si lo deseamos, casi cualquier aspecto del proceso de codificación. En nuestro caso, hemos optado por seguir el estilo marcado por la herramienta, ya de por sí, es un estandar. Tabulaciones, apertura y cierre de llaves, organización y orden de librerías son sólo algunos de los aspectos que podemos parametrizar. 
-
-![Formateo de código Java](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/EclipseFormatter.PNG?raw=true "Formateador")
-
-​		La limpieza de código es otro aspecto que podemos controlar automatizando determinadas tareas rutinarias.
-
-![Limpieza de código Java](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/EclipseClean.PNG?raw=true "Reglas de limpieza")
-
-​		Por último, y a modo de ejemplo, vemos que también es posible la organizació de los paquetes del desarrollo siguiendo una determinada pauta.
-
-![Paquetes Java](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/EclipseOrganizer.PNG?raw=true "Organización de paquetes")
-
-​		Por otra parte, señalamos a continuación las reglas de estilo y buenas prácticas que se han puesto en práctica durante el desarrollo y algunos ejemplos de los mismos en el código:
-
-#### 5.2.1.1 Declaraciones
-
-Para la declaración de las variables se utiliza una declaración de cada vez y no se permiten dejar variables locales sin inicializar salvo en el caso de que sean propiedades de un objeto bean.
-
-
-	 @PostMapping("/loadFecdesdeFechasta/{fecDesde}/{fecHasta}")
-	 public Map<String, String> loadFecdesdeFechasta(@PathVariable String fecDesde, @PathVariable String fecHasta)  throws ParseException {
-		 		 
-		 double start = 1.5;
-		 double end = 0.5;
-		 double random, result;
-		 
-		 DateFormat sourceFormat = new SimpleDateFormat("dd/MM/yyyy");
-		
-		 DecimalFormatSymbols simbolos = new DecimalFormatSymbols();
-		 simbolos.setDecimalSeparator('.');
-		 DecimalFormat df = new DecimalFormat("#.00",simbolos);
-#### 5.2.1.2 Constantes
-
-Como norma general todas las constantes numéricas no deberían codificarse directamente, salvo la excepción de -1, 0 y 1.
-
-#### 5.2.1.3 Propiedades
-
-El acceso/modificación de las propiedades de una clase (no constantes) siempre mediante métodos de acceso get/set.
-
-	public Valor getValor() {
-		return valor;
-	}
-	
-	public void setValor(Valor valor) {
-		this.valor = valor;
-	}
-	
-	public Date getFecValor() {
-		return fecValor;
-	}
-La asignación de variables / propiedades no podrá ser consecutiva.
-
-
-		 inicio = sourceFormat.parse(fechaDesde);		 
-		 fin = sourceFormat.parse(fechaHasta);
-		 
-		 Date actual = inicio;
-		 
-		 // Recuperamos todos los valores
-		 List<Valor> listaValores;
-		 listaValores = valorService.findAll();
-#### 5.2.1.4 Métodos
-
-Los métodos deberán ser verbos (en infinitivo), en mayúsculas y minúsculas con la primera letra del nombre en minúsculas, y con la primera letra de cada palabra interna en mayúsculas (lowerCamelCase).
-
-No se permiten caracteres especiales.
-
-El nombre ha de ser lo suficientemente descriptivo, no importando a priori la longitud del mismo.
-
-
-	 @DeleteMapping("valores/{valorHistId}/{fecha}")
-	 public String deleteValorHist(@PathVariable int valorHistId, @PathVariable String fecha) {
-	
-	        Valorhist valorHist = valorhistService.findById(valorHistId, fecha);
-	
-	        if(valorHist == null) {
-	            throw new RuntimeException("Valor histórico desconocido id:"+valorHistId);
-	        }
-	
-	        valorhistService.deleteById(valorHistId,fecha);
-	
-	        return "Valor histórico borrado con id - "+valorHistId + " y fecha "+fecha;
-	  }
-### 5.2.2 Organización del código
-
-#### 5.2.2.1 Backend. 
-
-​		El código del proyecto estará estructurado en cuatro paquetes básicos que nos darán una idea bastante clara de la jerarquía de los objetos que contienen. Son los siguientes:
-
-- Entidades: representarán a la tupla de la BBDD y contendrán los constructores y métodos básicos de acceso a sus propiedades. En algunos casos también contendrá a las clases "clave" que nos servirán para identificar al objeto univocamente utilizando otro objeto contenido en el.
-
-- Acceso a datos (DAO): estos objetos serán los responsables de interactuar con JPA y, utilizando los métodos necesarios, interactuar con la BBDD.
-
-- Servicios: los servicios serán la herramienta o capa visible que utilizará el desarrollador para acceder a los datos e interactuar con ellos.
-
-- Controladores: serán los que reciban las peticiones http y en función de las mismas, realicen la acción que se les solicite (GET, POST, PUT y DELETE). Serán la capa visible de cara al frontend.
-
-  Además de estos paquetes básicos, tendremos también otros como el de recursos donde almacenaremos la parametrización de la conexión a BBDD.
-
-#### 5.2.2.2 Frontend. 
-
-​		Nuestra web constará de los siguientes elementos a nivel de desarrollo:
-
-- Código JavaScript:
-  - dashboard.js: contendrá la funcionalidad principla de acceso a la API, llamadas AJAX, así como el tratamiento de los datos recibidos.
-  - objetos.js: contiene las clases creadas para el tratamiento de la información.
-
-- Ventanas: una ventana principal, index, será el inicio de la navegación y donde se nos ofrecerán las distintas funcionalidades.
-
-### 5.2.3 Modelado de datos.
+## 5.2 Modelado de datos.
 
 ​		Al haber optado por JPA a la hora de gestionar y desarrollar nuestra capa de persistencia, la BB.DD. aparece reflejada como entidades que se relacionan entre sí utilizando etiquetas. De esta forma hemos evitado la creación de un script de creación propiamente dicho (create, alters, etc.) pero, por otra parte, hemos tenido que ser más cuidadosos a la hora del diseño de las entidades ya que son estas un reflejo de las tablas, como veremos más adelante. En cualquier caso, se ha diseñado un diagrama E/R como elemento previo y de ayuda para el diseño de las clases y su etiquetado.
 
@@ -256,7 +143,122 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
 
 ​		La clase ID que hemos tomado como ejemplo para ilustrar esta casuística consta básicamente con una referencia a otro objeto (Divisa) y una propiedad más para identificarla univocamente, en este caso fecha.
 
-### 5.2.4 Arquitectura de clases
+## 5.3 Programación.
+
+### 5.3.1 Guía de estilo
+
+​		Eclipse nos proporciona opciones para personalizar, si lo deseamos, casi cualquier aspecto del proceso de codificación. En nuestro caso, hemos optado por seguir el estilo marcado por la herramienta, ya de por sí, es un estandar. Tabulaciones, apertura y cierre de llaves, organización y orden de librerías son sólo algunos de los aspectos que podemos parametrizar. 
+
+![Formateo de código Java](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/EclipseFormatter.PNG?raw=true "Formateador")
+
+​		La limpieza de código es otro aspecto que podemos controlar automatizando determinadas tareas rutinarias.
+
+![Limpieza de código Java](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/EclipseClean.PNG?raw=true "Reglas de limpieza")
+
+​		Por último, y a modo de ejemplo, vemos que también es posible la organizació de los paquetes del desarrollo siguiendo una determinada pauta.
+
+![Paquetes Java](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/EclipseOrganizer.PNG?raw=true "Organización de paquetes")
+
+​		Por otra parte, señalamos a continuación las reglas de estilo y buenas prácticas que se han puesto en práctica durante el desarrollo y algunos ejemplos de los mismos en el código:
+
+#### 5.3.1.1 Declaraciones
+
+Para la declaración de las variables se utiliza una declaración de cada vez y no se permiten dejar variables locales sin inicializar salvo en el caso de que sean propiedades de un objeto bean.
+
+
+	 @PostMapping("/loadFecdesdeFechasta/{fecDesde}/{fecHasta}")
+	 public Map<String, String> loadFecdesdeFechasta(@PathVariable String fecDesde, @PathVariable String fecHasta)  throws ParseException {
+		 		 
+		 double start = 1.5;
+		 double end = 0.5;
+		 double random, result;
+		 
+		 DateFormat sourceFormat = new SimpleDateFormat("dd/MM/yyyy");
+		
+		 DecimalFormatSymbols simbolos = new DecimalFormatSymbols();
+		 simbolos.setDecimalSeparator('.');
+		 DecimalFormat df = new DecimalFormat("#.00",simbolos);
+#### 5.3.1.2 Constantes
+
+Como norma general todas las constantes numéricas no deberían codificarse directamente, salvo la excepción de -1, 0 y 1.
+
+#### 5.3.1.3 Propiedades
+
+El acceso/modificación de las propiedades de una clase (no constantes) siempre mediante métodos de acceso get/set.
+
+	public Valor getValor() {
+		return valor;
+	}
+	
+	public void setValor(Valor valor) {
+		this.valor = valor;
+	}
+	
+	public Date getFecValor() {
+		return fecValor;
+	}
+La asignación de variables / propiedades no podrá ser consecutiva.
+
+
+		 inicio = sourceFormat.parse(fechaDesde);		 
+		 fin = sourceFormat.parse(fechaHasta);
+		 
+		 Date actual = inicio;
+		 
+		 // Recuperamos todos los valores
+		 List<Valor> listaValores;
+		 listaValores = valorService.findAll();
+#### 5.3.1.4 Métodos
+
+Los métodos deberán ser verbos (en infinitivo), en mayúsculas y minúsculas con la primera letra del nombre en minúsculas, y con la primera letra de cada palabra interna en mayúsculas (lowerCamelCase).
+
+No se permiten caracteres especiales.
+
+El nombre ha de ser lo suficientemente descriptivo, no importando a priori la longitud del mismo.
+
+
+	 @DeleteMapping("valores/{valorHistId}/{fecha}")
+	 public String deleteValorHist(@PathVariable int valorHistId, @PathVariable String fecha) {
+	
+	        Valorhist valorHist = valorhistService.findById(valorHistId, fecha);
+	
+	        if(valorHist == null) {
+	            throw new RuntimeException("Valor histórico desconocido id:"+valorHistId);
+	        }
+	
+	        valorhistService.deleteById(valorHistId,fecha);
+	
+	        return "Valor histórico borrado con id - "+valorHistId + " y fecha "+fecha;
+	  }
+### 5.3.2 Organización del código
+
+#### 5.3.2.1 Backend. 
+
+​		El código del proyecto estará estructurado en cuatro paquetes básicos que nos darán una idea bastante clara de la jerarquía de los objetos que contienen. Son los siguientes:
+
+- Entidades: representarán a la tupla de la BBDD y contendrán los constructores y métodos básicos de acceso a sus propiedades. En algunos casos también contendrá a las clases "clave" que nos servirán para identificar al objeto univocamente utilizando otro objeto contenido en el.
+
+- Acceso a datos (DAO): estos objetos serán los responsables de interactuar con JPA y, utilizando los métodos necesarios, interactuar con la BBDD.
+
+- Servicios: los servicios serán la herramienta o capa visible que utilizará el desarrollador para acceder a los datos e interactuar con ellos.
+
+- Controladores: serán los que reciban las peticiones http y en función de las mismas, realicen la acción que se les solicite (GET, POST, PUT y DELETE). Serán la capa visible de cara al frontend.
+
+  Además de estos paquetes básicos, tendremos también otros como el de recursos donde almacenaremos la parametrización de la conexión a BBDD.
+
+#### 5.3.2.2 Frontend. 
+
+​		Nuestra web constará de los siguientes elementos a nivel de desarrollo:
+
+- Código JavaScript:
+  - dashboard.js: contendrá la funcionalidad principla de acceso a la API, llamadas AJAX, así como el tratamiento de los datos recibidos.
+  - objetos.js: contiene las clases creadas para el tratamiento de la información.
+
+- Ventanas: una ventana principal, index, será el inicio de la navegación y donde se nos ofrecerán las distintas funcionalidades.
+
+
+
+### 5.3.3 Arquitectura de clases
 
 ​		Nuestra arquitectura de clases se base en cuatro elementos básicos sobre los que se ha construido todo el sistema. En el diagrama de clases podemos ver más gráficamente cómo se estructuran las diferentes clases y cuales son sus propiedades y métodos. Algunas entidades son sólo de uso interno y como apoyo de otras, tal es el caso de los ID necesarios en algunos casos y cuyo tratamiento es un poco más complejo y específico. Los objetos serían los siguientes:
 
@@ -292,9 +294,9 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
 
 ![Diagrama de clases](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20clases.png?raw=true "Diagrama de clases")
 
-### 5.2.5 Pruebas
+### 5.3.4 Pruebas
 
-#### 5.2.5.1 Backend
+#### 5.3.4.1 Backend
 
 ​		Las pruebas en backend estarán gestionadas por Postman. Para cada una de los objetos/entidades se ha creado una batería de pruebas que engloba todo el ciclo de vida del mismo (CRUD). Además, se incluyen llamadas a métodos de carga masiva, aleatoria y parametrizable para cada una de dichas entidades y así facilitar la casuística de las pruebas. Estas baterías de pruebas, agrupadas por entidad en carpetas, son ejecutables masivamente utilizando la herramienta "Runner" de Postman. No se descarta realizar pruebas unitarias más específicas desde el IDE basándonos en Junit si se dispone en un futuro de tiempo para ello.
 
@@ -304,7 +306,7 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
 
 ​		Las pruebas que vemos en la imagen de más arriba están direccionadas a una máquina local (localhost:8080). Añadiremos otro juego de pruebas, una vez realizado el despliegue tanto de la API como de la BB.DD., que apunte a la ubicacion remota de la API para poder confirmar que funciona correctamente
 
-#### 5.2.5.2 Frontend
+#### 5.3.4.2 Frontend
 
 ​		Las pruebas de la web se han realizado con varios navegadores (Chrome y Edge) a fin de confirmar que su aspecto y respuesta es la correcta. Gracias a estas pruebas se detectaron algunas incidencias importantes en el rendimiento de los accesos a la API. Por su importancia, han quedado  reflejadas en el apartado "Conclusiones".
 
@@ -316,9 +318,9 @@ Edge.
 
 ![Pruebas con Edge](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Edge.PNG?raw=true "Pruebas con Edge")
 
-## 5.3 Desarrollo web
+## 5.4 Desarrollo web
 
-### 5.3.1 Estructura del sitio web
+### 5.4.1 Estructura del sitio web
 
 - Backend
 
@@ -402,13 +404,13 @@ Edge.
   ​		 https://proyecto-fin-de-curso-front-end.vercel.app/
 
 
-### 5.3.2 Maquetación
+### 5.4.2 Maquetación
 
   ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.
 
   ![Maquetación](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png?raw=true "Maquetación")
 
-### 5.3.3 Manual de estilo.
+### 5.4.3 Manual de estilo.
 
 Al utilizar bootstrap, se fijan una serie de estilos por defecto:
 
@@ -416,7 +418,7 @@ Al utilizar bootstrap, se fijan una serie de estilos por defecto:
   - Las fuentes que vamos a utlizar son las denominadas "base" por bootstrap, tanto en su familia, tamaño y altura. Es lo que sería la tipografía base de bootstrap.
   - 
 
-## 5.4 Control de versiones.
+## 5.5 Control de versiones.
 
 ​		Github será nuestra herraminta de versionado y de mantenimiento de las distintas ramas del desarrollo. Estas ramas nos ayudan a manterner ordenado y estructurado todo el trabajo realizado durante el desarrollo y, en última instancia, nos ayudarán a realizar el desplieque. Las ramas, tal y como se puede ver en la imagen de más abajo, son cinco:
 

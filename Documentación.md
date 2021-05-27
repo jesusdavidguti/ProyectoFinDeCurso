@@ -318,6 +318,10 @@ Edge.
 
 ![Pruebas con Edge](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Edge.PNG?raw=true "Pruebas con Edge")
 
+Firefox.
+
+![Pruebas con Firefox](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Firefox.PNG?raw=true "Pruebas con Firefox")
+
 ## 5.4 Desarrollo web
 
 ### 5.4.1 Estructura del sitio web

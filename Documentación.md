@@ -316,7 +316,7 @@ Completar con capturas.
 
 - Backend
 
-  Dependiendo de si estamos realizando las llamadas a la API en local (pruebas) o de si ya está desplegada en Heroku, utilizaremos las siguientes URL:
+  Dependiendo de si estamos realizando las llamadas a la API en local (pruebas) o de si ya está desplegada en Heroku, utilizaremos distintas url las cuales estan gestionadas por la clase *montaUrl*:
 
   - Local: http://localhost:8080/
   - Desplegada: https://proyectofincurso.herokuapp.com/
@@ -391,18 +391,20 @@ Completar con capturas.
   
 - FrontEnd
 
+  ​		Para acceder a nuestra aplicación, una vez desplegada en Vercel, utilizaremos la siguiente URL:
+
+  ​		 https://proyecto-fin-de-curso-front-end.vercel.app/
+
   - Maquetación
 
   ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.
 
-  ​		Para acceder a nuestra aplicación, una vez desplegada en Vercel, utilizaremos la siguiente URL:
-
-  ​		 https://proyecto-fin-de-curso-front-end.vercel.app/		
+  ​		
 
   ![Maquetación](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png?raw=true "Maquetación")
 
   - Estilos bootstrap.
-
+  
     Al utilizar bootstrap, se fijan una serie de estilos por defecto:
   
     - El color de fondo del cuerpo background-color: #fff
@@ -423,6 +425,8 @@ Completar con capturas.
 
 # 6. Dificultades encontradas
 
+- Despliegue.
+  - Vercel no permite el despliegue desde una rama, siempre lo hace desde main, por lo que ha sido necesario clonar la rama de frontend para poder hacer el despliegue.
 - FrontEnd
   - A la hora de usar Ajax para recuperar y mostrar datos hay que tener en cuenta la "rapidez" con que se ejecutan las sentencias. Así, para mostrar datos o actualizar un objeto con datos procedentes de Ajax es necesario hacer que los métodos que pintan los datos no se ejecuten antes de que Ajax haya finalizado su ejecución y devuelto los datos.
   - El objeto para dibujar gráficas, llamado "Chart", es muy útil pero presenta ciertas características en su manejo que debemos respetar y aprender para su correcto uso. Podemos trabajar con el como si fuese un objeto "plano", definiendo sus propiedades una a una., o bien acceder a las mismas con la notación punto. Es esta última  opción por la que nos hemos decantado a pesar de que sus propiedades están muy agrupadas y que el cambio de una sola puede afectar al resto.

@@ -57,9 +57,19 @@ Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo
 
 ![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/FrontEndValoresEvolucion.PNG "Evolución de valores")
 
+**FrontEnd: Compra de valores**
+
+![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/FrontEndValoresCompra.PNG?raw=true "Compra de valores")
+
+**FrontEnd: Seguimiento compra de valores**
+
+![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/FrontEndValoresCompraEvolucion.PNG?raw=true "Seguimiento compra de valores")
+
+
+
 **Github: estructura del proyecto**
 
-![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas.PNG "Ramas en Github")
+![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas.PNG?raw=true "Ramas en Github")
 
 ## Bibliografía
 
@@ -87,4 +97,4 @@ Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo
     - [Dropdowns](https://getbootstrap.com/docs/4.0/components/dropdowns/) 
 
 
-  
+

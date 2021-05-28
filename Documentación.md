@@ -470,6 +470,7 @@ Las posibles mejoras podrían ser infinitas una vez visto el potencial que la AP
 - FrontEnd
   - Area de mantenimiento: donde se podrán mantener las entidades padre (divisa, valor, mercado, etc.)
   - Moneda de uso: utilizamos el dolar americano por defecto para almacenar, pero podríamos mostrar la información en cualquier otra moneda simplemente convirtiendo los valores antes de ser mostrados.
+  - El objeto Chart.js permite su tratamiento a nivel de objeto, como ya hemos visto. Aunque se han creado funciones genéricas para la gestión de este tipo de objeto, se podría haber mejorado aún más su tratamiento una vez se conoce el funcionamiento de sus métodos.
 - BackEnd
   - Incluir batería de pruebas con JUnit para un testeo más exhaustivo de los métodos, tanto públicos como privados.
   - Carga de datos más parametrizada: para una sola entidad, limitando los importes máximo y mínimo, etc.

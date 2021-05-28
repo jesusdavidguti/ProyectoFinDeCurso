@@ -434,6 +434,10 @@ Al utilizar bootstrap, se fijan una serie de estilos por defecto:
 
 ![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas.PNG?raw=true "Ramas en Github")
 
+Debido a la imposibilidad de desplegar en Vercel desde una rama (sólo es posible desde main), se ha tenido que generar un nuevo proyecto Github llamado [ProyectoFinDeCurso_FrontEnd](https://github.com/jesusdavidguti/ProyectoFinDeCurso_FrontEnd) que nos pertimitrá automatizar el despliegue del frontend.
+
+![Github para frontend](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas_frontend.PNG?raw=true "Github para frontend")
+
 # 6. Dificultades encontradas
 
 - Despliegue.

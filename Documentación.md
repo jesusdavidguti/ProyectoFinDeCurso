@@ -468,6 +468,7 @@ Debido a la imposibilidad de desplegar en Vercel desde una rama (sólo es posibl
 
 - Generales
   - Una vez  más se cumple el dicho de que la *primera solución que pensamos no es la mejor casi nunca.*
+  - Las espedificaciones funcionales, por muy generales que sean, deben ser atendidas al pie de la letra.
 - FrontEnd
   - Las llamadas a la Api deben hacerse escalonadamente si la callback es la encargada de pasar la información a otro objeto. Así, a la hora de informar el chart, los datasets con la información se deben pasar uno a uno. Es por ello que las llamadas se hacen anidadas para que se ejecuten de una en una y en orden. De otra forma, se puede dar el caso de que algunas de las llamadas a la API no hayan finalizado cuando ya estamos informando el objeto con el siguiente grupo de valores.
   - A la hora de utilizar cualquier tipo de componente web hay que tener muy en cuenta su versión y compatibilidad con otros componentes.
@@ -484,10 +485,12 @@ Las posibles mejoras podrían ser infinitas una vez visto el potencial que la AP
   - Area de mantenimiento: donde se podrán mantener las entidades padre (divisa, valor, mercado, etc.)
   - Moneda de uso: utilizamos el dolar americano por defecto para almacenar, pero podríamos mostrar la información en cualquier otra moneda simplemente convirtiendo los valores antes de ser mostrados.
   - El objeto Chart.js permite su tratamiento a nivel de objeto, como ya hemos visto. Aunque se han creado funciones genéricas para la gestión de este tipo de objeto, se podría haber mejorado aún más su tratamiento una vez se conoce el funcionamiento de sus métodos.
+  - Hacer completamente "responsive" la aplicación.
 - BackEnd
   - Incluir batería de pruebas con JUnit para un testeo más exhaustivo de los métodos, tanto públicos como privados.
   - Carga de datos más parametrizada: para una sola entidad, limitando los importes máximo y mínimo, etc.
   - Distintas consultas que nos darán información más detallada de los valores en sus ciclos de subida y bajada.
+  - Enfocar algunos de los puntos de entrada a la alimentación del objeto chart.js, es decir, devolver arrays que contengan sólo los datos y las etiquetas a usar para descargar de dichos procesos a la parte cliente.
 
 # 9. Fuentes de información
 

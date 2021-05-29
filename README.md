@@ -95,6 +95,7 @@ Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo
     - [Lineal](https://www.chartjs.org/docs/latest/charts/line.html)
   - Bootstrap
     - [Dropdowns](https://getbootstrap.com/docs/4.0/components/dropdowns/) 
+    - [Bootstrap 4.0](https://www.eniun.com/texto-tipografia-colores-bootstrap/)
 
 
 

@@ -12,7 +12,7 @@
 
 
 
-​																									                                                                                Módulo: DAW																									                                                                                Proyecto: appValores																									                                                                                Fecha de exposición: xx/xx/xx																									                                                                                Alumno: Jesús David Gutiérrez Delgado																									                                                                                Tutor: Alfonso 
+​																									                                                                                Módulo: DAW																									                                                                                Proyecto: appValores																									                                                                                Fecha de exposición: 11/06/2021																									                                                                                Alumno: Jesús David Gutiérrez Delgado																									                                                                                Tutor: Alfonso Jiménez Vílchez
 
 [TOC]
 
@@ -72,7 +72,7 @@
   - Pruebas: Postman 8.1
   - Documentación: utilizaremos Typora como editor para Markdown así como LibreOffice Writter
 
-- Repositorios: para la gestión documental y del desarrollo nos apoyaremos en Github. Nuestro repositorio de Github se llamará [ProyectoFinDeCurso](https://github.com/jesusdavidguti/ProyectoFinDeCurso) y contará con las siguientes ramas:
+- Repositorios: para la gestión documental y del desarrollo nos apoyaremos en Github. Nuestro repositorio principal de Github se llamará [ProyectoFinDeCurso](https://github.com/jesusdavidguti/ProyectoFinDeCurso) y contará con las siguientes ramas:
 
   - [Main](https://github.com/jesusdavidguti/ProyectoFinDeCurso): resumen visual y bibliografía
   - [Backend](https://github.com/jesusdavidguti/ProyectoFinDeCurso/tree/backend): objetos del proyecto en Spring y JPAl. Desde esta rama se realizará el despliegue en Heroku
@@ -416,11 +416,20 @@ Firefox.
 
 ### 5.4.3 Manual de estilo.
 
-Al utilizar bootstrap, se fijan una serie de estilos por defecto:
+Al utilizar bootstrap, version 4, se fijan una serie de estilos por defecto que pasamos a ver a continuación:
 
-- El color de fondo del cuerpo background-color: #fff
-  - Las fuentes que vamos a utlizar son las denominadas "base" por bootstrap, tanto en su familia, tamaño y altura. Es lo que sería la tipografía base de bootstrap.
-  - 
+- El tamaño de fuentes por defecto es **font-size de 16px** y separación de líneas **line-height de 1.5 rem**.
+- Dispone de una **font-family** predeterminada de tipo “**Helvetica Neue”, Helvetica, Arial, sans-serif.**
+- Pas etiquetas **<p>** tienen **margin-top: 0 y margin-bottom: 1rem** (16px por defecto).
+- Los encabezados <h1> – <h6> disponen de estilos predefinidos:
+  - h1 Bootstrap (2.5rem = 40px)
+  - h2 Bootstrap (2rem = 32px)
+  - h3 Bootstrap (1.75rem = 28px)
+  - h4 Bootstrap (1.5rem = 24px)
+  - h5 Bootstrap (1.25rem = 20px)
+  - h6 Bootstrap (1rem = 16px)
+- Las clases para los colores del texto son: **.text-primary, .text-secondary, .text-muted, .text-success, .text-danger, .text-warning, .text-info, .text-white, .text-dark y .text-light.**
+- Las clases de colores de fondo son: **.bg-primary , .bg-success , .bg-info , .bg-warning , .bg-danger , .bg-secondary , .bg-dark y .bg-light .** Cuando utilizamos los colores de fondo es muy usual combinarlo junto con las clases de los colores de texto para configurar un buen contraste entre ellos.
 
 ## 5.5 Control de versiones.
 

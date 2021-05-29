@@ -517,5 +517,7 @@ Estas son algunas de las fuentes de información consultadas principalmente:
   - Iconos: https://feathericons.com/
   - Diagramas estadísticos
     - Lineal: https://www.chartjs.org/docs/latest/charts/line.html
+    - Donut: https://www.chartjs.org/docs/latest/charts/doughnut.html
   - Bootstrap
     - Dropdowns: https://getbootstrap.com/docs/4.0/components/dropdowns/
+    - Bootstrap 4.0: https://www.eniun.com/texto-tipografia-colores-bootstrap/

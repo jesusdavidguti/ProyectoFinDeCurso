@@ -424,7 +424,7 @@ Al utilizar bootstrap, version 4, se fijan una serie de estilos por defecto que 
 
 - El tamaño de fuentes por defecto es **font-size de 16px** y separación de líneas **line-height de 1.5 rem**.
 - Dispone de una **font-family** predeterminada de tipo “**Helvetica Neue”, Helvetica, Arial, sans-serif.**
-- Pas etiquetas **<p>** tienen **margin-top: 0 y margin-bottom: 1rem** (16px por defecto).
+- Las etiquetas **p** tienen **margin-top: 0 y margin-bottom: 1rem** (16px por defecto).
 - Los encabezados h1 – h6 disponen de estilos predefinidos:
   - h1 Bootstrap (2.5rem = 40px)
   - h2 Bootstrap (2rem = 32px)

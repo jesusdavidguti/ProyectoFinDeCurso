@@ -10,7 +10,11 @@
 
 
 
-​																									                                                                                **Módulo:** DAW																									                                                                                **Proyecto:** appValores																									                                                                                **Fecha de exposición:** 11/06/2021																									                                                                                **Alumno:** Jesús David Gutiérrez Delgado																									                                                                                **Tutor:** Alfonso Jiménez Vílchez
+​	                                            **Módulo:** DAW		
+                                    **Proyecto:** appValores																									                                                                                
+**Fecha de exposición:** 11/06/2021
+																							                                            **Alumno:** Jesús David Gutiérrez Delgado								
+                                                                                          											                                    **Tutor:** Alfonso Jiménez Vílchez
 
 
 
@@ -20,7 +24,7 @@
 
 # 1. Introducción
 
-​		El objetivo de este proyecto es el desarrollo de una aplicación web capaz de almacenar y mostrar información de valores bursátiles y su evolución en el tiempo. La aplicación se podrá ejecutar en los principales navegadores así como en distintos dispositivos móviles. Su funcionalidad será muy básica en un primer momento por lo que será susceptible de mejoras en un futuro. Esta funcionalidad básica es lo que hace que vaya orientada al gran público o a personas con pocos o ningún conocimiento sobre infromática y que sólo dispongan de un dispositivo móvil o tablet.
+​		Este proyecto está orientado hacia  el desarrollo de una aplicación web capaz de almacenar y mostrar información de valores bursátiles y su evolución en el tiempo. La aplicación se podrá ejecutar en los principales navegadores así como en distintos dispositivos móviles. Su funcionalidad será muy básica en un primer momento por lo que será susceptible de mejoras en un futuro. Esta funcionalidad básica es lo que hace que vaya orientada al gran público o a personas con pocos o ningún conocimiento sobre infromática y que sólo dispongan de un dispositivo móvil o tablet.
 
 # 2. Objetivos
 

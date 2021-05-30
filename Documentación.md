@@ -10,15 +10,78 @@
 
 
 
-​	                                            **Módulo:** DAW		
-                                    **Proyecto:** appValores																									                                                                                
+
+
+
+
+
+
+**Módulo:** DAW		
+**Proyecto:** appValores
+
 **Fecha de exposición:** 11/06/2021
-																							                                            **Alumno:** Jesús David Gutiérrez Delgado								
-                                                                                          											                                    **Tutor:** Alfonso Jiménez Vílchez
+
+**Alumno:** Jesús David Gutiérrez Delgado
+
+**Tutor:** Alfonso Jiménez Vílchez
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 [TOC]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -44,6 +107,30 @@
   - Permita consultar el historial de un valor, mostrando gráficas con su evolución en 1 día, 5 días, una semana, un mes, 6 meses y un año. Se podrá consultar más de un valor a la vez.
   - Permita definir una cartera de inversión (añadir cuántas acciones se dispone de cada valor) y muestre gráficas e información sobre la composición de la cartera, su precio y su historial.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 3. Análisis previo.
 
 ​		Para la consecución de nuestros objetivos deberemos contar con un software capaz de acceder a un sistema remoto de almacenamiento donde tendremos los datos. Deberemos contar también con un gestor de BB.DD (SGBD) y las herramientas necesarias para interactuar con el. La interfaz con el usuario, o front-end, será independiente del sistema de gestión de los datos, de hecho tendrán alojamiento en distintos servidores. 
@@ -61,6 +148,20 @@
 - Frontend: aquí son también amplias las posibilidades en cuanto a la implementación de una interfaz de usuario, pero optaremos por una solución convencional y a la vez muy extendida: Javascript. Para estandarizar el desarrollo todo lo posible, en su parte de diseño y estilo optaremos por Bootstrap que nos aportará facilidad y rapidez a la hora de implementar el estilo de la web.
 
   ​	 Por otra parte, necesitaremos algún tipo de componente que nos permita implementar de forma rápida y eficaz las distintas gráficas que necesitaremos para mostrar al usuario la evolución temporal de valores, divisas, etc. El componente [Chart.js](https://www.chartjs.org/docs/latest/) es, a priori, el que presenta una mayor facilidad de uso. La integración con JScript es total y la faciclidad a la hora de implementar distintos tipos de gráficas "alimentadas" por datos proporcionados por nuestra API hacen que sea una opción más que factible.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 4. Recursos
 
@@ -88,7 +189,29 @@
 
   - Despliegue back-end: [Heroku](https://id.heroku.com/login)
   - Despliegue front-end: [Vercel](https://vercel.com/login)
-  - Despliegue SGBD: [Gearhost](https://www.gearhost.com/)																																																																														
+  - Despliegue SGBD: [Gearhost](https://www.gearhost.com/)																	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # 5. Desarrollo del proyecto.
@@ -108,6 +231,10 @@
    El siguiente esquema condensa la forma en la que se va a realizar el despliegue:
 
    ![Despliegue](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Despliegue.png?raw=true "Despliegue")
+
+
+
+
 
 ## 5.2 Modelado de datos.
 
@@ -298,6 +425,22 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
 
 ![Diagrama de clases](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Diagrama%20clases.png?raw=true "Diagrama de clases")
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 5.3.4 Pruebas
 
 #### 5.3.4.1 Backend
@@ -412,6 +555,37 @@ Firefox.
   ​		 https://proyecto-fin-de-curso-front-end.vercel.app/
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 5.4.2 Maquetación
 
   ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.
@@ -495,6 +669,30 @@ Las posibles mejoras podrían ser infinitas una vez visto el potencial que la AP
   - Carga de datos más parametrizada: para una sola entidad, limitando los importes máximo y mínimo, etc.
   - Distintas consultas que nos darán información más detallada de los valores en sus ciclos de subida y bajada.
   - Enfocar algunos de los puntos de entrada a la alimentación del objeto chart.js, es decir, devolver arrays que contengan sólo los datos y las etiquetas a usar para descargar de dichos procesos a la parte cliente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 9. Fuentes de información
 

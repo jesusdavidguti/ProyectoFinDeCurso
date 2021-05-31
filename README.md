@@ -45,6 +45,8 @@ Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo
 
 ![Maquetación web](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png "Maquetación web")
 
+![Maquetación web](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web2.png "Maquetación web")
+
 **FrontEnd: Divisas**
 
 ![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/FrontEndDivisas.PNG "Datos de divisas")

@@ -588,7 +588,7 @@ Firefox.
 
 ### 5.4.2 Maquetación
 
-  ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día.
+  ​		Nuestro sitio web constará de una página principal desde la que podremos acceder a las distintas opciones de mantenimiento, cuando estén disponibles. Tal y como podemos ver en el documento de maquetación, contaremos con dos gráficas principales, divisas y valores,  entre las que se insetará una tabla con las subidas y bajadas más señaladas del día. Al final de la página habrá un área de simulación de compra de valores y su evolución a lo largo del tiempo.
 
   ![Maquetación](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/Maquetaci%C3%B3n%20web.png?raw=true "Maquetación")
 

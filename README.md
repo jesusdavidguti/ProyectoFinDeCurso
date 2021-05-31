@@ -73,6 +73,8 @@ Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo
 
 ![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas.PNG?raw=true "Ramas en Github")
 
+![Github](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas2.PNG?raw=true "Proyecto para la rama FrontEnd")
+
 ## Bibliografía
 
 - Sprin boot

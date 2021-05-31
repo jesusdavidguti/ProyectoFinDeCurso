@@ -16,6 +16,26 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 **Módulo:** DAW		
 **Proyecto:** appValores
 
@@ -27,27 +47,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+​	
 
 
 
@@ -625,6 +625,28 @@ Debido a la imposibilidad de desplegar en Vercel desde una rama (sólo es posibl
 
 ![Github para frontend](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/GitRamas_frontend.PNG?raw=true "Github para frontend")
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 6. Dificultades encontradas
 
 - Despliegue.
@@ -639,6 +661,22 @@ Debido a la imposibilidad de desplegar en Vercel desde una rama (sólo es posibl
   - El uso de un identificador que requiera una entidad hace que se tengan que tener en cuenta una serie de aspectos a la hora de utilizarlo. El más importante es el hecho de que para poder realizar acciones de comparación es necesario añadir métodos específicos para comparación de objetos como si fuesen un ID.
   - El envío de fechas a la API se ha relizado en formato ddMMyyyy. Se ha optado por la simplicidad del dato inicial de entrada y su posterior tratamiento en la API.
   - La carga inicial de datos en la BB.DD. remota ha sido problematica ya que había que insertar datos para, al menos, un año de cotización. Las peticiones a la API para este tipo de acciones (load) se ralentizaban mucho y no se acababan de completar ya que la llamda http se cancelaba por tiempo. Para solventar este problema, hubo que lanzar el proceso en local pero atacando a la BB.DD. remota y aún así requirió varias horas en el proceso.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 7. Conclusiones
 
@@ -655,6 +693,26 @@ Debido a la imposibilidad de desplegar en Vercel desde una rama (sólo es posibl
   - Las interfaces de los objetos DAO pueden ser exactamente iguales, por lo que sólo habría que hacer una. Sin embargo, las particularidades de cada objeto hacen que sea necesario introducir variaciones que poco o nada tienen que ver con la funcionalidad del resto de objetos. Es por ello que es preferible hacer una interfaz para cada objeto DAO.
   - La BB.DD. no genera claves externas al uso una vez la creamos. Son JPA y Spring los que, mediante anotaciones, se encargan de generar dichas relaciones cuando activamos el servicio por vez primera. De hecho, las tablas son creadas en la BB.DD. como ficheros simples sin relación alguna y que podemos borrar desde el gestor de BB.DD. sin tener avisos de fallos de integridad.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 8. Posibles mejoras
 
 Las posibles mejoras podrían ser infinitas una vez visto el potencial que la API nos da. Algunas podrían ser las siguientes:
@@ -669,6 +727,14 @@ Las posibles mejoras podrían ser infinitas una vez visto el potencial que la AP
   - Carga de datos más parametrizada: para una sola entidad, limitando los importes máximo y mínimo, etc.
   - Distintas consultas que nos darán información más detallada de los valores en sus ciclos de subida y bajada.
   - Enfocar algunos de los puntos de entrada a la alimentación del objeto chart.js, es decir, devolver arrays que contengan sólo los datos y las etiquetas a usar para descargar de dichos procesos a la parte cliente.
+
+
+
+
+
+
+
+
 
 
 

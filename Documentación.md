@@ -1,4 +1,4 @@
-# App valores
+# 	App valores
 
 
 
@@ -383,7 +383,7 @@ El nombre ha de ser lo suficientemente descriptivo, no importando a priori la lo
 
 - Código JavaScript:
   - dashboard.js: contendrá la funcionalidad principla de acceso a la API, llamadas AJAX, así como el tratamiento de los datos recibidos.
-  - objetos.js: contiene las clases creadas para el tratamiento de la información.
+  - objetos.js: contiene la clase montaUrl destinada al montaje de las url de acceso a la API via AJAX.
 
 - Ventanas: una ventana principal, index, será el inicio de la navegación y donde se nos ofrecerán las distintas funcionalidades.
 

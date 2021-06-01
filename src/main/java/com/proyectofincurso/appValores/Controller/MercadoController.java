@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,20 +51,32 @@ public class MercadoController {
 	}
 	
 	@GetMapping("/mercados")
-    public List<Mercado> findAll(){
+    public ResponseEntity<?> findAll(){
 
-        return mercadoService.findAll();
+        //return mercadoService.findAll();
+		
+		List<Mercado> result = mercadoService.findAll();
+		
+		if (result.isEmpty()){
+			return ResponseEntity.notFound().build();
+		}
+		else{
+			return ResponseEntity.ok(result);
+		}
     }
 	
 	@GetMapping("/mercados/{mercadoId}")
-    public Mercado getMercado(@PathVariable String mercadoId){
+    public ResponseEntity<?> getMercado(@PathVariable String mercadoId){
         Mercado mercado = mercadoService.findById(mercadoId);
 
         if(mercado == null) {
-            throw new RuntimeException("Mercado desconocido -"+mercadoId);
+            //throw new RuntimeException("Mercado desconocido -"+mercadoId);
+        	return ResponseEntity.notFound().build();
         }
-
-        return mercado;
+        else {
+        	return ResponseEntity.ok(mercado);
+        }
+        
     }
 
 	 // ...aquí podríamos ampliar nuestra funcionalidad añadiendo distintas búsquedas.

@@ -727,7 +727,7 @@ Las posibles mejoras podrían ser infinitas una vez visto el potencial que la AP
   - Carga de datos más parametrizada: para una sola entidad, limitando los importes máximo y mínimo, etc.
   - Distintas consultas que nos darán información más detallada de los valores en sus ciclos de subida y bajada.
   - Enfocar algunos de los puntos de entrada a la alimentación del objeto chart.js, es decir, devolver arrays que contengan sólo los datos (patrón DTO) y las etiquetas a usar para descargar de dichos procesos a la parte cliente.
-  - Uso de las ReponseEntity para estandarizar la respuesta de los puntos de entrada.
+  - Uso de las ReponseEntity para estandarizar la respuesta de los puntos de entrada y de lombok para abreviar métidos base (getters y setters)
   - Cabeceras de métodos.
 
 

@@ -728,6 +728,7 @@ Las posibles mejoras podrían ser infinitas una vez visto el potencial que la AP
   - Distintas consultas que nos darán información más detallada de los valores en sus ciclos de subida y bajada.
   - Enfocar algunos de los puntos de entrada a la alimentación del objeto chart.js, es decir, devolver arrays que contengan sólo los datos (patrón DTO) y las etiquetas a usar para descargar de dichos procesos a la parte cliente.
   - Uso de las ReponseEntity para estandarizar la respuesta de los puntos de entrada.
+  - Cabeceras de métodos.
 
 
 

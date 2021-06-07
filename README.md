@@ -20,6 +20,10 @@ Este es un pequeño resumen en imágenes de la estructura del desarrollo y cómo
 
 ![Clase DivisahistID](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/DivisahistID.PNG "Clase DivisahistID")
 
+**Mejora objeto**
+
+![Clase DivisahistID](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/ResponseEntity.PNG "Mejora de objeto")
+
 **Clase montaUrl**
 
 ![Clase DivisahistID](https://github.com/jesusdavidguti/ProyectoFinDeCurso/blob/img/VSobjeto.PNG?raw=true "Clase Url")

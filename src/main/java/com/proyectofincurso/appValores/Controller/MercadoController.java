@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.proyectofincurso.appError.ApiError;
 import com.proyectofincurso.appValores.Service.MercadoService;
 import com.proyectofincurso.appValores.Service.MercadoServiceImpl;
 import com.proyectofincurso.appValores.entity.Mercado;
@@ -144,5 +145,10 @@ public class MercadoController {
 
 	        return "Mercado borrado con id - "+mercadoId;
 	    }	 
+	 
+//	 @ExceptionHandler(MercadoNotFoundException.class)
+//	 public ResponseEntity<ApiError> handlerMercadoNoEncontrado(MercadoNotFoundException ex){
+//		 
+//	 }
 	 
 }
